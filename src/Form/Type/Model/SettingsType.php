@@ -8,6 +8,7 @@ use App\Entity\User;
 use App\Enum\CurrencyEnum;
 use App\Enum\DateFormatEnum;
 use App\Enum\LocaleEnum;
+use App\Enum\ThemeEnum;
 use App\Enum\VisibilityEnum;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
@@ -40,6 +41,11 @@ class SettingsType extends AbstractType
             ->add('visibility', ChoiceType::class, [
                 'choices' => array_flip(VisibilityEnum::getVisibilityLabels()),
                 'required' => true
+            ])
+            ->add('theme', ChoiceType::class, [
+                'choices' => array_flip(ThemeEnum::getThemeLabels()),
+                'multiple' => false,
+                'expanded' => true
             ])
             ->add('darkModeEnabled', CheckboxType::class, [
                 'required' => false

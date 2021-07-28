@@ -9,6 +9,9 @@ export default class extends Controller {
     chart = null;
     isDarkMode =  document.getElementById('settings').dataset.theme === 'dark';
 
+    style = getComputedStyle(document.body);
+    medium = this.style.getPropertyValue('--medium');
+
     connect() {
         let data = JSON.parse(this.element.dataset.json);
 
@@ -28,13 +31,13 @@ export default class extends Controller {
                     initialTreeDepth: -1,
                     animationDurationUpdate: 750,
                     itemStyle: {
-                        borderColor: this.isDarkMode ? '#00ce99' : '#009688',
+                        borderColor: this.isDarkMode ? '#00ce99' : this.medium,
                     },
                     lineStyle: {
-                        color: this.isDarkMode ? '#4a4b4d' : '#ccc'
+                        color: this.isDarkMode ? '#4a4b4d' : '#cccccc'
                     },
                     label: {
-                        color: this.isDarkMode ? '#a6a7a8' : '#555'
+                        color: this.isDarkMode ? '#a6a7a8' : '#555555'
                     }
                 }
             ]

@@ -23,7 +23,6 @@ export default class extends Controller {
         }
     }
 
-
     doAjaxCall() {
         let url = window.location.href.split('?')[0];
         let self = this;

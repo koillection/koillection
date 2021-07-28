@@ -21,7 +21,10 @@
 
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
-        {{ encore_entry_link_tags(app.user and app.user.isInDarkMode ? 'dark-mode' : 'light-mode') }}
+
+        {% if app.user and app.user.isInDarkMode %}
+            {{ encore_entry_link_tags('dark-mode') }}
+        {% endif %}
     {% endblock %}
 
     {% block javascripts %}
@@ -32,12 +35,14 @@
         {{ is_granted('IS_AUTHENTICATED_REMEMBERED') == false and context == 'default' ? 'unauthorized ' }}
         {{ app.request.cookies.get('sidebar_collapsed') ? 'collapsed ' }}
         {{ status_code is defined ? 'error ' }}
+
+        {{ 'theme-' ~ app.user.currentTheme|default('teal') }}
     ">
 
     {% block body %}{% endblock %}
     <div id="settings"
-         data-theme="{{ app.user and app.user.isInDarkMode ? 'dark' : 'light' }}"
-         data-date-format="{{ app.user.dateFormatForJs|default('yyyy-mm-dd') }}"
+         data-theme="{{ app.user.theme|default('teal') }}"
+         data-date-format="{{ app.currentTheme.dateFormatForJs|default('yyyy-mm-dd') }}"
     ></div>
     <div id="offline-message" {{ stimulus_controller('offline-message')}} data-action="online@window->offline-message#hide offline@window->offline-message#show" class="valign-wrapper hidden"><span>{{ 'message.offline'|trans }}</span></div>
 </body>

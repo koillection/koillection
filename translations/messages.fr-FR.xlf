@@ -4542,5 +4542,23 @@
         <target>Retourner à ma collection</target>
       </segment>
     </unit>
+    <unit id="q5aA89s" name="title.update_theme">
+      <segment>
+        <source>title.update_theme</source>
+        <target>Édition du thème</target>
+      </segment>
+    </unit>
+    <unit id="bvcr9e4" name="global.themes.teal">
+      <segment>
+        <source>global.themes.teal</source>
+        <target>Turquoise</target>
+      </segment>
+    </unit>
+    <unit id="5sd89e1" name="global.themes.coral">
+      <segment>
+        <source>global.themes.coral</source>
+        <target>Corail</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

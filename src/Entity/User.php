@@ -9,6 +9,7 @@ use App\Entity\Interfaces\BreadcrumbableInterface;
 use App\Enum\DateFormatEnum;
 use App\Enum\LocaleEnum;
 use App\Enum\RoleEnum;
+use App\Enum\ThemeEnum;
 use App\Enum\VisibilityEnum;
 use DateTimeInterface;
 use Doctrine\Common\Collections\Collection as DoctrineCollection;
@@ -185,6 +186,12 @@ class User implements UserInterface, BreadcrumbableInterface, \Serializable
     private ?DateTimeInterface $lastDateOfActivity = null;
 
     /**
+     * @var string
+     * @ORM\Column(type="string", options={"default": "teal"})
+     */
+    private string $theme;
+
+    /**
      * @var bool
      * @ORM\Column(type="boolean", options={"default": 0})
      */
@@ -272,6 +279,7 @@ class User implements UserInterface, BreadcrumbableInterface, \Serializable
         $this->locale = LocaleEnum::LOCALE_EN_GB;
         $this->visibility = VisibilityEnum::VISIBILITY_PRIVATE;
         $this->dateFormat = DateFormatEnum::FORMAT_HYPHEN_YMD;
+        $this->theme = ThemeEnum::THEME_TEAL;
         $this->darkModeEnabled = false;
         $this->wishlistsFeatureEnabled = true;
         $this->tagsFeatureEnabled = true;
@@ -312,6 +320,15 @@ class User implements UserInterface, BreadcrumbableInterface, \Serializable
     public function isAdmin(): bool
     {
         return \in_array(RoleEnum::ROLE_ADMIN, $this->roles, true);
+    }
+
+    public function getCurrentTheme() : string
+    {
+        if ($this->isDarkModeEnabled()) {
+            return 'dark';
+        }
+
+        return $this->theme;
     }
 
     public function isInDarkMode() : bool
@@ -704,6 +721,18 @@ class User implements UserInterface, BreadcrumbableInterface, \Serializable
     public function setStatisticsFeatureEnabled(bool $statisticsFeatureEnabled): User
     {
         $this->statisticsFeatureEnabled = $statisticsFeatureEnabled;
+
+        return $this;
+    }
+
+    public function getTheme(): string
+    {
+        return $this->theme;
+    }
+
+    public function setTheme(string $theme): User
+    {
+        $this->theme = $theme;
 
         return $this;
     }

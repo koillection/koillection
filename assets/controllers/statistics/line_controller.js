@@ -9,6 +9,9 @@ export default class extends Controller {
     chart = null;
     isDarkMode =  document.getElementById('settings').dataset.theme === 'dark';
 
+    style = getComputedStyle(document.body);
+    medium = this.style.getPropertyValue('--medium');
+
     connect() {
         let data = JSON.parse(this.element.dataset.json);
 
@@ -23,7 +26,7 @@ export default class extends Controller {
                     return params[0].axisValue + ': ' + Translator.transChoice('statistics.items', params[0].data);
                 }
             },
-            color: [this.isDarkMode ? '#00ce99' : '#009688'],
+            color: [this.isDarkMode ? '#00ce99' : this.medium],
             xAxis: {
                 type: 'category',
                 data: Object.keys(data),
@@ -81,7 +84,7 @@ export default class extends Controller {
                 sampling: 'average',
                 areaStyle: {
                     normal: {
-                        color: this.isDarkMode ? '#00ce99' : '#009688'
+                        color: this.isDarkMode ? '#00ce99' : this.medium
                     }
                 }
             }]

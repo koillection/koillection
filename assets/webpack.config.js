@@ -25,7 +25,6 @@ Encore
 
     .addStyleEntry('export', './styles/export.css')
     .addStyleEntry('dark-mode', './styles/themes/dark-mode.css')
-    .addStyleEntry('light-mode', './styles/themes/light-mode.css')
 
     .addPlugin(new CopyPlugin({
         patterns: [

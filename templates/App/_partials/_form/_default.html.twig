@@ -67,6 +67,28 @@
     {% endapply %}
 {% endblock checkbox_row %}
 
+{% block _settings_theme_widget %}
+    {% apply spaceless %}
+        {% for choice in choices %}
+            <div class="input-field input-checkbox col s12 l5 xl3 {% if loop.index % 2 != 0 %} offset-l1 offset-xl3 {% endif %}">
+                <label>
+                    <input type="radio" value="{{ choice.value }}" {{ block('widget_attributes') }} {{ choice is selectedchoice(value) ? 'checked="checked"' }} />
+                    <span>{{ choice.label|trans }}</span>
+
+                    <div class="theme-preview-wrapper">
+                        <span class="theme-preview {{ choice.value }}-theme lightest"></span>
+                        <span class="theme-preview {{ choice.value }}-theme light"></span>
+                        <span class="theme-preview {{ choice.value }}-theme medium"></span>
+                        <span class="theme-preview {{ choice.value }}-theme dark"></span>
+                        <span class="theme-preview {{ choice.value }}-theme complementary"></span>
+                    </div>
+                </label>
+            </div>
+        {% endfor %}
+        {{- form_errors(form) -}}
+    {% endapply %}
+{% endblock _settings_theme_widget %}
+
 {% block collection_widget %}
     {% apply spaceless %}
         {% if prototype is defined %}

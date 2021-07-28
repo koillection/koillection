@@ -1,14 +1,3 @@
-/* Lightest */
-.progress,
-.picker__today:focus, .picker__clear:focus, .picker__close:focus,
-.select2-container--default .select2-results__option[aria-selected="true"]
-{background-color: #777;}
-
-.autocomplete-results li {border-bottom: 1px #777 solid;}
-
-/* Light */
-.breadcrumb-item + .breadcrumb-item::before
-{color: #5e5e5e;}
 
 .btn:hover,
 .btn-large:hover,

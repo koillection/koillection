@@ -11,6 +11,12 @@ export default class extends Controller {
     chart = null;
     isDarkMode =  document.getElementById('settings').dataset.theme === 'dark';
 
+    style = getComputedStyle(document.body);
+    lightest = this.style.getPropertyValue('--lightest');
+    light = this.style.getPropertyValue('--light');
+    medium = this.style.getPropertyValue('--medium');
+    dark = this.style.getPropertyValue('--dark');
+
     monthsLabel = [
         Translator.trans('global.months.january'),
         Translator.trans('global.months.february'),
@@ -48,10 +54,10 @@ export default class extends Controller {
                 right: 215,
                 bottom: 'bottom',
                 pieces: [
-                    {min: 31, color: this.isDarkMode ? '#007C5C' : '#006355'},
-                    {min: 16, max: 30, color: this.isDarkMode ? '#00ce99' : '#009688'},
-                    {min: 6, max: 15, color: this.isDarkMode ? '#4DDDB8' : '#1ab0a2'},
-                    {min: 1, max: 5, color: this.isDarkMode ? '#b3f0e0' : '#80cbc4'},
+                    {min: 31, color: this.isDarkMode ? '#007C5C' : this.dark},
+                    {min: 16, max: 30, color: this.isDarkMode ? '#00ce99' : this.medium},
+                    {min: 6, max: 15, color: this.isDarkMode ? '#4DDDB8' : this.light},
+                    {min: 1, max: 5, color: this.isDarkMode ? '#b3f0e0' : this.lightest},
                     {min: 0, max: 0, color: '#ededed'}
                 ],
                 textStyle: {
