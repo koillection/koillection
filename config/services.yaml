@@ -1,5 +1,5 @@
 parameters:
-    release: '1.5.13'
+    release: '1.5.14'
     default_locale: 'en'
     container.dumper.inline_factories: true
 
