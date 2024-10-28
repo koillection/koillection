@@ -9,12 +9,12 @@
     "node": ">= 14.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.25.2",
-    "@babel/preset-env": "7.25.4",
+    "@babel/core": "7.26.0",
+    "@babel/preset-env": "7.26.0",
     "@hotwired/stimulus": "3.2.2",
     "@materializecss/materialize": "2.0.4",
     "@symfony/stimulus-bridge": "3.2.2",
-    "@symfony/webpack-encore": "5.0.0",
+    "@symfony/webpack-encore": "5.0.1",
     "copy-webpack-plugin": "12.0.2",
     "core-js": "3.38.1",
     "croppie": "2.6.5",
@@ -36,8 +36,8 @@
   "dependencies": {
     "bazinga-translator": "6.1.0",
     "hotkeys-js": "^3.10.2",
-    "intl-messageformat": "10.5.14",
+    "intl-messageformat": "10.7.3",
     "ts-select2": "^0.2.5"
   },
-  "packageManager": "yarn@4.5.0"
+  "packageManager": "yarn@4.5.1"
 }
