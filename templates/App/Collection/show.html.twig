@@ -100,10 +100,12 @@
                             {% endfor %}
                         {% endif %}
                         {% if getCachedValues(collection).prices|default(null) is not empty %}
-                            {% for label, value in getCachedValues(collection).prices %}
+                            {% for label, currencies in getCachedValues(collection).prices %}
                                 <div class="datum-row s12 l5 xl4">
                                     <span class="label">{{ label }} :</span>
-                                    {{ value|format_currency(getContextUser().currency) }}
+                                    {% for currency, value in currencies %}
+                                        {{ value|format_currency(currency) }} {% if loop.last == false %} + {% endif %}
+                                    {% endfor %}
                                 </div>
                             {% endfor %}
                         {% endif %}

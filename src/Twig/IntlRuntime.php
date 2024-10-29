@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Twig;
 
+use App\Enum\CurrencyEnum;
 use Symfony\Component\Intl\Countries;
 use Twig\Extension\RuntimeExtensionInterface;
 
@@ -14,6 +15,20 @@ class IntlRuntime implements RuntimeExtensionInterface
     public function __construct()
     {
         $this->countries = Countries::getNames();
+    }
+
+    public function getCurrenciesList(): array
+    {
+        $currencies = [];
+
+        foreach (CurrencyEnum::getCurrencyLabels() as $currencyCode => $name) {
+            $currencies[] = [
+                'name' => $name,
+                'code' => $currencyCode,
+            ];
+        }
+
+        return $currencies;
     }
 
     public function getEmojiFlag(string $countryCode): string

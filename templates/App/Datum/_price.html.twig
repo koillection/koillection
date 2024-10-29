@@ -1,4 +1,4 @@
-<div class="input-field outlined s9 m4 datum-input-field">
+<div class="input-field outlined s9 m3 datum-input-field">
     <input type="number"
            id="data_{{ iteration }}_value"
            name="{{ entity }}[data][{{ iteration }}][value]" step="0.01"
@@ -8,6 +8,19 @@
     >
     <label for="data_{{ iteration }}_value" class="{% if datum is defined %}active{% endif %}">{{ 'label.value'|trans }}</label>
 </div>
-<div class="input-field outlined s1 currency-input">
-    <div class="">{{ getCurrencySymbol(app.user.currency) }}</div>
+<div class="input-field outlined s9 m2 datum-input-field">
+    <select id="data_{{ iteration }}_value"
+            name="{{ entity }}[data][{{ iteration }}][currency]"
+            data-controller="select--default" data-additional-data-target="value"
+    >
+        <option value="" {% if datum is not defined %}selected{% endif %}>
+            {% for currency in getCurrenciesList() %}
+                <option value="{{ currency.code }}"
+                   {% if datum.currency|default(getContextUser().currency) == currency.code %}selected{% endif %}
+                >
+                    {{ currency.name }}
+                </option>
+            {% endfor %}
+    </select>
+    <label for="data_{{ iteration }}_currency">{{ 'label.currency'|trans }}</label>
 </div>

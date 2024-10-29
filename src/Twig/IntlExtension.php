@@ -12,6 +12,9 @@ class IntlExtension extends AbstractExtension
     public function getFunctions(): array
     {
         return [
+            new TwigFunction('getCurrenciesList', static function (): array {
+                return (new IntlRuntime())->getCurrenciesList();
+            }),
             new TwigFunction('getCountriesList', static function (): array {
                 return (new IntlRuntime())->getCountriesList();
             }),

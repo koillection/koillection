@@ -7,6 +7,7 @@ namespace App\Form\Type\Entity;
 use App\Entity\ChoiceList;
 use App\Entity\Datum;
 use App\Entity\Item;
+use App\Enum\CurrencyEnum;
 use App\Enum\DatumTypeEnum;
 use App\Enum\VisibilityEnum;
 use App\Form\DataTransformer\UrlToImageTransformer;
@@ -88,6 +89,14 @@ class DatumType extends AbstractType
                 $data = $event->getData();
 
                 match ($data['type']) {
+                    DatumTypeEnum::TYPE_PRICE => $form
+                        ->add('value', TextType::class, [
+                            'required' => false,
+                        ])
+                        ->add('currency', ChoiceType::class, [
+                            'choices' => array_flip(CurrencyEnum::getCurrencyLabels()),
+                            'required' => true,
+                        ]),
                     DatumTypeEnum::TYPE_RATING => $form
                         ->add('value', ChoiceType::class, [
                             'choices' => array_combine(range(1, 10), range(1, 10)),

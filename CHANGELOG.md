@@ -4,8 +4,8 @@ All notable changes to this project will be documented in this file.
 ## [1.5.14] / 2024-10-28
 :warning: If you are using the API, the "hydra" prefix has been removed from api responses. Removing every occurrence of `hydra:` should work.
 
-### Fixes
-- Add Features (simplified) language (Gannnonnn)
+### Features
+- Add Chinese (simplified) language (Gannnonnn)
 
 ### Miscellaneous
 - Upgrade PHP and JS dependencies (benjaminjonard)

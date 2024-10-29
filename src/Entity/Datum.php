@@ -115,6 +115,11 @@ class Datum implements VisibleInterface, \Stringable
     #[Groups(['datum:read', 'datum:write'])]
     private ?int $position = null;
 
+    #[ORM\Column(type: Types::STRING, length: 3, nullable: true)]
+    #[Assert\Currency]
+    #[Groups(['datum:read', 'datum:write'])]
+    private ?string $currency = null;
+
     #[Upload(pathProperty: 'image', smallThumbnailPathProperty: 'imageSmallThumbnail', largeThumbnailPathProperty: 'imageLargeThumbnail')]
     #[Assert\Image(mimeTypes: ['image/png', 'image/jpeg', 'image/webp', 'image/avif'], groups: ['datum:image'])]
     #[AppAssert\HasEnoughSpaceForUpload]
@@ -492,6 +497,18 @@ class Datum implements VisibleInterface, \Stringable
 
     public function updateDescendantsVisibility(): self
     {
+        return $this;
+    }
+
+    public function getCurrency(): ?string
+    {
+        return $this->currency;
+    }
+
+    public function setCurrency(?string $currency): Datum
+    {
+        $this->currency = $currency;
+
         return $this;
     }
 }

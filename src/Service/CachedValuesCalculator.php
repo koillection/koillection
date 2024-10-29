@@ -76,6 +76,7 @@ class CachedValuesCalculator
             ],
         ];
 
+
         foreach ($collection->getChildren() as $child) {
             $nestedCounters = $this->computeForCollection($child);
 
@@ -89,31 +90,36 @@ class CachedValuesCalculator
             $values['counters']['privateCounters']['items'] += $nestedCounters['counters']['privateCounters']['items'];
 
 
-            foreach ($nestedCounters['prices']['publicPrices'] as $label => $value) {
-                if (isset($values['prices']['publicPrices'][$label])) {
-                    $values['prices']['publicPrices'][$label] += $value;
-                } else {
-                    $values['prices']['publicPrices'][$label] = $value;
+            foreach ($nestedCounters['prices']['publicPrices'] as $label => $currencies) {
+                foreach ($currencies as $currency => $value) {
+                    if (isset($values['prices']['publicPrices'][$label][$currency])) {
+                        $values['prices']['publicPrices'][$label][$currency] += $value;
+                    } else {
+                        $values['prices']['publicPrices'][$label][$currency] = $value;
+                    }
                 }
             }
 
-            foreach ($nestedCounters['prices']['privatePrices'] as $label => $value) {
-                if (isset($values['prices']['privatePrices'][$label])) {
-                    $values['prices']['privatePrices'][$label] += $value;
-                } else {
-                    $values['prices']['privatePrices'][$label] = $value;
+            foreach ($nestedCounters['prices']['privatePrices'] as $label => $currencies) {
+                foreach ($currencies as $currency => $value) {
+                    if (isset($values['prices']['privatePrices'][$label][$currency])) {
+                        $values['prices']['privatePrices'][$label][$currency] += $value;
+                    } else {
+                        $values['prices']['privatePrices'][$label][$currency] = $value;
+                    }
                 }
             }
 
-            foreach ($nestedCounters['prices']['internalPrices'] as $label => $value) {
-                if (isset($values['prices']['internalPrices'][$label])) {
-                    $values['prices']['internalPrices'][$label] += $value;
-                } else {
-                    $values['prices']['internalPrices'][$label] = $value;
+            foreach ($nestedCounters['prices']['internalPrices'] as $label => $currencies) {
+                foreach ($currencies as $currency => $value) {
+                    if (isset($values['prices']['internalPrices'][$label][$currency])) {
+                        $values['prices']['internalPrices'][$label][$currency] += $value;
+                    } else {
+                        $values['prices']['internalPrices'][$label][$currency] = $value;
+                    }
                 }
             }
         }
-
 
         $collection->setCachedValues($values);
 

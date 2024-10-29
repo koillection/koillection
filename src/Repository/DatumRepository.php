@@ -8,9 +8,6 @@ use App\Entity\Collection;
 use App\Entity\Datum;
 use App\Enum\DatumTypeEnum;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\DBAL\Exception;
-use Doctrine\DBAL\Platforms\MySQLPlatform;
-use Doctrine\DBAL\Platforms\PostgreSQLPlatform;
 use Doctrine\ORM\Query\ResultSetMapping;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -61,34 +58,35 @@ class DatumRepository extends ServiceEntityRepository
         return $qb->getQuery()->getArrayResult();
     }
 
-    public function computePricesForCollection(Collection $collection, string $visibility)
+    public function computePricesForCollection(Collection $collection, string $visibility): array
     {
         $id = $collection->getId();
         $type = DatumTypeEnum::TYPE_PRICE;
-        $databasePlatform = $this->getEntityManager()->getConnection()->getDatabasePlatform();
-
-        $cast = match (true) {
-            $databasePlatform instanceof PostgreSQLPlatform => 'DOUBLE PRECISION',
-            $databasePlatform instanceof MySQLPlatform => 'DECIMAL(12, 2)'
-        };
 
         $rsm = new ResultSetMapping();
-        $rsm->addIndexByScalar('label');
+        $rsm->addScalarResult('label', 'label');
+        $rsm->addScalarResult('currency', 'currency');
         $rsm->addScalarResult('value', 'value');
+        $rsm->addScalarResult('quantity', 'quantity');
 
         $sql = "
-            SELECT datum.label AS label, SUM(CAST(datum.value AS {$cast}) * item.quantity) AS value
+            SELECT datum.label AS label, datum.currency AS currency, datum.value AS value, item.quantity AS quantity
             FROM koi_datum datum
             JOIN koi_item item ON datum.item_id = item.id AND item.collection_id = '{$id}'
             WHERE datum.type = '{$type}'
             AND datum.visibility = '{$visibility}'
-            GROUP BY datum.label
         ";
 
-        $result = $this->getEntityManager()->createNativeQuery($sql, $rsm)->getArrayResult();
+        $prices = [];
+        $results = $this->getEntityManager()->createNativeQuery($sql, $rsm)->getArrayResult();
+        foreach ($results as $result) {
+            if (!isset($prices[$result['label']][$result['currency']])) {
+                $prices[$result['label']][$result['currency']] = 0.0;
+            }
 
-        return array_map(static function ($price): float {
-            return (float) $price['value'];
-        }, $result);
+            $prices[$result['label']][$result['currency']] += (float) $result['value'] * $result['quantity'];
+        }
+
+        return $prices;
     }
 }

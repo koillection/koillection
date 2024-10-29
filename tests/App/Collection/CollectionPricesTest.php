@@ -38,23 +38,23 @@ class CollectionPricesTest extends AppTestCase
 
         $collectionLevel1 = CollectionFactory::createOne(['parent' => null, 'owner' => $user]);
         $item1 = ItemFactory::createOne(['collection' => $collectionLevel1, 'owner' => $user]);
-        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'label' => 'Original price', 'value' => '100', 'item' => $item1, 'owner' => $user]);
-        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'label' => 'Current price', 'value' => '1000', 'item' => $item1, 'owner' => $user]);
+        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'currency' => 'EUR', 'label' => 'Original price', 'value' => '100', 'item' => $item1, 'owner' => $user]);
+        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'currency' => 'EUR', 'label' => 'Current price', 'value' => '1000', 'item' => $item1, 'owner' => $user]);
 
         $collectionLevel2 = CollectionFactory::createOne(['parent' => $collectionLevel1, 'owner' => $user]);
         $item2 = ItemFactory::createOne(['collection' => $collectionLevel2, 'owner' => $user]);
-        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'label' => 'Original price', 'value' => '100', 'item' => $item2, 'owner' => $user]);
-        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'label' => 'Current price', 'value' => '1000', 'item' => $item2, 'owner' => $user]);
+        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'currency' => 'EUR', 'label' => 'Original price', 'value' => '100', 'item' => $item2, 'owner' => $user]);
+        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'currency' => 'EUR', 'label' => 'Current price', 'value' => '1000', 'item' => $item2, 'owner' => $user]);
 
         $collectionLevel3 = CollectionFactory::createOne(['parent' => $collectionLevel2, 'owner' => $user]);
         $item3 = ItemFactory::createOne(['collection' => $collectionLevel3, 'owner' => $user]);
-        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'label' => 'Original price', 'value' => '100', 'item' => $item3, 'owner' => $user]);
-        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'label' => 'Current price', 'value' => '1000', 'item' => $item3, 'owner' => $user]);
+        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'currency' => 'EUR', 'label' => 'Original price', 'value' => '100', 'item' => $item3, 'owner' => $user]);
+        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'currency' => 'EUR', 'label' => 'Current price', 'value' => '1000', 'item' => $item3, 'owner' => $user]);
 
         $collectionLevel4 = CollectionFactory::createOne(['parent' => $collectionLevel3, 'owner' => $user]);
         $item4 = ItemFactory::createOne(['collection' => $collectionLevel4, 'owner' => $user]);
-        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'label' => 'Original price', 'value' => '100', 'item' => $item4, 'owner' => $user]);
-        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'label' => 'Current price', 'value' => '1000', 'item' => $item4, 'owner' => $user]);
+        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'currency' => 'EUR', 'label' => 'Original price', 'value' => '100', 'item' => $item4, 'owner' => $user]);
+        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'currency' => 'EUR', 'label' => 'Current price', 'value' => '1000', 'item' => $item4, 'owner' => $user]);
 
         // Act
         $newParentCollection = CollectionFactory::createOne(['owner' => $user]);
@@ -67,20 +67,20 @@ class CollectionPricesTest extends AppTestCase
         $this->refreshCachedValuesQueue->process();
 
         // Assert
-        $this->assertEqualsWithDelta(200.0, $this->cachedValuesGetter->getCachedValues($newParentCollection->_real())['prices']['Original price'], PHP_FLOAT_EPSILON);
-        $this->assertEqualsWithDelta(2000.0, $this->cachedValuesGetter->getCachedValues($newParentCollection->_real())['prices']['Current price'], PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(200.0, $this->cachedValuesGetter->getCachedValues($newParentCollection->_real())['prices']['Original price']['EUR'], PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(2000.0, $this->cachedValuesGetter->getCachedValues($newParentCollection->_real())['prices']['Current price']['EUR'], PHP_FLOAT_EPSILON);
 
-        $this->assertEqualsWithDelta(200.0, $this->cachedValuesGetter->getCachedValues($collectionLevel1->_real())['prices']['Original price'], PHP_FLOAT_EPSILON);
-        $this->assertEqualsWithDelta(2000.0, $this->cachedValuesGetter->getCachedValues($collectionLevel1->_real())['prices']['Current price'], PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(200.0, $this->cachedValuesGetter->getCachedValues($collectionLevel1->_real())['prices']['Original price']['EUR'], PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(2000.0, $this->cachedValuesGetter->getCachedValues($collectionLevel1->_real())['prices']['Current price']['EUR'], PHP_FLOAT_EPSILON);
 
-        $this->assertEqualsWithDelta(100.0, $this->cachedValuesGetter->getCachedValues($collectionLevel2->_real())['prices']['Original price'], PHP_FLOAT_EPSILON);
-        $this->assertEqualsWithDelta(1000.0, $this->cachedValuesGetter->getCachedValues($collectionLevel2->_real())['prices']['Current price'], PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(100.0, $this->cachedValuesGetter->getCachedValues($collectionLevel2->_real())['prices']['Original price']['EUR'], PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(1000.0, $this->cachedValuesGetter->getCachedValues($collectionLevel2->_real())['prices']['Current price']['EUR'], PHP_FLOAT_EPSILON);
 
-        $this->assertEqualsWithDelta(200.0, $this->cachedValuesGetter->getCachedValues($collectionLevel3->_real())['prices']['Original price'], PHP_FLOAT_EPSILON);
-        $this->assertEqualsWithDelta(2000.0, $this->cachedValuesGetter->getCachedValues($collectionLevel3->_real())['prices']['Current price'], PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(200.0, $this->cachedValuesGetter->getCachedValues($collectionLevel3->_real())['prices']['Original price']['EUR'], PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(2000.0, $this->cachedValuesGetter->getCachedValues($collectionLevel3->_real())['prices']['Current price']['EUR'], PHP_FLOAT_EPSILON);
 
-        $this->assertEqualsWithDelta(100.0, $this->cachedValuesGetter->getCachedValues($collectionLevel4->_real())['prices']['Original price'], PHP_FLOAT_EPSILON);
-        $this->assertEqualsWithDelta(1000.0, $this->cachedValuesGetter->getCachedValues($collectionLevel4->_real())['prices']['Current price'], PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(100.0, $this->cachedValuesGetter->getCachedValues($collectionLevel4->_real())['prices']['Original price']['EUR'], PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(1000.0, $this->cachedValuesGetter->getCachedValues($collectionLevel4->_real())['prices']['Current price']['EUR'], PHP_FLOAT_EPSILON);
     }
 
     public function test_delete_child_collection(): void
@@ -90,34 +90,34 @@ class CollectionPricesTest extends AppTestCase
 
         $collectionLevel1 = CollectionFactory::createOne(['parent' => null, 'owner' => $user]);
         $item1 = ItemFactory::createOne(['collection' => $collectionLevel1, 'owner' => $user]);
-        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'label' => 'Original price', 'value' => '100', 'item' => $item1, 'owner' => $user]);
-        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'label' => 'Current price', 'value' => '1000', 'item' => $item1, 'owner' => $user]);
+        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'currency' => 'EUR', 'label' => 'Original price', 'value' => '100', 'item' => $item1, 'owner' => $user]);
+        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'currency' => 'EUR', 'label' => 'Current price', 'value' => '1000', 'item' => $item1, 'owner' => $user]);
 
         $collectionLevel2 = CollectionFactory::createOne(['parent' => $collectionLevel1, 'owner' => $user]);
         $item2 = ItemFactory::createOne(['collection' => $collectionLevel2, 'owner' => $user]);
-        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'label' => 'Original price', 'value' => '100', 'item' => $item2, 'owner' => $user]);
-        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'label' => 'Current price', 'value' => '1000', 'item' => $item2, 'owner' => $user]);
+        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'currency' => 'EUR', 'label' => 'Original price', 'value' => '100', 'item' => $item2, 'owner' => $user]);
+        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'currency' => 'EUR', 'label' => 'Current price', 'value' => '1000', 'item' => $item2, 'owner' => $user]);
 
         $collectionLevel3 = CollectionFactory::createOne(['parent' => $collectionLevel2, 'owner' => $user]);
         $item3 = ItemFactory::createOne(['collection' => $collectionLevel3, 'owner' => $user]);
-        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'label' => 'Original price', 'value' => '100', 'item' => $item3, 'owner' => $user]);
-        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'label' => 'Current price', 'value' => '1000', 'item' => $item3, 'owner' => $user]);
+        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'currency' => 'EUR', 'label' => 'Original price', 'value' => '100', 'item' => $item3, 'owner' => $user]);
+        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'currency' => 'EUR', 'label' => 'Current price', 'value' => '1000', 'item' => $item3, 'owner' => $user]);
 
         $collectionLevel4 = CollectionFactory::createOne(['parent' => $collectionLevel3, 'owner' => $user]);
         $item4 = ItemFactory::createOne(['collection' => $collectionLevel4, 'owner' => $user]);
-        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'label' => 'Original price', 'value' => '100', 'item' => $item4, 'owner' => $user]);
-        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'label' => 'Current price', 'value' => '1000', 'item' => $item4, 'owner' => $user]);
+        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'currency' => 'EUR', 'label' => 'Original price', 'value' => '100', 'item' => $item4, 'owner' => $user]);
+        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'currency' => 'EUR', 'label' => 'Current price', 'value' => '1000', 'item' => $item4, 'owner' => $user]);
 
         // Act
         $collectionLevel3->_delete();
         $this->refreshCachedValuesQueue->process();
 
         // Assert
-        $this->assertEqualsWithDelta(200.0, $this->cachedValuesGetter->getCachedValues($collectionLevel1->_real())['prices']['Original price'], PHP_FLOAT_EPSILON);
-        $this->assertEqualsWithDelta(2000.0, $this->cachedValuesGetter->getCachedValues($collectionLevel1->_real())['prices']['Current price'], PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(200.0, $this->cachedValuesGetter->getCachedValues($collectionLevel1->_real())['prices']['Original price']['EUR'], PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(2000.0, $this->cachedValuesGetter->getCachedValues($collectionLevel1->_real())['prices']['Current price']['EUR'], PHP_FLOAT_EPSILON);
 
-        $this->assertEqualsWithDelta(100.0, $this->cachedValuesGetter->getCachedValues($collectionLevel2->_real())['prices']['Original price'], PHP_FLOAT_EPSILON);
-        $this->assertEqualsWithDelta(1000.0, $this->cachedValuesGetter->getCachedValues($collectionLevel2->_real())['prices']['Current price'], PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(100.0, $this->cachedValuesGetter->getCachedValues($collectionLevel2->_real())['prices']['Original price']['EUR'], PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(1000.0, $this->cachedValuesGetter->getCachedValues($collectionLevel2->_real())['prices']['Current price']['EUR'], PHP_FLOAT_EPSILON);
     }
 
     public function test_add_item(): void
@@ -128,21 +128,21 @@ class CollectionPricesTest extends AppTestCase
         $collectionLevel2 = CollectionFactory::createOne(['parent' => $collectionLevel1, 'owner' => $user]);
         $collectionLevel3 = CollectionFactory::createOne(['parent' => $collectionLevel2, 'owner' => $user]);
         $item = ItemFactory::createOne(['collection' => $collectionLevel3, 'owner' => $user, 'quantity' => 2]);
-        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'label' => 'Original price', 'value' => '100', 'item' => $item, 'owner' => $user]);
-        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'label' => 'Current price', 'value' => '1000', 'item' => $item, 'owner' => $user]);
+        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'currency' => 'EUR', 'label' => 'Original price', 'value' => '100', 'item' => $item, 'owner' => $user]);
+        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'currency' => 'EUR', 'label' => 'Current price', 'value' => '1000', 'item' => $item, 'owner' => $user]);
 
         // Act
         $this->refreshCachedValuesQueue->process();
 
         // Assert
-        $this->assertEqualsWithDelta(200.0, $this->cachedValuesGetter->getCachedValues($collectionLevel1->_real())['prices']['Original price'], PHP_FLOAT_EPSILON);
-        $this->assertEqualsWithDelta(2000.0, $this->cachedValuesGetter->getCachedValues($collectionLevel1->_real())['prices']['Current price'], PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(200.0, $this->cachedValuesGetter->getCachedValues($collectionLevel1->_real())['prices']['Original price']['EUR'], PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(2000.0, $this->cachedValuesGetter->getCachedValues($collectionLevel1->_real())['prices']['Current price']['EUR'], PHP_FLOAT_EPSILON);
 
-        $this->assertEqualsWithDelta(200.0, $this->cachedValuesGetter->getCachedValues($collectionLevel2->_real())['prices']['Original price'], PHP_FLOAT_EPSILON);
-        $this->assertEqualsWithDelta(2000.0, $this->cachedValuesGetter->getCachedValues($collectionLevel2->_real())['prices']['Current price'], PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(200.0, $this->cachedValuesGetter->getCachedValues($collectionLevel2->_real())['prices']['Original price']['EUR'], PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(2000.0, $this->cachedValuesGetter->getCachedValues($collectionLevel2->_real())['prices']['Current price']['EUR'], PHP_FLOAT_EPSILON);
 
-        $this->assertEqualsWithDelta(200.0, $this->cachedValuesGetter->getCachedValues($collectionLevel3->_real())['prices']['Original price'], PHP_FLOAT_EPSILON);
-        $this->assertEqualsWithDelta(2000.0, $this->cachedValuesGetter->getCachedValues($collectionLevel3->_real())['prices']['Current price'], PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(200.0, $this->cachedValuesGetter->getCachedValues($collectionLevel3->_real())['prices']['Original price']['EUR'], PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(2000.0, $this->cachedValuesGetter->getCachedValues($collectionLevel3->_real())['prices']['Current price']['EUR'], PHP_FLOAT_EPSILON);
     }
 
     public function test_move_item(): void
@@ -153,13 +153,13 @@ class CollectionPricesTest extends AppTestCase
 
         $collectionLevel2 = CollectionFactory::createOne(['parent' => $collectionLevel1, 'owner' => $user]);
         $item = ItemFactory::createOne(['collection' => $collectionLevel2, 'owner' => $user]);
-        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'label' => 'Original price', 'value' => '100', 'item' => $item, 'owner' => $user]);
-        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'label' => 'Current price', 'value' => '1000', 'item' => $item, 'owner' => $user]);
+        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'currency' => 'EUR', 'label' => 'Original price', 'value' => '100', 'item' => $item, 'owner' => $user]);
+        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'currency' => 'EUR', 'label' => 'Current price', 'value' => '1000', 'item' => $item, 'owner' => $user]);
 
         $collectionLevel3 = CollectionFactory::createOne(['parent' => $collectionLevel2, 'owner' => $user]);
         $itemToMove = ItemFactory::createOne(['collection' => $collectionLevel3, 'owner' => $user]);
-        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'label' => 'Original price', 'value' => '100', 'item' => $itemToMove, 'owner' => $user]);
-        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'label' => 'Current price', 'value' => '1000', 'item' => $itemToMove, 'owner' => $user]);
+        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'currency' => 'EUR', 'label' => 'Original price', 'value' => '100', 'item' => $itemToMove, 'owner' => $user]);
+        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'currency' => 'EUR', 'label' => 'Current price', 'value' => '1000', 'item' => $itemToMove, 'owner' => $user]);
 
         // Act
         $newCollection = CollectionFactory::createOne(['owner' => $user]);
@@ -173,14 +173,14 @@ class CollectionPricesTest extends AppTestCase
         $this->refreshCachedValuesQueue->process();
 
         // Assert
-        $this->assertEqualsWithDelta(100.0, $this->cachedValuesGetter->getCachedValues($newCollection->_real())['prices']['Original price'], PHP_FLOAT_EPSILON);
-        $this->assertEqualsWithDelta(1000.0, $this->cachedValuesGetter->getCachedValues($newCollection->_real())['prices']['Current price'], PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(100.0, $this->cachedValuesGetter->getCachedValues($newCollection->_real())['prices']['Original price']['EUR'], PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(1000.0, $this->cachedValuesGetter->getCachedValues($newCollection->_real())['prices']['Current price']['EUR'], PHP_FLOAT_EPSILON);
 
-        $this->assertEqualsWithDelta(100.0, $this->cachedValuesGetter->getCachedValues($collectionLevel1->_real())['prices']['Original price'], PHP_FLOAT_EPSILON);
-        $this->assertEqualsWithDelta(1000.0, $this->cachedValuesGetter->getCachedValues($collectionLevel1->_real())['prices']['Current price'], PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(100.0, $this->cachedValuesGetter->getCachedValues($collectionLevel1->_real())['prices']['Original price']['EUR'], PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(1000.0, $this->cachedValuesGetter->getCachedValues($collectionLevel1->_real())['prices']['Current price']['EUR'], PHP_FLOAT_EPSILON);
 
-        $this->assertEqualsWithDelta(100.0, $this->cachedValuesGetter->getCachedValues($collectionLevel2->_real())['prices']['Original price'], PHP_FLOAT_EPSILON);
-        $this->assertEqualsWithDelta(1000.0, $this->cachedValuesGetter->getCachedValues($collectionLevel2->_real())['prices']['Current price'], PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(100.0, $this->cachedValuesGetter->getCachedValues($collectionLevel2->_real())['prices']['Original price']['EUR'], PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(1000.0, $this->cachedValuesGetter->getCachedValues($collectionLevel2->_real())['prices']['Current price']['EUR'], PHP_FLOAT_EPSILON);
 
         $this->assertArrayNotHasKey('Original price', $this->cachedValuesGetter->getCachedValues($collectionLevel3->_real())['prices']);
         $this->assertArrayNotHasKey('Current price', $this->cachedValuesGetter->getCachedValues($collectionLevel3->_real())['prices']);
@@ -195,24 +195,24 @@ class CollectionPricesTest extends AppTestCase
 
         $collectionLevel2 = CollectionFactory::createOne(['parent' => $collectionLevel1, 'owner' => $user]);
         $item = ItemFactory::createOne(['collection' => $collectionLevel2, 'owner' => $user]);
-        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'label' => 'Original price', 'value' => '100', 'item' => $item, 'owner' => $user]);
-        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'label' => 'Current price', 'value' => '1000', 'item' => $item, 'owner' => $user]);
+        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'currency' => 'EUR', 'label' => 'Original price', 'value' => '100', 'item' => $item, 'owner' => $user]);
+        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'currency' => 'EUR', 'label' => 'Current price', 'value' => '1000', 'item' => $item, 'owner' => $user]);
 
         $collectionLevel3 = CollectionFactory::createOne(['parent' => $collectionLevel2, 'owner' => $user]);
         $itemToRemove = ItemFactory::createOne(['collection' => $collectionLevel3, 'owner' => $user]);
-        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'label' => 'Original price', 'value' => '100', 'item' => $itemToRemove, 'owner' => $user]);
-        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'label' => 'Current price', 'value' => '1000', 'item' => $itemToRemove, 'owner' => $user]);
+        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'currency' => 'EUR', 'label' => 'Original price', 'value' => '100', 'item' => $itemToRemove, 'owner' => $user]);
+        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'currency' => 'EUR', 'label' => 'Current price', 'value' => '1000', 'item' => $itemToRemove, 'owner' => $user]);
 
         // Act
         $itemToRemove->_delete();
         $this->refreshCachedValuesQueue->process();
 
         // Assert
-        $this->assertEqualsWithDelta(100.0, $this->cachedValuesGetter->getCachedValues($collectionLevel1->_real())['prices']['Original price'], PHP_FLOAT_EPSILON);
-        $this->assertEqualsWithDelta(1000.0, $this->cachedValuesGetter->getCachedValues($collectionLevel1->_real())['prices']['Current price'], PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(100.0, $this->cachedValuesGetter->getCachedValues($collectionLevel1->_real())['prices']['Original price']['EUR'], PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(1000.0, $this->cachedValuesGetter->getCachedValues($collectionLevel1->_real())['prices']['Current price']['EUR'], PHP_FLOAT_EPSILON);
 
-        $this->assertEqualsWithDelta(100.0, $this->cachedValuesGetter->getCachedValues($collectionLevel2->_real())['prices']['Original price'], PHP_FLOAT_EPSILON);
-        $this->assertEqualsWithDelta(1000.0, $this->cachedValuesGetter->getCachedValues($collectionLevel2->_real())['prices']['Current price'], PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(100.0, $this->cachedValuesGetter->getCachedValues($collectionLevel2->_real())['prices']['Original price']['EUR'], PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(1000.0, $this->cachedValuesGetter->getCachedValues($collectionLevel2->_real())['prices']['Current price']['EUR'], PHP_FLOAT_EPSILON);
 
         $this->assertArrayNotHasKey('Original price', $this->cachedValuesGetter->getCachedValues($collectionLevel3->_real())['prices']);
         $this->assertArrayNotHasKey('Current price', $this->cachedValuesGetter->getCachedValues($collectionLevel3->_real())['prices']);

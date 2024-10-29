@@ -82,6 +82,14 @@ readonly class CachedValuesGetter
     {
         $result = [];
 
+        if ($array2 === []) {
+            return $array1;
+        }
+
+        if ($array1 === []) {
+            return $array2;
+        }
+
         foreach (array_keys($array1 + $array2) as $value) {
             $result[$value] = ($array1[$value] ?? 0) + ($array2[$value] ?? 0);
         }
