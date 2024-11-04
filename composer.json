@@ -14,13 +14,13 @@
         "ext-iconv": "*",
         "ext-intl": "*",
         "ext-json": "*",
-        "api-platform/core": "4.0.5",
+        "api-platform/core": "4.0.6",
         "composer/semver": "3.4.3",
         "doctrine/doctrine-bundle": "2.13.0",
         "doctrine/doctrine-migrations-bundle": "3.3.1",
         "doctrine/orm": "3.3.0",
         "doctrine/dbal": "3.9.3",
-        "doctrine/persistence": "3.3.3",
+        "doctrine/persistence": "3.4.0",
         "lexik/jwt-authentication-bundle": "3.1.0",
         "maennchen/zipstream-php": "3.1.1",
         "nelmio/cors-bundle": "2.5.0",
@@ -74,13 +74,13 @@
         "friendsofphp/php-cs-fixer": "3.64.0",
         "justinrainbow/json-schema": "6.0.0",
         "phpunit/php-code-coverage": "11.0.7",
-        "phpunit/phpunit": "11.4.2",
-        "rector/rector": "1.2.8",
+        "phpunit/phpunit": "11.4.3",
+        "rector/rector": "1.2.9",
         "symfony/maker-bundle": "1.61.0",
         "symfony/stopwatch": "7.1.6",
         "symfony/var-dumper": "7.1.6",
         "symfony/web-profiler-bundle": "7.1.6",
-        "zenstruck/foundry": "2.2.0"
+        "zenstruck/foundry": "2.2.1"
     },
     "config": {
         "allow-plugins": {
