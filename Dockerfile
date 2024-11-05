@@ -1,4 +1,4 @@
-FROM ubuntu:jammy
+FROM ubuntu:noble
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -74,7 +74,6 @@ RUN apt-get update && \
     sed -i "s/group = www-data/group = $USER/g" /etc/php/8.3/fpm/pool.d/www.conf && \
     chown -R "$USER":"$USER" /var/www/koillection && \
     chmod +x /var/www/koillection/docker/entrypoint.sh && \
-    mkdir /run/php && \
 # Add nginx and PHP config files
     cp /var/www/koillection/docker/default.conf /etc/nginx/nginx.conf && \
     cp /var/www/koillection/docker/php.ini /etc/php/8.3/fpm/conf.d/php.ini
