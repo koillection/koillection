@@ -108,7 +108,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Breadcr
 
     #[ORM\Column(type: Types::BIGINT, options: ['default' => 536870912])]
     #[Groups(['user:read'])]
-    private string $diskSpaceAllowed = '536870912';
+    #[ApiProperty(
+        openapiContext: [
+            'type' => 'integer',
+        ],
+        jsonSchemaContext: [
+            'type' => 'integer',
+        ]
+    )]
+    private int $diskSpaceAllowed = 536870912;
 
     #[ORM\Column(type: Types::STRING, length: 10)]
     #[Groups(['user:read', 'user:write'])]
@@ -282,6 +290,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Breadcr
 
     public function eraseCredentials(): void
     {
+        $this->plainPassword = null;
     }
 
     public function getUsername(): ?string
@@ -438,12 +447,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Breadcr
         return $this;
     }
 
-    public function getDiskSpaceAllowed(): ?string
+    public function getDiskSpaceAllowed(): ?int
     {
-        return $this->diskSpaceAllowed;
+        return (int) $this->diskSpaceAllowed;
     }
 
-    public function setDiskSpaceAllowed(string $diskSpaceAllowed): self
+    public function setDiskSpaceAllowed(int $diskSpaceAllowed): self
     {
         $this->diskSpaceAllowed = $diskSpaceAllowed;
 

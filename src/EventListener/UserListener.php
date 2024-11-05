@@ -10,9 +10,9 @@ use Doctrine\Bundle\DoctrineBundle\Attribute\AsEntityListener;
 use Doctrine\ORM\Event\PreRemoveEventArgs;
 use Doctrine\ORM\Events;
 
-#[AsEntityListener(event: Events::prePersist, entity: User::class, lazy: true)]
-#[AsEntityListener(event: Events::preUpdate, entity: User::class, lazy: true)]
-#[AsEntityListener(event: Events::preRemove, entity: User::class, lazy: true)]
+#[AsEntityListener(event: Events::prePersist, entity: User::class)]
+#[AsEntityListener(event: Events::preUpdate, entity: User::class)]
+#[AsEntityListener(event: Events::preRemove, entity: User::class)]
 final readonly class UserListener
 {
     public function __construct(

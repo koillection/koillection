@@ -28,7 +28,6 @@ security:
             jwt: ~
         main:
             pattern: ^/
-            lazy: true
             remember_me:
                 secret: '%env(string:APP_SECRET)%'
                 lifetime: 2628000 # 1 month

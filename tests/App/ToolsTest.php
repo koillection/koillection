@@ -74,22 +74,4 @@ class ToolsTest extends AppTestCase
         $this->assertResponseIsSuccessful();
         $this->assertResponseHeaderSame('Content-Type', 'text/csv; charset=UTF-8');
     }
-
-    public function test_can_export_sql(): void
-    {
-        // Arrange
-        $user = UserFactory::createOne()->_real();
-        $this->client->loginUser($user);
-        $collection = CollectionFactory::createOne(['title' => 'Frieren', 'owner' => $user])->_real();
-        ItemFactory::createOne(['name' => 'Frieren #1', 'collection' => $collection, 'owner' => $user])->_real();
-        ItemFactory::createOne(['name' => 'Frieren #2', 'collection' => $collection, 'owner' => $user])->_real();
-        ItemFactory::createOne(['name' => 'Frieren #3', 'collection' => $collection, 'owner' => $user])->_real();
-
-        // Act
-        $this->client->request('GET', '/tools/export/sql');
-
-        // Assert
-        $this->assertResponseIsSuccessful();
-        $this->assertResponseHeaderSame('Content-Type', 'text/plain; charset=UTF-8');
-    }
 }

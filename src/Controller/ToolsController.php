@@ -51,12 +51,6 @@ class ToolsController extends AbstractController
         return new CsvResponse($rows, (new \DateTimeImmutable())->format('YmdHis') . '-koillection-export.csv');
     }
 
-    #[Route(path: '/tools/export/sql', name: 'app_tools_export_sql', methods: ['GET'])]
-    public function exportSql(DatabaseDumper $databaseDumper): FileResponse
-    {
-        return new FileResponse($databaseDumper->dump(), (new \DateTimeImmutable())->format('YmdHis') . '-koillection-export.sql');
-    }
-
     #[Route(path: '/tools/export/images', name: 'app_tools_export_images', methods: ['GET'])]
     public function exportImages(#[Autowire('%kernel.project_dir%/public/uploads')] string $uploadsPath): StreamedResponse
     {

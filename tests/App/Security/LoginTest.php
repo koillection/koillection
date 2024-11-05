@@ -26,13 +26,13 @@ class LoginTest extends AppTestCase
     public function test_can_login(): void
     {
         // Arrange
-        $user = UserFactory::createOne();
+        $user = UserFactory::createOne(['plainPassword' => '123456789aaaAAA']);
 
         // Act
         $this->client->request('GET', '/');
         $crawler = $this->client->submitForm('Sign in', [
             '_login' => $user->getUsername(),
-            '_password' => $user->getPlainPassword()
+            '_password' => '123456789aaaAAA'
         ]);
 
         // Assert
@@ -60,13 +60,13 @@ class LoginTest extends AppTestCase
     public function test_not_enabled_user_cant_login(): void
     {
         // Arrange
-        $user = UserFactory::createOne(['enabled' => false]);
+        $user = UserFactory::createOne(['enabled' => false, 'plainPassword' => '123456789aaaAAA']);
 
         // Act
         $this->client->request('GET', '/');
         $crawler = $this->client->submitForm('Sign in', [
             '_login' => $user->getUsername(),
-            '_password' => $user->getPlainPassword()
+            '_password' => '123456789aaaAAA'
         ]);
 
         // Assert

@@ -24,6 +24,7 @@ class PasswordUpdater
 
         $hashedPassword = $this->passwordHasher->hashPassword($user, $plainPassword);
         $user->setPassword($hashedPassword);
+        $user->eraseCredentials();
 
         return $user;
     }

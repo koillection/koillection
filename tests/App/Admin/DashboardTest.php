@@ -39,24 +39,6 @@ class DashboardTest extends AppTestCase
         $this->assertResponseIsSuccessful();
     }
 
-    public function test_can_export_sql(): void
-    {
-        // Arrange
-        $admin = UserFactory::createOne(['roles' => [RoleEnum::ROLE_ADMIN]])->_real();
-        $this->client->loginUser($admin);
-        $collection = CollectionFactory::createOne(['title' => 'Frieren', 'owner' => $admin])->_real();
-        ItemFactory::createOne(['name' => 'Frieren #1', 'collection' => $collection, 'owner' => $admin])->_real();
-        ItemFactory::createOne(['name' => 'Frieren #2', 'collection' => $collection, 'owner' => $admin])->_real();
-        ItemFactory::createOne(['name' => 'Frieren #3', 'collection' => $collection, 'owner' => $admin])->_real();
-
-        // Act
-        $this->client->request('GET', '/admin/export/sql');
-
-        // Assert
-        $this->assertResponseIsSuccessful();
-        $this->assertResponseHeaderSame('Content-Type', 'text/plain; charset=UTF-8');
-    }
-
     public function test_can_refresh_caches(): void
     {
         // Arrange

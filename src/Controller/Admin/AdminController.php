@@ -71,12 +71,6 @@ class AdminController extends AbstractController
         ]);
     }
 
-    #[Route(path: '/admin/export/sql', name: 'app_admin_export_sql', methods: ['GET'])]
-    public function exportSql(DatabaseDumper $databaseDumper): FileResponse
-    {
-        return new FileResponse($databaseDumper->dump(), (new \DateTimeImmutable())->format('YmdHis') . '-koillection-database.sql');
-    }
-
     #[Route(path: '/admin/export/images', name: 'app_admin_export_images', methods: ['GET'])]
     public function exportImages(
         UserRepository $userRepository,
