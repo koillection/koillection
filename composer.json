@@ -45,7 +45,7 @@
         "symfony/intl": "7.1.6",
         "symfony/mime": "7.1.6",
         "symfony/monolog-bundle": "3.10.0",
-        "symfony/process": "7.1.6",
+        "symfony/process": "7.1.7",
         "symfony/property-access": "7.1.6",
         "symfony/property-info": "7.1.6",
         "symfony/routing": "7.1.6",
