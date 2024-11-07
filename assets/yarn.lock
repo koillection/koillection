@@ -3215,15 +3215,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"intl-messageformat@npm:10.7.5":
-  version: 10.7.5
-  resolution: "intl-messageformat@npm:10.7.5"
+"intl-messageformat@npm:10.7.6":
+  version: 10.7.6
+  resolution: "intl-messageformat@npm:10.7.6"
   dependencies:
     "@formatjs/ecma402-abstract": "npm:2.2.3"
     "@formatjs/fast-memoize": "npm:2.2.3"
     "@formatjs/icu-messageformat-parser": "npm:2.9.3"
     tslib: "npm:2"
-  checksum: 10/8880448d62bd0260eafd4ee7ccfabaea573476f28e6d6bf47e027ee9c1d46d4919a076df7abedaf282422ff80ade02b5c637c69cdf739ee405e4837098bac37e
+  checksum: 10/53f40e386fcc2eaf1ec7d974b18c91e436bc2dc8188587aa652b307160220847b06275d28ca9757ffd9e8471bb6993bf503a71363ce5f9c155d8dc33b43ab97a
   languageName: node
   linkType: hard
 
@@ -3422,7 +3422,7 @@ __metadata:
     croppie: "npm:2.6.5"
     echarts: "npm:5.5.1"
     hotkeys-js: "npm:^3.10.2"
-    intl-messageformat: "npm:10.7.5"
+    intl-messageformat: "npm:10.7.6"
     regenerator-runtime: "npm:0.14.1"
     sortablejs: "npm:1.15.3"
     stimulus-lightbox: "npm:3.2.0"
