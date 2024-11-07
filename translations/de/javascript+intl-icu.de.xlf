@@ -136,13 +136,13 @@
     <unit id="AghNVUV" name="statistics.items_added">
       <segment state="translated">
         <source>{count, plural, one {# item added} other {# items added}}</source>
-        <target>Einträge hinzugefügt</target>
+        <target>{count, plural, one {# Eintrag hinzugefügt} other {# Einträge hinzugefügt}}</target>
       </segment>
     </unit>
     <unit id="cEDaX3_" name="statistics.items">
       <segment state="translated">
         <source>{count, plural, one {# item} other {# items}}</source>
-        <target>Einträge</target>
+        <target>{count, plural, one {# Eintrag} other {# Einträge}}</target>
       </segment>
     </unit>
     <unit id="w0J8w0G" name="select2.no_results">
@@ -166,7 +166,7 @@
     <unit id="Em6KHMM" name="global.search.more_results">
       <segment state="translated">
         <source>{count, plural, one { + # more result} other { + # more results}}</source>
-        <target>Weitere Ergebnisse</target>
+        <target>{count, plural, one { + # weiteres Ergebnis} other { + # weitere Ergebnisse}}</target>
       </segment>
     </unit>
     <unit id="nfDV3tB" name="global.search.no_results">
