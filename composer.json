@@ -49,7 +49,7 @@
         "symfony/property-access": "7.1.6",
         "symfony/property-info": "7.1.6",
         "symfony/routing": "7.1.6",
-        "symfony/runtime": "7.1.6",
+        "symfony/runtime": "7.1.7",
         "symfony/security-bundle": "7.1.6",
         "symfony/security-core": "7.1.6",
         "symfony/security-http": "7.1.6",
