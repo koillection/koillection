@@ -940,7 +940,7 @@
     <unit id="8yVQg94" name="title.tag_collection">
       <segment state="translated">
         <source>Batch tagging {collection}</source>
-        <target>Stapelverschlagwortung</target>
+        <target>Stapelverschlagwortung {collection}</target>
       </segment>
     </unit>
     <unit id="KlxVsBD" name="title.edit_collection">
@@ -1498,7 +1498,7 @@
     <unit id=".ZHhONJ" name="label.tag_category">
       <segment state="translated">
         <source>Category</source>
-        <target>Kategory</target>
+        <target>Kategorie</target>
       </segment>
     </unit>
     <unit id="p4z8GI6" name="title.edit_tag">
@@ -1606,7 +1606,7 @@
     <unit id="w4I3.hu" name="title.edit_template">
       <segment state="translated">
         <source>Edit template {template}</source>
-        <target>Bearbeite Vorlage</target>
+        <target>Bearbeite Vorlage {template}</target>
       </segment>
     </unit>
     <unit id="kXYXu7R" name="menu.templates">
@@ -3094,7 +3094,7 @@
     <unit id="hnKIpTQ" name="label.apiplatform_version">
       <segment state="translated">
         <source>API Platform version</source>
-        <target>API Platform Version</target>
+        <target>API Plattform Version</target>
       </segment>
     </unit>
     <unit id="gx6LCyR" name="global.themes.browser">
@@ -3587,6 +3587,12 @@
       <segment state="translated">
         <source>Enable metrics</source>
         <target>Metriken aktivieren</target>
+      </segment>
+    </unit>
+    <unit id="zNpYLvW" name="label.display_mode">
+      <segment state="translated">
+        <source>Display mode</source>
+        <target>Anzeigemodus</target>
       </segment>
     </unit>
   </file>
