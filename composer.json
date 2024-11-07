@@ -39,7 +39,7 @@
         "symfony/flex": "2.4.7",
         "symfony/form": "7.1.6",
         "symfony/framework-bundle": "7.1.6",
-        "symfony/http-client": "7.1.6",
+        "symfony/http-client": "7.1.7",
         "symfony/http-foundation": "7.1.6",
         "symfony/http-kernel": "7.1.6",
         "symfony/intl": "7.1.6",
