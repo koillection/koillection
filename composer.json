@@ -52,7 +52,7 @@
         "symfony/runtime": "7.1.7",
         "symfony/security-bundle": "7.1.6",
         "symfony/security-core": "7.1.6",
-        "symfony/security-http": "7.1.6",
+        "symfony/security-http": "7.1.8",
         "symfony/serializer": "7.1.6",
         "symfony/string": "7.1.6",
         "symfony/translation": "7.1.6",
