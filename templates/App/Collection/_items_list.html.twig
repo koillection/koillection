@@ -54,14 +54,14 @@
                     {% endif %}
                 </td>
                 <td data-column="name">
-                    <span data-value="{{ item.name }}">
+                    <span data-value="{{ item.name }}" data-type="string">
                     <a class="table-link" href="{{ link }}"></a>
                     {{ item.name|u.truncate(50, '...') }}
                 </td>
 
                 {% if displayConfiguration.showItemQuantities %}
                     <td data-column="koi-quantity">
-                    <span data-value="{{ item.quantity }}">
+                    <span data-value="{{ item.quantity }}" data-type="number">
                     <a class="table-link" href="{{ link }}"></a>
                     {{ item.quantity }}
                     </td>

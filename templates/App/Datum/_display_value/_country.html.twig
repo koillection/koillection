@@ -1,6 +1,6 @@
 {% if datum.value is not empty %}
     {% set countryName = getCountryName(datum.value) %}
-    <span data-value="{{ countryName }}"></span>
+    <span data-value="{{ countryName }}" data-type="string"></span>
 
     <span class="flag">{{ getCountryFlag(datum.value) }}</span>
     <span class="country-name">({{ countryName }})</span>

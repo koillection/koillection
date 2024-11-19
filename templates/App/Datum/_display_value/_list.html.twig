@@ -1,4 +1,4 @@
-<span data-value="{{ datum.value|join|default('') }}"></span>
+<span data-value="{{ datum.value|join|default('') }}" data-type="string"></span>
 {% set values = datum.value|jsonDecode %}
 
 {% if values|length > 1 %}
