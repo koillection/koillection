@@ -1,6 +1,18 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.5.15] / 2024-11-22
+
+### Features
+- Currency can now be changed on price data (benjaminjonard)
+
+### Fixes
+- Fix ordering on columns containing numbers (benjaminjonard)
+
+### Miscellaneous
+- Update Docker images to Ubuntu 24 (benjaminjonard)
+- Upgrade PHP and JS dependencies (benjaminjonard)
+
 ## [1.5.14] / 2024-10-28
 :warning: If you are using the API, the "hydra" prefix has been removed from api responses. Removing every occurrence of `hydra:` should work.
 

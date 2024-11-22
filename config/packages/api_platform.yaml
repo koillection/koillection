@@ -1,6 +1,6 @@
 api_platform:
   title: 'Koillection API'
-  version: 1.5.14
+  version: 1.5.15
   show_webby: false
 
   formats:
