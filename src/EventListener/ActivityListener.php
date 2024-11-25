@@ -29,5 +29,6 @@ final readonly class ActivityListener
 
         $user->setLastDateOfActivity($now);
         $this->managerRegistry->getManager()->flush();
+        return null;
     }
 }

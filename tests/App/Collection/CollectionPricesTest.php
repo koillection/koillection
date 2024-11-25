@@ -23,8 +23,10 @@ class CollectionPricesTest extends AppTestCase
     use ResetDatabase;
 
     public ?RefreshCachedValuesQueue $refreshCachedValuesQueue;
+
     public ?CachedValuesGetter $cachedValuesGetter;
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->refreshCachedValuesQueue = $this->getContainer()->get(RefreshCachedValuesQueue::class);
@@ -64,6 +66,7 @@ class CollectionPricesTest extends AppTestCase
             }
         );
         $collectionLevel3->_save();
+
         $this->refreshCachedValuesQueue->process();
 
         // Assert

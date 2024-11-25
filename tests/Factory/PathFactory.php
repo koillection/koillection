@@ -15,6 +15,7 @@ final class PathFactory extends PersistentProxyObjectFactory
         parent::__construct();
     }
 
+    #[\Override]
     protected function defaults(): array|callable
     {
         return [
@@ -25,11 +26,13 @@ final class PathFactory extends PersistentProxyObjectFactory
         ];
     }
 
+    #[\Override]
     protected function initialize(): static
     {
         return $this;
     }
 
+    #[\Override]
     public static function class(): string
     {
         return Path::class;

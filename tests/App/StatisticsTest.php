@@ -7,6 +7,7 @@ namespace App\Tests\App;
 use App\Tests\AppTestCase;
 use App\Tests\Factory\UserFactory;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
+use Symfony\Component\HttpFoundation\Request;
 use Zenstruck\Foundry\Test\Factories;
 use Zenstruck\Foundry\Test\ResetDatabase;
 
@@ -17,6 +18,7 @@ class StatisticsTest extends AppTestCase
 
     private KernelBrowser $client;
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->client = static::createClient();
@@ -30,7 +32,7 @@ class StatisticsTest extends AppTestCase
         $this->client->loginUser($user);
 
         // Act
-        $crawler = $this->client->request('GET', '/statistics');
+        $crawler = $this->client->request(Request::METHOD_GET, '/statistics');
 
         // Assert
         $this->assertResponseIsSuccessful();

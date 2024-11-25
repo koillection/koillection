@@ -9,6 +9,7 @@ use App\Tests\Factory\TagCategoryFactory;
 use App\Tests\Factory\TagFactory;
 use App\Tests\Factory\UserFactory;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
+use Symfony\Component\HttpFoundation\Request;
 use Zenstruck\Foundry\Test\Factories;
 use Zenstruck\Foundry\Test\ResetDatabase;
 
@@ -19,6 +20,7 @@ class TagCategoryTest extends AppTestCase
 
     private KernelBrowser $client;
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->client = static::createClient();
@@ -33,7 +35,7 @@ class TagCategoryTest extends AppTestCase
         TagCategoryFactory::createMany(3, ['owner' => $user]);
 
         // Act
-        $crawler = $this->client->request('GET', '/tag-categories');
+        $crawler = $this->client->request(Request::METHOD_GET, '/tag-categories');
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -50,7 +52,7 @@ class TagCategoryTest extends AppTestCase
         TagFactory::createMany(3, ['category' => $tagCategory, 'owner' => $user]);
 
         // Act
-        $crawler = $this->client->request('GET', '/tag-categories/' . $tagCategory->getId());
+        $crawler = $this->client->request(Request::METHOD_GET, '/tag-categories/' . $tagCategory->getId());
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -68,7 +70,7 @@ class TagCategoryTest extends AppTestCase
         $this->client->loginUser($user);
 
         // Act
-        $this->client->request('GET', '/tag-categories/add');
+        $this->client->request(Request::METHOD_GET, '/tag-categories/add');
 
         $crawler = $this->client->submitForm('Submit', [
             'tag_category[label]' => 'Person',
@@ -89,7 +91,7 @@ class TagCategoryTest extends AppTestCase
         $tagCategory = TagCategoryFactory::createOne(['owner' => $user])->_real();
 
         // Act
-        $this->client->request('GET', '/tag-categories/' . $tagCategory->getId() . '/edit');
+        $this->client->request(Request::METHOD_GET, '/tag-categories/' . $tagCategory->getId() . '/edit');
         $crawler = $this->client->submitForm('Submit', [
             'tag_category[label]' => 'Company',
             'tag_category[color]' => '009688',
@@ -110,7 +112,7 @@ class TagCategoryTest extends AppTestCase
         TagFactory::createOne(['category' => $tagCategory, 'owner' => $user]);
 
         // Act
-        $crawler = $this->client->request('GET', '/tag-categories/' . $tagCategory->getId());
+        $crawler = $this->client->request(Request::METHOD_GET, '/tag-categories/' . $tagCategory->getId());
         $crawler->filter('#modal-delete form')->getNode(0)->setAttribute('action', '/tag-categories/' . $tagCategory->getId() . '/delete');
         $this->client->submitForm('OK');
 

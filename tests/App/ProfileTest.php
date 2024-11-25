@@ -7,6 +7,7 @@ namespace App\Tests\App;
 use App\Tests\AppTestCase;
 use App\Tests\Factory\UserFactory;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
+use Symfony\Component\HttpFoundation\Request;
 use Zenstruck\Foundry\Test\Factories;
 use Zenstruck\Foundry\Test\ResetDatabase;
 
@@ -17,6 +18,7 @@ class ProfileTest extends AppTestCase
 
     private KernelBrowser $client;
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->client = static::createClient();
@@ -31,7 +33,7 @@ class ProfileTest extends AppTestCase
         $avatarPath = $user->getAvatar();
 
         // Act
-        $this->client->request('GET', '/profile');
+        $this->client->request(Request::METHOD_GET, '/profile');
         $this->client->submitForm('Submit', [
             'profile[username]' => 'Stitch',
             'profile[email]' => 'stitch@koillection.com'
@@ -51,7 +53,7 @@ class ProfileTest extends AppTestCase
         $oldAvatarPath = $user->getAvatar();
 
         // Act
-        $this->client->request('GET', '/profile');
+        $this->client->request(Request::METHOD_GET, '/profile');
         $crawler = $this->client->submitForm('Submit', [
             'profile[deleteAvatar]' => true,
         ]);

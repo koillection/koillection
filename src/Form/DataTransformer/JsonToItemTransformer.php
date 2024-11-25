@@ -16,6 +16,7 @@ class JsonToItemTransformer implements DataTransformerInterface
     ) {
     }
 
+    #[\Override]
     public function transform($items): string|bool
     {
         $array = [];
@@ -30,6 +31,7 @@ class JsonToItemTransformer implements DataTransformerInterface
         return json_encode($array);
     }
 
+    #[\Override]
     public function reverseTransform($json): array
     {
         $items = [];

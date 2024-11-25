@@ -11,6 +11,7 @@ use App\Tests\Factory\UserFactory;
 use App\Tests\Factory\WishFactory;
 use App\Tests\Factory\WishlistFactory;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
+use Symfony\Component\HttpFoundation\Request;
 use Zenstruck\Foundry\Test\Factories;
 use Zenstruck\Foundry\Test\ResetDatabase;
 
@@ -21,6 +22,7 @@ class WishlistTest extends AppTestCase
 
     private KernelBrowser $client;
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->client = static::createClient();
@@ -35,7 +37,7 @@ class WishlistTest extends AppTestCase
         WishlistFactory::createMany(3, ['owner' => $user]);
 
         // Act
-        $crawler = $this->client->request('GET', '/wishlists');
+        $crawler = $this->client->request(Request::METHOD_GET, '/wishlists');
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -51,7 +53,7 @@ class WishlistTest extends AppTestCase
         WishlistFactory::createMany(3, ['owner' => $user]);
 
         // Act
-        $this->client->request('GET', '/wishlists/edit');
+        $this->client->request(Request::METHOD_GET, '/wishlists/edit');
         $crawler = $this->client->submitForm('Submit', [
             'display_configuration[displayMode]' => DisplayModeEnum::DISPLAY_MODE_LIST,
         ]);
@@ -72,7 +74,7 @@ class WishlistTest extends AppTestCase
         WishFactory::createMany(3, ['owner' => $user, 'wishlist' => $wishlist]);
 
         // Act
-        $crawler = $this->client->request('GET', '/wishlists/' . $wishlist->getId());
+        $crawler = $this->client->request(Request::METHOD_GET, '/wishlists/' . $wishlist->getId());
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -95,7 +97,7 @@ class WishlistTest extends AppTestCase
         WishFactory::createMany(3, ['owner' => $user, 'wishlist' => $wishlist]);
 
         // Act
-        $crawler = $this->client->request('GET', '/wishlists/' . $wishlist->getId());
+        $crawler = $this->client->request(Request::METHOD_GET, '/wishlists/' . $wishlist->getId());
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -113,7 +115,7 @@ class WishlistTest extends AppTestCase
         $parent = WishlistFactory::createOne(['owner' => $user]);
 
         // Act
-        $this->client->request('GET', '/wishlists/add?parent=' . $parent->getId());
+        $this->client->request(Request::METHOD_GET, '/wishlists/add?parent=' . $parent->getId());
 
         $crawler = $this->client->submitForm('Submit', [
             'wishlist[name]' => 'Books',
@@ -133,7 +135,7 @@ class WishlistTest extends AppTestCase
         $imagePath = $wishlist->getImage();
 
         // Act
-        $this->client->request('GET', '/wishlists/' . $wishlist->getId() . '/edit');
+        $this->client->request(Request::METHOD_GET, '/wishlists/' . $wishlist->getId() . '/edit');
         $crawler = $this->client->submitForm('Submit', [
             'wishlist[name]' => 'Video games',
             'wishlist[visibility]' => VisibilityEnum::VISIBILITY_PUBLIC
@@ -153,7 +155,7 @@ class WishlistTest extends AppTestCase
         $oldImagePath = $album->getImage();
 
         // Act
-        $this->client->request('GET', '/wishlists/' . $album->getId() . '/edit');
+        $this->client->request(Request::METHOD_GET, '/wishlists/' . $album->getId() . '/edit');
         $crawler = $this->client->submitForm('Submit', [
             'wishlist[deleteImage]' => true,
         ]);
@@ -176,7 +178,7 @@ class WishlistTest extends AppTestCase
         WishFactory::createMany(3, ['wishlist' => $otherWishlist, 'owner' => $user]);
 
         // Act
-        $crawler = $this->client->request('GET', '/wishlists/' . $wishlist->getId());
+        $crawler = $this->client->request(Request::METHOD_GET, '/wishlists/' . $wishlist->getId());
         $crawler->filter('#modal-delete form')->getNode(0)->setAttribute('action', '/wishlists/' . $wishlist->getId() . '/delete');
         $this->client->submitForm('OK');
 

@@ -10,6 +10,7 @@ use Twig\TwigFunction;
 
 class ContextExtension extends AbstractExtension
 {
+    #[\Override]
     public function getFilters(): array
     {
         return [
@@ -18,6 +19,7 @@ class ContextExtension extends AbstractExtension
         ];
     }
 
+    #[\Override]
     public function getFunctions(): array
     {
         return [

@@ -24,6 +24,7 @@ class DumpJavascriptTranslationsCommand extends Command
         parent::__construct();
     }
 
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         if (!is_dir($dir = \dirname($this->javascriptsPath)) && !@mkdir($dir, 0777, true)) {

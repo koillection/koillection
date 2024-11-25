@@ -9,6 +9,7 @@ use App\Tests\Factory\CollectionFactory;
 use App\Tests\Factory\ItemFactory;
 use App\Tests\Factory\UserFactory;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
+use Symfony\Component\HttpFoundation\Request;
 use Zenstruck\Foundry\Test\Factories;
 use Zenstruck\Foundry\Test\ResetDatabase;
 
@@ -19,6 +20,7 @@ class ToolsTest extends AppTestCase
 
     private KernelBrowser $client;
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->client = static::createClient();
@@ -32,7 +34,7 @@ class ToolsTest extends AppTestCase
         $this->client->loginUser($user);
 
         // Act
-        $crawler = $this->client->request('GET', '/tools');
+        $crawler = $this->client->request(Request::METHOD_GET, '/tools');
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -50,7 +52,7 @@ class ToolsTest extends AppTestCase
         ItemFactory::createOne(['name' => 'Frieren #3', 'collection' => $collection, 'owner' => $user])->_real();
 
         // Act
-        $crawler = $this->client->request('GET', '/tools/export/printable-list');
+        $crawler = $this->client->request(Request::METHOD_GET, '/tools/export/printable-list');
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -68,7 +70,7 @@ class ToolsTest extends AppTestCase
         ItemFactory::createOne(['name' => 'Frieren #3', 'collection' => $collection, 'owner' => $user])->_real();
 
         // Act
-        $this->client->request('GET', '/tools/export/csv');
+        $this->client->request(Request::METHOD_GET, '/tools/export/csv');
 
         // Assert
         $this->assertResponseIsSuccessful();

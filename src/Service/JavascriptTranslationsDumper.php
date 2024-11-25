@@ -15,8 +15,8 @@ class JavascriptTranslationsDumper
     public function __construct(
         private readonly Environment $twig,
         private readonly Filesystem $filesystem,
-        #[Autowire('%default_locale%')] private readonly string $defaultLocale,
-        #[Autowire('%kernel.enabled_locales%')] private readonly array $enabledLocales,
+        #[Autowire(param: 'default_locale')] private readonly string $defaultLocale,
+        #[Autowire(param: 'kernel.enabled_locales')] private readonly array $enabledLocales,
         #[Autowire('%kernel.project_dir%/translations')] private readonly string $translationsPath,
     ) {
     }

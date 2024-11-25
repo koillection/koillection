@@ -11,6 +11,7 @@ use App\Tests\Factory\DatumFactory;
 use App\Tests\Factory\ItemFactory;
 use App\Tests\Factory\UserFactory;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
+use Symfony\Component\HttpFoundation\Request;
 use Zenstruck\Foundry\Test\Factories;
 use Zenstruck\Foundry\Test\ResetDatabase;
 
@@ -21,6 +22,7 @@ class SignatureTest extends AppTestCase
 
     private KernelBrowser $client;
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->client = static::createClient();
@@ -41,7 +43,7 @@ class SignatureTest extends AppTestCase
         }
 
         // Act
-        $crawler = $this->client->request('GET', '/signatures');
+        $crawler = $this->client->request(Request::METHOD_GET, '/signatures');
 
         // Assert
         $this->assertResponseIsSuccessful();

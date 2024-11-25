@@ -243,11 +243,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Breadcr
         $this->id = Uuid::v7()->toRfc4122();
     }
 
+    #[\Override]
     public function getUserIdentifier(): string
     {
         return (string) $this->getUsername();
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return (string) $this->getUsername();
@@ -283,11 +285,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Breadcr
         return DateFormatEnum::MAPPING[$this->dateFormat][DateFormatEnum::CONTEXT_FORM];
     }
 
+    #[\Override]
     public function getOwner(): ?self
     {
         return $this;
     }
 
+    #[\Override]
     public function eraseCredentials(): void
     {
         $this->plainPassword = null;
@@ -303,6 +307,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Breadcr
         return $this;
     }
 
+    #[\Override]
     public function getPassword(): ?string
     {
         return $this->password;
@@ -328,6 +333,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Breadcr
         return $this;
     }
 
+    #[\Override]
     public function getRoles(): array
     {
         $roles = $this->roles;
@@ -363,6 +369,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Breadcr
         return $this;
     }
 
+    #[\Override]
     public function getId(): ?string
     {
         return $this->id;
@@ -449,7 +456,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Breadcr
 
     public function getDiskSpaceAllowed(): ?int
     {
-        return (int) $this->diskSpaceAllowed;
+        return $this->diskSpaceAllowed;
     }
 
     public function setDiskSpaceAllowed(int $diskSpaceAllowed): self

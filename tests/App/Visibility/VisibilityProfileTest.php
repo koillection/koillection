@@ -14,6 +14,7 @@ use App\Tests\Factory\TagFactory;
 use App\Tests\Factory\UserFactory;
 use App\Tests\Factory\WishlistFactory;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Zenstruck\Foundry\Test\Factories;
 use Zenstruck\Foundry\Test\ResetDatabase;
@@ -25,6 +26,7 @@ class VisibilityProfileTest extends AppTestCase
 
     private KernelBrowser $client;
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->client = static::createClient();
@@ -38,7 +40,7 @@ class VisibilityProfileTest extends AppTestCase
 
         foreach ($this->getUrlsForOwner($owner) as $url) {
             // Act
-            $this->client->request('GET', $url);
+            $this->client->request(Request::METHOD_GET, $url);
 
             // Assert
             $this->assertResponseStatusCodeSame(Response::HTTP_NOT_FOUND);
@@ -54,7 +56,7 @@ class VisibilityProfileTest extends AppTestCase
 
         foreach ($this->getUrlsForOwner($owner) as $url) {
             // Act
-            $this->client->request('GET', $url);
+            $this->client->request(Request::METHOD_GET, $url);
 
             // Assert
             $this->assertResponseStatusCodeSame(Response::HTTP_NOT_FOUND);
@@ -68,7 +70,7 @@ class VisibilityProfileTest extends AppTestCase
 
         foreach ($this->getUrlsForOwner($owner) as $url) {
             // Act
-            $this->client->request('GET', $url);
+            $this->client->request(Request::METHOD_GET, $url);
 
             // Assert
             $this->assertResponseStatusCodeSame(Response::HTTP_NOT_FOUND);
@@ -84,7 +86,7 @@ class VisibilityProfileTest extends AppTestCase
 
         foreach ($this->getUrlsForOwner($owner) as $url) {
             // Act
-            $this->client->request('GET', $url);
+            $this->client->request(Request::METHOD_GET, $url);
 
             // Assert
             $this->assertResponseIsSuccessful();
@@ -98,7 +100,7 @@ class VisibilityProfileTest extends AppTestCase
 
         foreach ($this->getUrlsForOwner($owner) as $url) {
             // Act
-            $this->client->request('GET', $url);
+            $this->client->request(Request::METHOD_GET, $url);
 
             // Assert
             $this->assertResponseIsSuccessful();
@@ -114,7 +116,7 @@ class VisibilityProfileTest extends AppTestCase
 
         foreach ($this->getUrlsForOwner($owner) as $url) {
             // Act
-            $this->client->request('GET', $url);
+            $this->client->request(Request::METHOD_GET, $url);
 
             // Assert
             $this->assertResponseIsSuccessful();

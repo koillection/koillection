@@ -154,11 +154,13 @@ class Album implements BreadcrumbableInterface, LoggableInterface, CacheableInte
         $this->photosDisplayConfiguration = new DisplayConfiguration();
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return $this->getTitle() ?? '';
     }
 
+    #[\Override]
     public function getId(): ?string
     {
         return $this->id;
@@ -224,6 +226,7 @@ class Album implements BreadcrumbableInterface, LoggableInterface, CacheableInte
         return $this;
     }
 
+    #[\Override]
     public function getOwner(): ?User
     {
         return $this->owner;
@@ -352,6 +355,7 @@ class Album implements BreadcrumbableInterface, LoggableInterface, CacheableInte
         return $this;
     }
 
+    #[\Override]
     public function updateDescendantsVisibility(): self
     {
         foreach ($this->getPhotos() as $photo) {

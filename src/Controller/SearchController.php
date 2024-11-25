@@ -36,6 +36,7 @@ class SearchController extends AbstractController
 
         $search = new Search();
         $search->setDisplayMode($this->getUser()?->getSearchResultsDisplayMode() ?? DisplayModeEnum::DISPLAY_MODE_GRID);
+
         $form = $this->createForm(SearchType::class, $search, [
             'method' => 'GET',
         ]);

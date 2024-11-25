@@ -16,11 +16,13 @@ class StringToInventoryContentTransformer implements DataTransformerInterface
     ) {
     }
 
+    #[\Override]
     public function transform($content): string
     {
         return '';
     }
 
+    #[\Override]
     public function reverseTransform($string): array
     {
         if (null === $string) {

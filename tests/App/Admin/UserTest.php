@@ -8,6 +8,7 @@ use App\Enum\RoleEnum;
 use App\Tests\AppTestCase;
 use App\Tests\Factory\UserFactory;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
+use Symfony\Component\HttpFoundation\Request;
 use Zenstruck\Foundry\Test\Factories;
 use Zenstruck\Foundry\Test\ResetDatabase;
 
@@ -18,6 +19,7 @@ class UserTest extends AppTestCase
 
     private KernelBrowser $client;
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->client = static::createClient();
@@ -31,7 +33,7 @@ class UserTest extends AppTestCase
         $this->client->loginUser($admin);
 
         // Act
-        $this->client->request('GET', '/admin/users');
+        $this->client->request(Request::METHOD_GET, '/admin/users');
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -44,7 +46,7 @@ class UserTest extends AppTestCase
         $this->client->loginUser($admin);
 
         // Act
-        $this->client->request('GET', '/admin/users/add');
+        $this->client->request(Request::METHOD_GET, '/admin/users/add');
         $this->client->submitForm('submit', [
             'user[username]' => 'Stitch',
             'user[email]' => 'stitch@koillection.com',
@@ -66,7 +68,7 @@ class UserTest extends AppTestCase
         $this->client->loginUser($admin);
 
         // Act
-        $this->client->request('GET', '/admin/users/' . $admin->getId() . '/edit');
+        $this->client->request(Request::METHOD_GET, '/admin/users/' . $admin->getId() . '/edit');
         $this->client->submitForm('submit', [
             'user[username]' => 'admin',
             'user[email]' => 'admin-new-email@test.com',
@@ -90,7 +92,7 @@ class UserTest extends AppTestCase
         $userId = $user->getId();
 
         // Act
-        $crawler = $this->client->request('GET', '/admin/users');
+        $crawler = $this->client->request(Request::METHOD_GET, '/admin/users');
         $crawler->filter('#modal-delete form')->getNode(0)->setAttribute('action', '/admin/users/' . $user->getId() . '/delete');
         $this->client->submitForm('OK');
 
@@ -106,7 +108,7 @@ class UserTest extends AppTestCase
         $this->client->loginUser($admin);
 
         // Act
-        $crawler = $this->client->request('GET', '/admin/users');
+        $crawler = $this->client->request(Request::METHOD_GET, '/admin/users');
         $crawler->filter('#modal-delete form')->getNode(0)->setAttribute('action', '/admin/users/' . $admin->getId() . '/delete');
         $this->client->submitForm('OK');
 

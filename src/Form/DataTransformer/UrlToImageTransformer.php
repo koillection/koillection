@@ -9,11 +9,13 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class UrlToImageTransformer implements DataTransformerInterface
 {
+    #[\Override]
     public function transform($file): ?string
     {
         return null;
     }
 
+    #[\Override]
     public function reverseTransform($url): ?UploadedFile
     {
         if (null === $url) {

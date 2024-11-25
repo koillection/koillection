@@ -18,6 +18,9 @@ use App\Tests\Factory\TagFactory;
 use App\Tests\Factory\TemplateFactory;
 use App\Tests\Factory\UserFactory;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Validator\Validator\TraceableValidator;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Zenstruck\Foundry\Test\Factories;
 use Zenstruck\Foundry\Test\ResetDatabase;
 
@@ -28,6 +31,7 @@ class ItemTest extends AppTestCase
 
     private KernelBrowser $client;
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->client = static::createClient();
@@ -80,7 +84,7 @@ class ItemTest extends AppTestCase
         DatumFactory::createOne(['owner' => $user, 'item' => $item, 'position' => 2, 'type' => DatumTypeEnum::TYPE_IMAGE, 'label' => 'Image', 'fileImage' => $this->createFile('png')]);
 
         // Act
-        $crawler = $this->client->request('GET', '/items/' . $item->getId());
+        $crawler = $this->client->request(Request::METHOD_GET, '/items/' . $item->getId());
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -168,7 +172,7 @@ class ItemTest extends AppTestCase
         DatumFactory::createOne(['owner' => $user, 'item' => $item, 'position' => 2, 'type' => DatumTypeEnum::TYPE_IMAGE, 'label' => 'Image', 'fileImage' => null]);
 
         // Act
-        $crawler = $this->client->request('GET', '/items/' . $item->getId());
+        $crawler = $this->client->request(Request::METHOD_GET, '/items/' . $item->getId());
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -184,7 +188,7 @@ class ItemTest extends AppTestCase
         $uploadedFile = $this->createFile('png');
 
         // Act
-        $this->client->request('GET', '/items/add?collection=' . $collection->getId());
+        $this->client->request(Request::METHOD_GET, '/items/add?collection=' . $collection->getId());
         $this->client->submitForm('Submit', [
             'item[name]' => 'Frieren #1',
             'item[file]' => $uploadedFile,
@@ -216,7 +220,7 @@ class ItemTest extends AppTestCase
         $collection = CollectionFactory::createOne(['owner' => $user])->_real();
 
         // Act
-        $this->client->request('GET', '/items/add?collection=' . $collection->getId());
+        $this->client->request(Request::METHOD_GET, '/items/add?collection=' . $collection->getId());
         $crawler = $this->client->submitForm('Submit and add another item', [
             'item[name]' => 'Frieren #1',
             'item[collection]' => $collection->getId(),
@@ -242,7 +246,7 @@ class ItemTest extends AppTestCase
         $this->client->loginUser($user);
 
         // Act
-        $this->client->request('GET', '/items/add');
+        $this->client->request(Request::METHOD_GET, '/items/add');
 
         // Assert
         $this->assertTrue($this->client->getResponse()->isNotFound());
@@ -258,7 +262,7 @@ class ItemTest extends AppTestCase
         $collection = CollectionFactory::createOne(['itemsDefaultTemplate' => $template, 'owner' => $user])->_real();
 
         // Act
-        $crawler = $this->client->request('GET', '/items/add?collection=' . $collection->getId());
+        $crawler = $this->client->request(Request::METHOD_GET, '/items/add?collection=' . $collection->getId());
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -296,7 +300,7 @@ class ItemTest extends AppTestCase
         $oldVideoDatumPath = $videoDatum->getVideo();
 
         // Act
-        $this->client->request('GET', '/items/' . $item->getId() . '/edit');
+        $this->client->request(Request::METHOD_GET, '/items/' . $item->getId() . '/edit');
         $this->client->submitForm('Submit', [
             'item[name]' => 'Berserk #1',
             'item[collection]' => $collection->getId(),
@@ -349,7 +353,7 @@ class ItemTest extends AppTestCase
         DatumFactory::createOne(['owner' => $user, 'item' => $item, 'position' => 1, 'type' => DatumTypeEnum::TYPE_TEXT, 'label' => 'Authors', 'value' => 'Abe Tsukasa, Yamada Kanehito']);
 
         // Act
-        $crawler = $this->client->request('GET', '/items/' . $item->getId());
+        $crawler = $this->client->request(Request::METHOD_GET, '/items/' . $item->getId());
         $crawler->filter('#modal-delete form')->getNode(0)->setAttribute('action', '/items/' . $item->getId() . '/delete');
         $this->client->submitForm('OK');
 
@@ -369,7 +373,7 @@ class ItemTest extends AppTestCase
         $item = ItemFactory::createOne(['collection' => $collection, 'owner' => $user]);
 
         // Act
-        $this->client->request('GET', '/items/' . $item->getId() . '/loan');
+        $this->client->request(Request::METHOD_GET, '/items/' . $item->getId() . '/loan');
         $this->client->submitForm('Submit', [
             'loan[lentAt]' => '2022-10-28',
             'loan[lentTo]' => 'Someone'
@@ -392,7 +396,7 @@ class ItemTest extends AppTestCase
         ItemFactory::createOne(['name' => 'Berserk #1', 'collection' => $collection, 'owner' => $user]);
 
         // Act
-        $this->client->request('GET', '/items/autocomplete/fri');
+        $this->client->request(Request::METHOD_GET, '/items/autocomplete/fri');
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -413,7 +417,7 @@ class ItemTest extends AppTestCase
         DatumFactory::createOne(['label' => 'Author', 'item' => $item, 'owner' => $user]);
 
         // Act
-        $errors = $this->getContainer()->get('validator')->validate($item->_real());
+        $errors = $this->getContainer()->get(ValidatorInterface::class)->validate($item->_real());
 
         // Assert
         $this->assertCount(1, $errors);

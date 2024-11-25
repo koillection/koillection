@@ -29,6 +29,7 @@ class UsernameOrEmailPasswordAuthenticator extends AbstractLoginFormAuthenticato
     ) {
     }
 
+    #[\Override]
     public function authenticate(Request $request): Passport
     {
         $login = (string) $request->request->get('_login');
@@ -52,11 +53,13 @@ class UsernameOrEmailPasswordAuthenticator extends AbstractLoginFormAuthenticato
         );
     }
 
+    #[\Override]
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
         return new RedirectResponse($this->router->generate('app_homepage'));
     }
 
+    #[\Override]
     public function onAuthenticationFailure(Request $request, AuthenticationException $exception): Response
     {
         if ($request->hasSession()) {
@@ -66,6 +69,7 @@ class UsernameOrEmailPasswordAuthenticator extends AbstractLoginFormAuthenticato
         return new RedirectResponse($this->router->generate('app_security_login'));
     }
 
+    #[\Override]
     protected function getLoginUrl(Request $request): string
     {
         return $this->router->generate('app_security_login');

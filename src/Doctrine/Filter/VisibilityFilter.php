@@ -17,6 +17,7 @@ class VisibilityFilter extends SQLFilter
         return $this->visibilities;
     }
 
+    #[\Override]
     public function addFilterConstraint(ClassMetadata $targetEntity, $targetTableAlias): string
     {
         $filter = '';

@@ -34,6 +34,7 @@ class TagRepository extends ServiceEntityRepository
         ;
     }
 
+    #[\Override]
     public function findAll(): array
     {
         return $this

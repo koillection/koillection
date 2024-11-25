@@ -9,16 +9,19 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 
 final class UploadedFileDenormalizer implements DenormalizerInterface
 {
-    public function denormalize(mixed $data, string $type, string $format = null, array $context = []): UploadedFile
+    #[\Override]
+    public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): UploadedFile
     {
         return $data;
     }
 
-    public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
+    #[\Override]
+    public function supportsDenormalization(mixed $data, string $type, ?string $format = null, array $context = []): bool
     {
         return $data instanceof UploadedFile;
     }
 
+    #[\Override]
     public function getSupportedTypes(?string $format): array
     {
         return ['*' => true];

@@ -11,6 +11,7 @@ use App\Tests\Factory\FieldFactory;
 use App\Tests\Factory\TemplateFactory;
 use App\Tests\Factory\UserFactory;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
+use Symfony\Component\HttpFoundation\Request;
 use Zenstruck\Foundry\Test\Factories;
 use Zenstruck\Foundry\Test\ResetDatabase;
 
@@ -21,6 +22,7 @@ class TemplateTest extends AppTestCase
 
     private KernelBrowser $client;
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->client = static::createClient();
@@ -34,7 +36,7 @@ class TemplateTest extends AppTestCase
         $this->client->loginUser($user);
 
         // Act
-        $crawler = $this->client->request('GET', '/templates');
+        $crawler = $this->client->request(Request::METHOD_GET, '/templates');
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -49,7 +51,7 @@ class TemplateTest extends AppTestCase
         $template = TemplateFactory::createOne(['owner' => $user]);
 
         // Act
-        $crawler = $this->client->request('GET', '/templates/' . $template->getId());
+        $crawler = $this->client->request(Request::METHOD_GET, '/templates/' . $template->getId());
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -63,7 +65,7 @@ class TemplateTest extends AppTestCase
         $this->client->loginUser($user);
 
         // Act
-        $this->client->request('GET', '/templates/add');
+        $this->client->request(Request::METHOD_GET, '/templates/add');
 
         $crawler = $this->client->submitForm('Submit', [
             'template[name]' => 'Book'
@@ -83,7 +85,7 @@ class TemplateTest extends AppTestCase
         FieldFactory::createOne(['template' => $template, 'owner' => $user]);
 
         // Act
-        $this->client->request('GET', '/templates/' . $template->getId() . '/edit');
+        $this->client->request(Request::METHOD_GET, '/templates/' . $template->getId() . '/edit');
         $crawler = $this->client->submitForm('Submit', [
             'template[name]' => 'Book',
             'template[fields][0][name]' => 'Author',
@@ -107,7 +109,7 @@ class TemplateTest extends AppTestCase
         FieldFactory::createMany(3, ['template' => $template, 'owner' => $user]);
 
         // Act
-        $crawler = $this->client->request('GET', '/templates/' . $template->getId());
+        $crawler = $this->client->request(Request::METHOD_GET, '/templates/' . $template->getId());
         $crawler->filter('#modal-delete form')->getNode(0)->setAttribute('action', '/templates/' . $template->getId() . '/delete');
         $this->client->submitForm('OK');
 
@@ -128,7 +130,7 @@ class TemplateTest extends AppTestCase
         FieldFactory::createOne(['name' => 'Pages', 'type' => DatumTypeEnum::TYPE_NUMBER, 'position' => 3, 'template' => $template, 'owner' => $user]);
 
         // Act
-        $this->client->request('GET', '/templates/' . $template->getId() . '/fields');
+        $this->client->request(Request::METHOD_GET, '/templates/' . $template->getId() . '/fields');
 
         // Assert
         $this->assertResponseIsSuccessful();

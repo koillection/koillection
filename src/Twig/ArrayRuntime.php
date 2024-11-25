@@ -16,7 +16,7 @@ class ArrayRuntime implements RuntimeExtensionInterface
     }
 
     public function naturalSorting(
-        iterable $array, DisplayConfiguration $displayConfiguration = null
+        iterable $array, ?DisplayConfiguration $displayConfiguration = null
     ): array {
         return $this->arraySorter->sort($array, $displayConfiguration);
     }

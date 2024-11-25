@@ -20,8 +20,10 @@ class AlbumCountersTest extends AppTestCase
     use ResetDatabase;
 
     public ?RefreshCachedValuesQueue $refreshCachedValuesQueue;
+
     public ?CachedValuesGetter $cachedValuesGetter;
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->refreshCachedValuesQueue = $this->getContainer()->get(RefreshCachedValuesQueue::class);

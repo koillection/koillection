@@ -118,11 +118,13 @@ class Tag implements BreadcrumbableInterface, LoggableInterface, \Stringable
         $this->itemsDisplayConfiguration = new DisplayConfiguration();
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return $this->getLabel() ?? '';
     }
 
+    #[\Override]
     public function getId(): ?string
     {
         return $this->id;
@@ -244,6 +246,7 @@ class Tag implements BreadcrumbableInterface, LoggableInterface, \Stringable
         return $this;
     }
 
+    #[\Override]
     public function getOwner(): ?User
     {
         return $this->owner;

@@ -10,6 +10,7 @@ use App\Tests\AppTestCase;
 use App\Tests\Factory\ConfigurationFactory;
 use App\Tests\Factory\UserFactory;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
+use Symfony\Component\HttpFoundation\Request;
 use Zenstruck\Foundry\Test\Factories;
 use Zenstruck\Foundry\Test\ResetDatabase;
 
@@ -20,6 +21,7 @@ class ConfigurationTest extends AppTestCase
 
     private KernelBrowser $client;
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->client = static::createClient();
@@ -33,7 +35,7 @@ class ConfigurationTest extends AppTestCase
         $this->client->loginUser($admin);
 
         // Act
-        $this->client->request('GET', '/admin/configuration');
+        $this->client->request(Request::METHOD_GET, '/admin/configuration');
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -46,7 +48,7 @@ class ConfigurationTest extends AppTestCase
         $this->client->loginUser($admin);
 
         // Act
-        $this->client->request('GET', '/admin/configuration');
+        $this->client->request(Request::METHOD_GET, '/admin/configuration');
         $this->client->submitForm('submit', [
             'configuration_admin[thumbnailsFormat][value]' => ConfigurationEnum::THUMBNAILS_FORMAT_WEBP,
         ]);

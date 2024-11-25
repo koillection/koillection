@@ -10,6 +10,7 @@ use Zenstruck\Foundry\Persistence\PersistentProxyObjectFactory;
 
 final class WishFactory extends PersistentProxyObjectFactory
 {
+    #[\Override]
     protected function defaults(): array|callable
     {
         return [
@@ -19,11 +20,13 @@ final class WishFactory extends PersistentProxyObjectFactory
         ];
     }
 
+    #[\Override]
     protected function initialize(): static
     {
         return $this;
     }
 
+    #[\Override]
     public static function class(): string
     {
         return Wish::class;

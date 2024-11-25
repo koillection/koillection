@@ -12,6 +12,7 @@ use App\Tests\Factory\ItemFactory;
 use App\Tests\Factory\UserFactory;
 use PHPUnit\Framework\Attributes\TestWith;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Zenstruck\Foundry\Test\Factories;
 use Zenstruck\Foundry\Test\ResetDatabase;
@@ -23,6 +24,7 @@ class CollectionVisibilityAccessTest extends AppTestCase
 
     private KernelBrowser $client;
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->client = static::createClient();
@@ -38,7 +40,7 @@ class CollectionVisibilityAccessTest extends AppTestCase
         CollectionFactory::createOne(['owner' => $user, 'visibility' => VisibilityEnum::VISIBILITY_PRIVATE]);
 
         // Act
-        $crawler = $this->client->request('GET', "/user/{$user->getUsername()}/collections");
+        $crawler = $this->client->request(Request::METHOD_GET, "/user/{$user->getUsername()}/collections");
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -58,7 +60,7 @@ class CollectionVisibilityAccessTest extends AppTestCase
         $this->client->loginUser($otherUser);
 
         // Act
-        $crawler = $this->client->request('GET', "/user/{$user->getUsername()}/collections");
+        $crawler = $this->client->request(Request::METHOD_GET, "/user/{$user->getUsername()}/collections");
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -76,7 +78,7 @@ class CollectionVisibilityAccessTest extends AppTestCase
 
         // Act
         $this->client->loginUser($user);
-        $crawler = $this->client->request('GET', "/collections");
+        $crawler = $this->client->request(Request::METHOD_GET, "/collections");
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -106,8 +108,8 @@ class CollectionVisibilityAccessTest extends AppTestCase
         DatumFactory::createOne(['owner' => $user, 'collection' => $collection, 'visibility' => VisibilityEnum::VISIBILITY_PRIVATE]);
 
         // Act
-        $this->client->request('GET', "/user/{$user->getUsername()}/collections"); //Don't know why it's needed, it seems like $collection isn't properly initialized, maybe from some cache
-        $crawler = $this->client->request('GET', "/user/{$user->getUsername()}/collections/{$collection->getId()}");
+        $this->client->request(Request::METHOD_GET, "/user/{$user->getUsername()}/collections"); //Don't know why it's needed, it seems like $collection isn't properly initialized, maybe from some cache
+        $crawler = $this->client->request(Request::METHOD_GET, "/user/{$user->getUsername()}/collections/{$collection->getId()}");
 
         // Assert
         if ($shouldSucceed) {
@@ -145,8 +147,9 @@ class CollectionVisibilityAccessTest extends AppTestCase
         // Act
         $otherUser = UserFactory::createOne()->_real();
         $this->client->loginUser($otherUser);
-        $this->client->request('GET', "/user/{$user->getUsername()}/collections"); //Don't know why it's needed, it seems like $collection isn't properly initialized, maybe from some cache
-        $crawler = $this->client->request('GET', "/user/{$user->getUsername()}/collections/{$collection->getId()}");
+        $this->client->request(Request::METHOD_GET, "/user/{$user->getUsername()}/collections");
+         //Don't know why it's needed, it seems like $collection isn't properly initialized, maybe from some cache
+        $crawler = $this->client->request(Request::METHOD_GET, "/user/{$user->getUsername()}/collections/{$collection->getId()}");
 
         // Assert
         if ($shouldSucceed) {
@@ -183,7 +186,7 @@ class CollectionVisibilityAccessTest extends AppTestCase
 
         // Act
         $this->client->loginUser($user);
-        $crawler = $this->client->request('GET', "/collections/{$collection->getId()}");
+        $crawler = $this->client->request(Request::METHOD_GET, "/collections/{$collection->getId()}");
 
         // Assert
         $this->assertResponseIsSuccessful();

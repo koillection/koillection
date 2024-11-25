@@ -20,6 +20,7 @@ class DisplayConfigurationType extends AbstractType
 {
     private array $preSubmitColumns = [];
 
+    #[\Override]
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
@@ -147,6 +148,7 @@ class DisplayConfigurationType extends AbstractType
         }
     }
 
+    #[\Override]
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([

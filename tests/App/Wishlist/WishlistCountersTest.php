@@ -20,8 +20,10 @@ class WishlistCountersTest extends AppTestCase
     use ResetDatabase;
 
     public ?RefreshCachedValuesQueue $refreshCachedValuesQueue;
+
     public ?CachedValuesGetter $cachedValuesGetter;
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->refreshCachedValuesQueue = $this->getContainer()->get(RefreshCachedValuesQueue::class);
@@ -76,6 +78,7 @@ class WishlistCountersTest extends AppTestCase
             }
         );
         $wishlistLevel3->_save();
+
         $this->refreshCachedValuesQueue->process();
 
         // Assert

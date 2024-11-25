@@ -10,6 +10,7 @@ use App\Enum\VisibilityEnum;
 use App\Tests\AppTestCase;
 use App\Tests\Factory\UserFactory;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
+use Symfony\Component\HttpFoundation\Request;
 use Zenstruck\Foundry\Test\Factories;
 use Zenstruck\Foundry\Test\ResetDatabase;
 
@@ -20,6 +21,7 @@ class SettingsTest extends AppTestCase
 
     private KernelBrowser $client;
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->client = static::createClient();
@@ -33,7 +35,7 @@ class SettingsTest extends AppTestCase
         $this->client->loginUser($user);
 
         // Act
-        $this->client->request('GET', '/settings');
+        $this->client->request(Request::METHOD_GET, '/settings');
 
         $this->client->submitForm('Submit', [
             'settings[locale]' => 'fr',

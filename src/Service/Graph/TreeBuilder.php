@@ -41,7 +41,7 @@ class TreeBuilder
         return $leaf;
     }
 
-    private function createLeaf(Collection $collection = null): array
+    private function createLeaf(?Collection $collection = null): array
     {
         $name = '';
         if ($collection instanceof Collection) {

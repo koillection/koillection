@@ -18,6 +18,7 @@ class HasEnoughSpaceForUploadValidator extends ChoiceValidator
     ) {
     }
 
+    #[\Override]
     public function validate($value, Constraint $constraint): void
     {
         if (!$constraint instanceof HasEnoughSpaceForUpload) {

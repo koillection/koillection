@@ -14,6 +14,7 @@ use App\Tests\Factory\TemplateFactory;
 use App\Tests\Factory\UserFactory;
 use App\Tests\Factory\WishlistFactory;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Zenstruck\Foundry\Test\Factories;
 use Zenstruck\Foundry\Test\ResetDatabase;
@@ -25,6 +26,7 @@ class DisabledFeatureTest extends AppTestCase
 
     private KernelBrowser $client;
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->client = static::createClient();
@@ -47,7 +49,7 @@ class DisabledFeatureTest extends AppTestCase
         $this->client->loginUser($user);
 
         // Act
-        $crawler = $this->client->request('GET', '/');
+        $crawler = $this->client->request(Request::METHOD_GET, '/');
 
         // Assert
         $this->assertStringContainsString('Collections', $crawler->filter('.nav-sidebar')->text());
@@ -80,7 +82,7 @@ class DisabledFeatureTest extends AppTestCase
 
         foreach ($this->getUrls($user) as $url) {
             // Act
-            $this->client->request('GET', $url);
+            $this->client->request(Request::METHOD_GET, $url);
 
             // Assert
             $this->assertResponseStatusCodeSame(Response::HTTP_NOT_FOUND);

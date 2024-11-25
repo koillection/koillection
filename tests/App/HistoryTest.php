@@ -19,6 +19,7 @@ use App\Tests\Factory\UserFactory;
 use App\Tests\Factory\WishFactory;
 use App\Tests\Factory\WishlistFactory;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
+use Symfony\Component\HttpFoundation\Request;
 use Zenstruck\Foundry\Test\Factories;
 use Zenstruck\Foundry\Test\ResetDatabase;
 
@@ -29,6 +30,7 @@ class HistoryTest extends AppTestCase
 
     private KernelBrowser $client;
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->client = static::createClient();
@@ -64,7 +66,7 @@ class HistoryTest extends AppTestCase
         }
 
         // Act
-        $crawler = $this->client->request('GET', '/history?search_history[classes][]=collection&search_history[classes][]=item&search_history[classes][]=tag&search_history[classes][]=tagCategory&search_history[classes][]=album&search_history[classes][]=photo&search_history[classes][]=wishlist&search_history[classes][]=wish&search_history[classes][]=template&search_history[classes][]=choiceList&search_history[classes][]=inventory&search_history[types][]=create&search_history[types][]=delete');
+        $crawler = $this->client->request(Request::METHOD_GET, '/history?search_history[classes][]=collection&search_history[classes][]=item&search_history[classes][]=tag&search_history[classes][]=tagCategory&search_history[classes][]=album&search_history[classes][]=photo&search_history[classes][]=wishlist&search_history[classes][]=wish&search_history[classes][]=template&search_history[classes][]=choiceList&search_history[classes][]=inventory&search_history[types][]=create&search_history[types][]=delete');
 
         // Assert
         $this->assertResponseIsSuccessful();

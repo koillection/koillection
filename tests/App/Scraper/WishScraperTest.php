@@ -10,6 +10,7 @@ use App\Tests\Factory\PathFactory;
 use App\Tests\Factory\ScraperFactory;
 use App\Tests\Factory\UserFactory;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
+use Symfony\Component\HttpFoundation\Request;
 use Zenstruck\Foundry\Test\Factories;
 use Zenstruck\Foundry\Test\ResetDatabase;
 
@@ -20,6 +21,7 @@ class WishScraperTest extends AppTestCase
 
     private KernelBrowser $client;
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->client = static::createClient();
@@ -33,7 +35,7 @@ class WishScraperTest extends AppTestCase
         $this->client->loginUser($user);
 
         // Act
-        $crawler = $this->client->request('GET', '/scrapers/wish-scrapers');
+        $crawler = $this->client->request(Request::METHOD_GET, '/scrapers/wish-scrapers');
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -48,7 +50,7 @@ class WishScraperTest extends AppTestCase
         $scraper = ScraperFactory::createOne(['type' => ScraperTypeEnum::TYPE_WISH, 'owner' => $user]);
 
         // Act
-        $crawler = $this->client->request('GET', '/scrapers/wish-scrapers/' . $scraper->getId());
+        $crawler = $this->client->request(Request::METHOD_GET, '/scrapers/wish-scrapers/' . $scraper->getId());
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -62,7 +64,7 @@ class WishScraperTest extends AppTestCase
         $this->client->loginUser($user);
 
         // Act
-        $this->client->request('GET', '/scrapers/wish-scrapers/add');
+        $this->client->request(Request::METHOD_GET, '/scrapers/wish-scrapers/add');
 
         $crawler = $this->client->submitForm('Submit', [
             'scraper[name]' => 'Manga News'
@@ -82,7 +84,7 @@ class WishScraperTest extends AppTestCase
         PathFactory::createOne(['scraper' => $scraper, 'owner' => $user]);
 
         // Act
-        $this->client->request('GET', '/scrapers/wish-scrapers/' . $scraper->getId() . '/edit');
+        $this->client->request(Request::METHOD_GET, '/scrapers/wish-scrapers/' . $scraper->getId() . '/edit');
         $crawler = $this->client->submitForm('Submit', [
             'scraper[name]' => 'Manga News',
             'scraper[namePath]' => '//h1/text()',
@@ -105,7 +107,7 @@ class WishScraperTest extends AppTestCase
         PathFactory::createOne(['scraper' => $scraper, 'owner' => $user]);
 
         // Act
-        $crawler = $this->client->request('GET', '/scrapers/wish-scrapers/' . $scraper->getId());
+        $crawler = $this->client->request(Request::METHOD_GET, '/scrapers/wish-scrapers/' . $scraper->getId());
         $crawler->filter('#modal-delete form')->getNode(0)->setAttribute('action', '/scrapers/wish-scrapers/' . $scraper->getId() . '/delete');
         $this->client->submitForm('OK');
 
@@ -124,7 +126,7 @@ class WishScraperTest extends AppTestCase
         PathFactory::createOne(['scraper' => $scraper, 'owner' => $user]);
 
         // Act
-        $this->client->request('GET', '/scrapers/wish-scrapers/' . $scraper->getId() . '/export');
+        $this->client->request(Request::METHOD_GET, '/scrapers/wish-scrapers/' . $scraper->getId() . '/export');
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -138,7 +140,7 @@ class WishScraperTest extends AppTestCase
         $this->client->loginUser($user);
 
         // Act
-        $this->client->request('GET', '/scrapers/wish-scrapers');
+        $this->client->request(Request::METHOD_GET, '/scrapers/wish-scrapers');
 
         $crawler = $this->client->submitForm('Import', [
             'wish_scraper_importer[file]' => $this->createFile('json'),

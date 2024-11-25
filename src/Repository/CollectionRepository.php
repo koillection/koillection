@@ -20,6 +20,7 @@ class CollectionRepository extends ServiceEntityRepository
         parent::__construct($registry, Collection::class);
     }
 
+    #[\Override]
     public function findAll(): array
     {
         return $this

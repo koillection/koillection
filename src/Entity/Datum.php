@@ -202,6 +202,7 @@ class Datum implements VisibleInterface, \Stringable
         $this->id = Uuid::v7()->toRfc4122();
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return $this->getLabel() ?? '';
@@ -495,6 +496,7 @@ class Datum implements VisibleInterface, \Stringable
         return $this;
     }
 
+    #[\Override]
     public function updateDescendantsVisibility(): self
     {
         return $this;

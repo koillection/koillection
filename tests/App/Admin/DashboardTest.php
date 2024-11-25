@@ -10,6 +10,7 @@ use App\Tests\Factory\CollectionFactory;
 use App\Tests\Factory\ItemFactory;
 use App\Tests\Factory\UserFactory;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
+use Symfony\Component\HttpFoundation\Request;
 use Zenstruck\Foundry\Test\Factories;
 use Zenstruck\Foundry\Test\ResetDatabase;
 
@@ -20,6 +21,7 @@ class DashboardTest extends AppTestCase
 
     private KernelBrowser $client;
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->client = static::createClient();
@@ -33,7 +35,7 @@ class DashboardTest extends AppTestCase
         $this->client->loginUser($admin);
 
         // Act
-        $this->client->request('GET', '/admin');
+        $this->client->request(Request::METHOD_GET, '/admin');
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -50,7 +52,7 @@ class DashboardTest extends AppTestCase
         ItemFactory::createOne(['name' => 'Frieren #3', 'collection' => $collection, 'owner' => $admin])->_real();
 
         // Act
-        $this->client->request('GET', '/admin/refresh-caches');
+        $this->client->request(Request::METHOD_GET, '/admin/refresh-caches');
 
         // Assert
         $this->assertResponseIsSuccessful();

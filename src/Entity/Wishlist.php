@@ -150,11 +150,13 @@ class Wishlist implements BreadcrumbableInterface, CacheableInterface, LoggableI
         $this->childrenDisplayConfiguration = new DisplayConfiguration();
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return $this->getName() ?? '';
     }
 
+    #[\Override]
     public function getId(): ?string
     {
         return $this->id;
@@ -220,6 +222,7 @@ class Wishlist implements BreadcrumbableInterface, CacheableInterface, LoggableI
         return $this;
     }
 
+    #[\Override]
     public function getOwner(): ?User
     {
         return $this->owner;
@@ -343,6 +346,7 @@ class Wishlist implements BreadcrumbableInterface, CacheableInterface, LoggableI
         return $this;
     }
 
+    #[\Override]
     public function updateDescendantsVisibility(): self
     {
         foreach ($this->getWishes() as $wish) {

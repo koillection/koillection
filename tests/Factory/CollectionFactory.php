@@ -10,6 +10,7 @@ use Zenstruck\Foundry\Persistence\PersistentProxyObjectFactory;
 
 final class CollectionFactory extends PersistentProxyObjectFactory
 {
+    #[\Override]
     protected function defaults(): array|callable
     {
         return [
@@ -42,6 +43,7 @@ final class CollectionFactory extends PersistentProxyObjectFactory
         ];
     }
 
+    #[\Override]
     protected function initialize(): static
     {
         return $this
@@ -52,6 +54,7 @@ final class CollectionFactory extends PersistentProxyObjectFactory
         ;
     }
 
+    #[\Override]
     public static function class(): string
     {
         return Collection::class;

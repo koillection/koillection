@@ -12,7 +12,7 @@ use Symfony\Contracts\Cache\ItemInterface;
 
 class ConfigurationHelper
 {
-    private const PREFIX = 'configuration_';
+    private const string PREFIX = 'configuration_';
 
     private readonly ApcuAdapter $cache;
 

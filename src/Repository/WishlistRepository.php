@@ -17,6 +17,7 @@ class WishlistRepository extends ServiceEntityRepository
         parent::__construct($registry, Wishlist::class);
     }
 
+    #[\Override]
     public function findAll(): array
     {
         return $this

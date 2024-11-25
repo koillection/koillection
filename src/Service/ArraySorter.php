@@ -22,7 +22,7 @@ class ArraySorter
 
     public function sort(
         iterable $array,
-        DisplayConfiguration $displayConfiguration = null
+        ?DisplayConfiguration $displayConfiguration = null
     ): array {
         $direction = $displayConfiguration instanceof DisplayConfiguration ? $displayConfiguration->getSortingDirection() : SortingDirectionEnum::ASCENDING;
         $type = $displayConfiguration?->getSortingType();

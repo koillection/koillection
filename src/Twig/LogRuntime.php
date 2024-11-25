@@ -28,9 +28,9 @@ class LogRuntime implements RuntimeExtensionInterface
         $explodedNamespace = explode('\\', $log->getObjectClass());
         $class = array_pop($explodedNamespace);
         $class = strtolower($class);
-        if ('tagcategory' == $class) {
+        if ('tagcategory' === $class) {
             $class = 'tag_category';
-        } elseif ('choicelist' == $class) {
+        } elseif ('choicelist' === $class) {
             $class = 'choice_list';
         }
 

@@ -20,12 +20,11 @@ class CollectionVisibilityUpdateTest extends AppTestCase
     use Factories;
     use ResetDatabase;
 
-    private KernelBrowser $client;
-
+    #[\Override]
     protected function setUp(): void
     {
-        $this->client = static::createClient();
-        $this->client->followRedirects();
+        $client = static::createClient();
+        $client->followRedirects();
     }
 
     #[TestWith(['public', 'public', 'public'])]

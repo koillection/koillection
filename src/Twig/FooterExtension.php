@@ -10,6 +10,7 @@ use Twig\TwigFunction;
 
 class FooterExtension extends AbstractExtension
 {
+    #[\Override]
     public function getFunctions(): array
     {
         return [

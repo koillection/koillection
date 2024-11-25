@@ -173,6 +173,7 @@ class Item implements BreadcrumbableInterface, LoggableInterface, CacheableInter
         $this->loans = new ArrayCollection();
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return $this->getName() ?? '';
@@ -210,6 +211,7 @@ class Item implements BreadcrumbableInterface, LoggableInterface, CacheableInter
         return $this->tags->contains($tag);
     }
 
+    #[\Override]
     public function getId(): ?string
     {
         return $this->id;
@@ -288,6 +290,7 @@ class Item implements BreadcrumbableInterface, LoggableInterface, CacheableInter
         return $this;
     }
 
+    #[\Override]
     public function getOwner(): ?User
     {
         return $this->owner;
@@ -482,6 +485,7 @@ class Item implements BreadcrumbableInterface, LoggableInterface, CacheableInter
         return $this;
     }
 
+    #[\Override]
     public function updateDescendantsVisibility(): self
     {
         foreach ($this->getData() as $datum) {

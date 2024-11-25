@@ -21,10 +21,11 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 
 class FieldType extends AbstractType
 {
-    public function __construct(private TranslatorInterface $translator)
+    public function __construct(private readonly TranslatorInterface $translator)
     {
     }
 
+    #[\Override]
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $types = array_flip(DatumTypeEnum::getTypesLabels());
@@ -69,6 +70,7 @@ class FieldType extends AbstractType
         );
     }
 
+    #[\Override]
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([

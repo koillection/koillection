@@ -23,7 +23,7 @@ class StatisticsController extends AbstractController
         CalendarBuilder $calendarBuilder,
         ChartBuilder $chartBuilder,
         UserRepository $userRepository,
-        #[MapEntity(mapping: ['username' => 'username'])] User $user = null
+        #[MapEntity(mapping: ['username' => 'username'])] ?User $user = null
     ): Response {
         $this->denyAccessUnlessFeaturesEnabled(['statistics']);
 

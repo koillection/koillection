@@ -8,6 +8,7 @@ use App\Tests\AppTestCase;
 use App\Tests\Factory\ChoiceListFactory;
 use App\Tests\Factory\UserFactory;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
+use Symfony\Component\HttpFoundation\Request;
 use Zenstruck\Foundry\Test\Factories;
 use Zenstruck\Foundry\Test\ResetDatabase;
 
@@ -18,6 +19,7 @@ class ChoiceListTest extends AppTestCase
 
     private KernelBrowser $client;
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->client = static::createClient();
@@ -31,7 +33,7 @@ class ChoiceListTest extends AppTestCase
         $this->client->loginUser($user);
 
         // Act
-        $crawler = $this->client->request('GET', '/choice-lists');
+        $crawler = $this->client->request(Request::METHOD_GET, '/choice-lists');
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -45,7 +47,7 @@ class ChoiceListTest extends AppTestCase
         $this->client->loginUser($user);
 
         // Act
-        $this->client->request('GET', '/choice-lists/add');
+        $this->client->request(Request::METHOD_GET, '/choice-lists/add');
 
         $crawler = $this->client->submitForm('Submit', [
             'choice_list[name]' => 'Progress'
@@ -64,7 +66,7 @@ class ChoiceListTest extends AppTestCase
         $choiceList = ChoiceListFactory::createOne(['owner' => $user, 'choices' => ['New', 'Test', 'Done']]);
 
         // Act
-        $this->client->request('GET', '/choice-lists/' . $choiceList->getId() . '/edit');
+        $this->client->request(Request::METHOD_GET, '/choice-lists/' . $choiceList->getId() . '/edit');
         $crawler = $this->client->submitForm('Submit', [
             'choice_list[name]' => 'Progress',
             'choice_list[choices][0]' => 'New',
@@ -86,7 +88,7 @@ class ChoiceListTest extends AppTestCase
         $choiceList = ChoiceListFactory::createOne(['owner' => $user]);
 
         // Act
-        $crawler = $this->client->request('GET', '/choice-lists/');
+        $crawler = $this->client->request(Request::METHOD_GET, '/choice-lists/');
         $crawler->filter('#modal-delete form')->getNode(0)->setAttribute('action', '/choice-lists/' . $choiceList->getId() . '/delete');
         $this->client->submitForm('OK');
 

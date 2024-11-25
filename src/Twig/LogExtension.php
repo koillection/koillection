@@ -9,6 +9,7 @@ use Twig\TwigFunction;
 
 class LogExtension extends AbstractExtension
 {
+    #[\Override]
     public function getFunctions(): array
     {
         return [

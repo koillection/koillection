@@ -36,6 +36,7 @@ class RegenerateLogsCommand extends Command
         parent::__construct();
     }
 
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $counter = 0;

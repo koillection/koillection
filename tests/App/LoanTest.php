@@ -10,6 +10,7 @@ use App\Tests\Factory\ItemFactory;
 use App\Tests\Factory\LoanFactory;
 use App\Tests\Factory\UserFactory;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
+use Symfony\Component\HttpFoundation\Request;
 use Zenstruck\Foundry\Test\Factories;
 use Zenstruck\Foundry\Test\ResetDatabase;
 
@@ -20,6 +21,7 @@ class LoanTest extends AppTestCase
 
     private KernelBrowser $client;
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->client = static::createClient();
@@ -33,7 +35,7 @@ class LoanTest extends AppTestCase
         $this->client->loginUser($user);
 
         // Act
-        $crawler = $this->client->request('GET', '/loans');
+        $crawler = $this->client->request(Request::METHOD_GET, '/loans');
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -50,7 +52,7 @@ class LoanTest extends AppTestCase
         $loan = LoanFactory::createOne(['item' => $item, 'owner' => $user]);
 
         // Act
-        $crawler = $this->client->request('GET', '/loans');
+        $crawler = $this->client->request(Request::METHOD_GET, '/loans');
         $crawler->filter('#modal-delete form')->getNode(0)->setAttribute('action', '/loans/' . $loan->getId() . '/delete');
         $this->client->submitForm('OK');
 
@@ -70,7 +72,7 @@ class LoanTest extends AppTestCase
         $loan = LoanFactory::createOne(['item' => $item, 'owner' => $user]);
 
         // Act
-        $this->client->request('GET', '/loans/' . $loan->getId() . '/returned');
+        $this->client->request(Request::METHOD_GET, '/loans/' . $loan->getId() . '/returned');
         $loan->_refresh();
 
         // Assert

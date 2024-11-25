@@ -21,8 +21,8 @@ final readonly class LocaleListener
 {
     public function __construct(
         private RequestStack $requestStack,
-        #[Autowire('%default_locale%')] private string $defaultLocale,
-        #[Autowire('%kernel.enabled_locales%')] private array $enabledLocales
+        #[Autowire(param: 'default_locale')] private string $defaultLocale,
+        #[Autowire(param: 'kernel.enabled_locales')] private array $enabledLocales
     ) {
     }
 

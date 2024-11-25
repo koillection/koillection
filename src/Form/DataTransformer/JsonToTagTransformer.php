@@ -15,6 +15,7 @@ class JsonToTagTransformer implements DataTransformerInterface
     ) {
     }
 
+    #[\Override]
     public function transform($tags): string|bool
     {
         $array = [];
@@ -25,13 +26,14 @@ class JsonToTagTransformer implements DataTransformerInterface
         return json_encode($array);
     }
 
+    #[\Override]
     public function reverseTransform($json): array
     {
         $tags = [];
         foreach (json_decode($json) as $raw) {
             $label = trim($raw);
 
-            if ('' == $label) {
+            if ('' === $label) {
                 continue;
             }
 

@@ -12,6 +12,7 @@ use App\Tests\Factory\ItemFactory;
 use App\Tests\Factory\UserFactory;
 use PHPUnit\Framework\Attributes\TestWith;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Zenstruck\Foundry\Test\Factories;
 use Zenstruck\Foundry\Test\ResetDatabase;
@@ -23,6 +24,7 @@ class ItemVisibilityAccessTest extends AppTestCase
 
     private KernelBrowser $client;
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->client = static::createClient();
@@ -44,7 +46,7 @@ class ItemVisibilityAccessTest extends AppTestCase
         DatumFactory::createOne(['owner' => $user, 'item' => $item, 'visibility' => VisibilityEnum::VISIBILITY_PRIVATE]);
 
         // Act
-        $crawler = $this->client->request('GET', "/user/{$user->getUsername()}/items/{$item->getId()}");
+        $crawler = $this->client->request(Request::METHOD_GET, "/user/{$user->getUsername()}/items/{$item->getId()}");
 
         // Assert
         if ($shouldSucceed) {
@@ -73,7 +75,7 @@ class ItemVisibilityAccessTest extends AppTestCase
         // Act
         $otherUser = UserFactory::createOne()->_real();
         $this->client->loginUser($otherUser);
-        $crawler = $this->client->request('GET', "/user/{$user->getUsername()}/items/{$item->getId()}");
+        $crawler = $this->client->request(Request::METHOD_GET, "/user/{$user->getUsername()}/items/{$item->getId()}");
 
         // Assert
         if ($shouldSucceed) {
@@ -101,7 +103,7 @@ class ItemVisibilityAccessTest extends AppTestCase
 
         // Act
         $this->client->loginUser($user);
-        $crawler = $this->client->request('GET', "/items/{$item->getId()}");
+        $crawler = $this->client->request(Request::METHOD_GET, "/items/{$item->getId()}");
 
         // Assert
         $this->assertResponseIsSuccessful();

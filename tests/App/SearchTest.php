@@ -15,6 +15,7 @@ use App\Tests\Factory\TagFactory;
 use App\Tests\Factory\UserFactory;
 use App\Tests\Factory\WishlistFactory;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Zenstruck\Foundry\Test\Factories;
 use Zenstruck\Foundry\Test\ResetDatabase;
@@ -26,6 +27,7 @@ class SearchTest extends AppTestCase
 
     private KernelBrowser $client;
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->client = static::createClient();
@@ -51,7 +53,7 @@ class SearchTest extends AppTestCase
         AlbumFactory::createOne(['title' => 'Berserk collection', 'owner' => $user, 'createdAt' => $now]);
 
         // Act
-        $crawler = $this->client->request('GET', '/search');
+        $crawler = $this->client->request(Request::METHOD_GET, '/search');
         $crawler = $this->client->submitForm('Submit', [
             'search[term]' => 'frie',
             'search[createdAt]' => $now->format('Y-m-d'),
@@ -87,7 +89,7 @@ class SearchTest extends AppTestCase
         ItemFactory::createOne(['name' => 'Frieren 9791032710838', 'collection' => $collectionFrieren, 'owner' => $user, 'createdAt' => $now]);
 
         // Act
-        $this->client->request('GET', '/search');
+        $this->client->request(Request::METHOD_GET, '/search');
         $crawler = $this->client->submitForm('Submit', [
             'search[term]' => '9791032710838',
             'search[createdAt]' => $now->format('Y-m-d'),
@@ -111,7 +113,7 @@ class SearchTest extends AppTestCase
         ItemFactory::createOne(['name' => 'Frieren 9791032710838', 'collection' => $collectionFrieren, 'owner' => $user, 'createdAt' => $now]);
 
         // Act
-        $this->client->request('GET', '/search');
+        $this->client->request(Request::METHOD_GET, '/search');
         $crawler = $this->client->submitForm('Submit', [
             'search[term]' => '9791032710838',
             'search[createdAt]' => $now->format('Y-m-d'),
@@ -131,7 +133,7 @@ class SearchTest extends AppTestCase
         $this->client->loginUser($user);
 
         // Act
-        $this->client->request('GET', '/search');
+        $this->client->request(Request::METHOD_GET, '/search');
 
         $crawler = $this->client->submitForm('Submit', [
         ], 'GET');
@@ -152,7 +154,7 @@ class SearchTest extends AppTestCase
         AlbumFactory::createOne(['title' => 'Frieren collection', 'owner' => $user]);
 
         // Act
-        $this->client->request('GET', '/user/' . $user->getUsername() . '/search');
+        $this->client->request(Request::METHOD_GET, '/user/' . $user->getUsername() . '/search');
         $crawler = $this->client->submitForm('Submit', [
             'search[term]' => 'fri',
         ], 'GET');
@@ -187,7 +189,7 @@ class SearchTest extends AppTestCase
         AlbumFactory::createOne(['title' => 'Frieren collection', 'owner' => $user, 'visibility' => VisibilityEnum::VISIBILITY_PRIVATE]);
 
         // Act
-        $this->client->request('GET', '/user/' . $user->getUsername() . '/search');
+        $this->client->request(Request::METHOD_GET, '/user/' . $user->getUsername() . '/search');
         $crawler = $this->client->submitForm('Submit', [
             'search[term]' => 'fri',
         ], 'GET');
@@ -207,7 +209,7 @@ class SearchTest extends AppTestCase
         $user = UserFactory::createOne(['visibility' => VisibilityEnum::VISIBILITY_PRIVATE])->_real();
 
         // Act
-        $this->client->request('GET', '/user/' . $user->getUsername() . '/search');
+        $this->client->request(Request::METHOD_GET, '/user/' . $user->getUsername() . '/search');
 
         // Assert
         $this->assertTrue($this->client->getResponse()->isNotFound());
@@ -225,7 +227,7 @@ class SearchTest extends AppTestCase
         $album = AlbumFactory::createOne(['title' => 'Frieren collection', 'owner' => $user]);
 
         // Act
-        $this->client->request('GET', '/search/autocomplete/fri');
+        $this->client->request(Request::METHOD_GET, '/search/autocomplete/fri');
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -251,7 +253,7 @@ class SearchTest extends AppTestCase
         $item2 = ItemFactory::createOne(['name' => 'Frieren 9791032710838', 'collection' => $collectionFrieren, 'owner' => $user, 'createdAt' => $now]);
 
         // Act
-        $this->client->request('GET', '/search/autocomplete/9791032710838');
+        $this->client->request(Request::METHOD_GET, '/search/autocomplete/9791032710838');
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -273,7 +275,7 @@ class SearchTest extends AppTestCase
         $item2 = ItemFactory::createOne(['name' => 'Frieren 9791032710838', 'collection' => $collectionFrieren, 'owner' => $user, 'createdAt' => $now]);
 
         // Act
-        $this->client->request('GET', '/search/autocomplete/9791032710838');
+        $this->client->request(Request::METHOD_GET, '/search/autocomplete/9791032710838');
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -295,7 +297,7 @@ class SearchTest extends AppTestCase
         $album = AlbumFactory::createOne(['title' => 'Frieren collection', 'owner' => $user]);
 
         // Act
-        $this->client->request('GET', '/user/' . $user->getUsername() . '/search/autocomplete/fri');
+        $this->client->request(Request::METHOD_GET, '/user/' . $user->getUsername() . '/search/autocomplete/fri');
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -321,7 +323,7 @@ class SearchTest extends AppTestCase
         AlbumFactory::createOne(['title' => 'Frieren collection', 'owner' => $user, 'visibility' => VisibilityEnum::VISIBILITY_PRIVATE]);
 
         // Act
-        $this->client->request('GET', '/user/' . $user->getUsername() . '/search/autocomplete/fri');
+        $this->client->request(Request::METHOD_GET, '/user/' . $user->getUsername() . '/search/autocomplete/fri');
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -336,7 +338,7 @@ class SearchTest extends AppTestCase
         $user = UserFactory::createOne(['visibility' => VisibilityEnum::VISIBILITY_PRIVATE])->_real();
 
         // Act
-        $this->client->request('GET', '/user/' . $user->getUsername() . '/search/autocomplete');
+        $this->client->request(Request::METHOD_GET, '/user/' . $user->getUsername() . '/search/autocomplete');
 
         // Assert
         $this->assertTrue($this->client->getResponse()->isNotFound());

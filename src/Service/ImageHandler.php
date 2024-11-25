@@ -24,7 +24,7 @@ class ImageHandler
         private readonly Security $security,
         private readonly ConfigurationRepository $configurationRepository,
         #[Autowire('%kernel.project_dir%/public')] private readonly string $publicPath,
-        #[Autowire('%kernel.environment%')] private readonly string $env
+        #[Autowire(param: 'kernel.environment')] private readonly string $env
     ) {
         $this->accessor = PropertyAccess::createPropertyAccessor();
     }

@@ -8,6 +8,7 @@ use Rector\CodingStyle\Rector\Encapsed\EncapsedStringsToSprintfRector;
 use Rector\Config\RectorConfig;
 use Rector\Doctrine\CodeQuality\Rector\Property\ImproveDoctrineCollectionDocTypeInEntityRector;
 use Rector\Doctrine\Set\DoctrineSetList;
+use Rector\Php84\Rector\Param\ExplicitNullableParamTypeRector;
 use Rector\PHPUnit\Set\PHPUnitSetList;
 use Rector\Set\ValueObject\SetList;
 use Rector\Symfony\CodeQuality\Rector\Class_\EventListenerToEventSubscriberRector;
@@ -30,7 +31,6 @@ use Rector\Php71\Rector\List_\ListToArrayDestructRector;
 use Rector\TypeDeclaration\Rector\ClassMethod\AddVoidReturnTypeWhereNoReturnRector;
 use Rector\Renaming\Rector\Name\RenameClassRector;
 use Rector\Renaming\Rector\ClassConstFetch\RenameClassConstFetchRector;
-
 
 return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->paths([
@@ -68,6 +68,8 @@ return static function (RectorConfig $rectorConfig): void {
         AddOverrideAttributeToOverriddenMethodsRector::class,
         AddTypeToConstRector::class,
 
+        // PHP 8.4
+        ExplicitNullableParamTypeRector::class,
 
         //Type declaration
         AddVoidReturnTypeWhereNoReturnRector::class,

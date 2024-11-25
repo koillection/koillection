@@ -61,6 +61,7 @@ class Inventory implements BreadcrumbableInterface, LoggableInterface, \Stringab
         $this->id = Uuid::v7()->toRfc4122();
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return $this->getName() ?? '';
@@ -86,6 +87,7 @@ class Inventory implements BreadcrumbableInterface, LoggableInterface, \Stringab
         return $totalItems;
     }
 
+    #[\Override]
     public function getId(): ?string
     {
         return $this->id;
@@ -139,6 +141,7 @@ class Inventory implements BreadcrumbableInterface, LoggableInterface, \Stringab
         return $this;
     }
 
+    #[\Override]
     public function getOwner(): ?User
     {
         return $this->owner;

@@ -171,6 +171,7 @@ class Collection implements LoggableInterface, BreadcrumbableInterface, Cacheabl
         $this->itemsDisplayConfiguration = new DisplayConfiguration();
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return $this->getTitle() ?? '';
@@ -187,6 +188,7 @@ class Collection implements LoggableInterface, BreadcrumbableInterface, Cacheabl
         return null;
     }
 
+    #[\Override]
     public function getId(): ?string
     {
         return $this->id;
@@ -295,6 +297,7 @@ class Collection implements LoggableInterface, BreadcrumbableInterface, Cacheabl
         return $this;
     }
 
+    #[\Override]
     public function getOwner(): ?User
     {
         return $this->owner;
@@ -439,6 +442,7 @@ class Collection implements LoggableInterface, BreadcrumbableInterface, Cacheabl
         return $this;
     }
 
+    #[\Override]
     public function updateDescendantsVisibility(): self
     {
         foreach ($this->getData() as $datum) {

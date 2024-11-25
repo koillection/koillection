@@ -23,6 +23,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ScrapingCollectionType extends AbstractType
 {
+    #[\Override]
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
@@ -57,7 +58,7 @@ class ScrapingCollectionType extends AbstractType
             ])
         ;
 
-        $formModifier = static function (FormInterface $form, Scraper $scraper = null): void {
+        $formModifier = static function (FormInterface $form, ?Scraper $scraper = null): void {
             $choices = $scraper instanceof \App\Entity\Scraper ? $scraper->getDataPaths() : [];
             $form->add('dataToScrap', EntityType::class, [
                 'class' => Path::class,
@@ -86,6 +87,7 @@ class ScrapingCollectionType extends AbstractType
         );
     }
 
+    #[\Override]
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([

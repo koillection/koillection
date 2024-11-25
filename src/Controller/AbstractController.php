@@ -44,7 +44,7 @@ abstract class AbstractController extends SymfonyAbstractController
 
     public function createDeleteForm(
         string $url,
-        User|Album|Collection|Inventory|Item|Loan|Photo|TagCategory|Tag|Template|Wish|Wishlist|ChoiceList|Scraper $entity = null
+        User|Album|Collection|Inventory|Item|Loan|Photo|TagCategory|Tag|Template|Wish|Wishlist|ChoiceList|Scraper|null $entity = null
     ): FormInterface {
         $params = [];
         if ($entity !== null) {

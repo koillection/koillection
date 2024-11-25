@@ -67,11 +67,13 @@ class ChoiceList implements BreadcrumbableInterface, LoggableInterface, \Stringa
         $this->id = Uuid::v7()->toRfc4122();
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return $this->getName() ?? '';
     }
 
+    #[\Override]
     public function getId(): ?string
     {
         return $this->id;
@@ -101,6 +103,7 @@ class ChoiceList implements BreadcrumbableInterface, LoggableInterface, \Stringa
         return $this;
     }
 
+    #[\Override]
     public function getOwner(): ?User
     {
         return $this->owner;

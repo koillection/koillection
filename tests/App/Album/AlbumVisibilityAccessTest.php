@@ -11,6 +11,7 @@ use App\Tests\Factory\PhotoFactory;
 use App\Tests\Factory\UserFactory;
 use PHPUnit\Framework\Attributes\TestWith;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Zenstruck\Foundry\Test\Factories;
 use Zenstruck\Foundry\Test\ResetDatabase;
@@ -22,6 +23,7 @@ class AlbumVisibilityAccessTest extends AppTestCase
 
     private KernelBrowser $client;
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->client = static::createClient();
@@ -37,7 +39,7 @@ class AlbumVisibilityAccessTest extends AppTestCase
         AlbumFactory::createOne(['owner' => $user, 'visibility' => VisibilityEnum::VISIBILITY_PRIVATE]);
 
         // Act
-        $crawler = $this->client->request('GET', "/user/{$user->getUsername()}/albums");
+        $crawler = $this->client->request(Request::METHOD_GET, "/user/{$user->getUsername()}/albums");
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -57,7 +59,7 @@ class AlbumVisibilityAccessTest extends AppTestCase
         $this->client->loginUser($otherUser);
 
         // Act
-        $crawler = $this->client->request('GET', "/user/{$user->getUsername()}/albums");
+        $crawler = $this->client->request(Request::METHOD_GET, "/user/{$user->getUsername()}/albums");
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -75,7 +77,7 @@ class AlbumVisibilityAccessTest extends AppTestCase
 
         // Act
         $this->client->loginUser($user);
-        $crawler = $this->client->request('GET', "/albums");
+        $crawler = $this->client->request(Request::METHOD_GET, "/albums");
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -101,8 +103,8 @@ class AlbumVisibilityAccessTest extends AppTestCase
         PhotoFactory::createOne(['owner' => $user, 'album' => $album, 'visibility' => VisibilityEnum::VISIBILITY_PRIVATE]);
 
         // Act
-        $this->client->request('GET', "/user/{$user->getUsername()}/albums"); //Don't know why it's needed, it seems like $album isn't properly initialized, maybe from some cache
-        $crawler = $this->client->request('GET', "/user/{$user->getUsername()}/albums/{$album->getId()}");
+        $this->client->request(Request::METHOD_GET, "/user/{$user->getUsername()}/albums"); //Don't know why it's needed, it seems like $album isn't properly initialized, maybe from some cache
+        $crawler = $this->client->request(Request::METHOD_GET, "/user/{$user->getUsername()}/albums/{$album->getId()}");
 
         // Assert
         if ($shouldSucceed) {
@@ -135,8 +137,9 @@ class AlbumVisibilityAccessTest extends AppTestCase
         // Act
         $otherUser = UserFactory::createOne()->_real();
         $this->client->loginUser($otherUser);
-        $this->client->request('GET', "/user/{$user->getUsername()}/albums"); //Don't know why it's needed, it seems like $album isn't properly initialized, maybe from some cache
-        $crawler = $this->client->request('GET', "/user/{$user->getUsername()}/albums/{$album->getId()}");
+        $this->client->request(Request::METHOD_GET, "/user/{$user->getUsername()}/albums");
+         //Don't know why it's needed, it seems like $album isn't properly initialized, maybe from some cache
+        $crawler = $this->client->request(Request::METHOD_GET, "/user/{$user->getUsername()}/albums/{$album->getId()}");
 
         // Assert
         if ($shouldSucceed) {
@@ -168,7 +171,7 @@ class AlbumVisibilityAccessTest extends AppTestCase
 
         // Act
         $this->client->loginUser($user);
-        $crawler = $this->client->request('GET', "/albums/{$album->getId()}");
+        $crawler = $this->client->request(Request::METHOD_GET, "/albums/{$album->getId()}");
 
         // Assert
         $this->assertResponseIsSuccessful();

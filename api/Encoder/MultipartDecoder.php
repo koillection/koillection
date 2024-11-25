@@ -10,12 +10,13 @@ use Symfony\Component\Serializer\Encoder\DecoderInterface;
 
 final readonly class MultipartDecoder implements DecoderInterface
 {
-    public const FORMAT = 'multipart';
+    public const string FORMAT = 'multipart';
 
     public function __construct(private readonly RequestStack $requestStack)
     {
     }
 
+    #[\Override]
     public function decode(string $data, string $format, array $context = []): ?array
     {
         $request = $this->requestStack->getCurrentRequest();
@@ -33,6 +34,7 @@ final readonly class MultipartDecoder implements DecoderInterface
         }, $request->request->all()) + $request->files->all() + $content;
     }
 
+    #[\Override]
     public function supportsDecoding(string $format): bool
     {
         return self::FORMAT === $format;

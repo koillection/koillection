@@ -13,6 +13,7 @@ use App\Tests\Factory\ItemFactory;
 use App\Tests\Factory\UserFactory;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Component\DomCrawler\Crawler;
+use Symfony\Component\HttpFoundation\Request;
 use Zenstruck\Foundry\Test\Factories;
 use Zenstruck\Foundry\Test\ResetDatabase;
 
@@ -23,6 +24,7 @@ class DatumTest extends AppTestCase
 
     private KernelBrowser $client;
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->client = static::createClient();
@@ -38,7 +40,7 @@ class DatumTest extends AppTestCase
         foreach (DatumTypeEnum::TYPES as $type) {
             if ($type !== DatumTypeEnum::TYPE_CHOICE_LIST) {
                 // Act
-                $this->client->request('GET', '/datum/' . $type);
+                $this->client->request(Request::METHOD_GET, '/datum/' . $type);
 
                 // Assert
                 $this->assertResponseIsSuccessful();
@@ -55,7 +57,7 @@ class DatumTest extends AppTestCase
         $choiceList = ChoiceListFactory::createOne(['owner' => $user]);
 
         // Act
-        $this->client->request('GET', '/datum/choice-list/' . $choiceList->getId());
+        $this->client->request(Request::METHOD_GET, '/datum/choice-list/' . $choiceList->getId());
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -82,7 +84,7 @@ class DatumTest extends AppTestCase
         DatumFactory::createOne(['owner' => $user, 'item' => $item2, 'position' => 2, 'type' => DatumTypeEnum::TYPE_NUMBER, 'label' => 'Volume', 'value' => '2']);
 
         // Act
-        $this->client->request('GET', '/datum/load-common-fields/' . $collection->getId());
+        $this->client->request(Request::METHOD_GET, '/datum/load-common-fields/' . $collection->getId());
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -108,7 +110,7 @@ class DatumTest extends AppTestCase
         DatumFactory::createOne(['owner' => $user, 'collection' => $collection, 'position' => 2, 'type' => DatumTypeEnum::TYPE_COUNTRY, 'label' => 'Country', 'value' => 'JP']);
 
         // Act
-        $response = $this->client->request('GET', '/datum/load-collection-fields/' . $collection->getId());
+        $this->client->request(Request::METHOD_GET, '/datum/load-collection-fields/' . $collection->getId());
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -135,7 +137,7 @@ class DatumTest extends AppTestCase
         DatumFactory::createOne(['owner' => $user, 'item' => $item, 'position' => 5, 'type' => DatumTypeEnum::TYPE_CHOICE_LIST, 'label' => 'Status', 'value' => json_encode(['In progress', 'Fake']), 'choiceList' => $choiceList]);
 
         // Act
-        $this->client->request('GET', '/items/' . $item->getId() . '/edit');
+        $this->client->request(Request::METHOD_GET, '/items/' . $item->getId() . '/edit');
         $crawler = $this->client->submitForm('Submit', [
             'item[name]' => $item->getName(),
             'item[collection]' => $collection->getId(),

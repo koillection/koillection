@@ -13,6 +13,7 @@ class DatumLabelNotExistsInParent extends Constraint
 
     public string $mode = 'strict';
 
+    #[\Override]
     public function validatedBy(): string
     {
         return static::class . 'Validator';

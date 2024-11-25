@@ -11,11 +11,13 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ModelTransformerExtension extends AbstractTypeExtension
 {
+    #[\Override]
     public static function getExtendedTypes(): iterable
     {
         return [FormType::class];
     }
 
+    #[\Override]
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         parent::buildForm($builder, $options);
@@ -25,6 +27,7 @@ class ModelTransformerExtension extends AbstractTypeExtension
         }
     }
 
+    #[\Override]
     public function configureOptions(OptionsResolver $resolver): void
     {
         parent::configureOptions($resolver);

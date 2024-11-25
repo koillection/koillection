@@ -7,6 +7,7 @@ namespace App\Tests\App\Admin;
 use App\Tests\AppTestCase;
 use App\Tests\Factory\UserFactory;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
+use Symfony\Component\HttpFoundation\Request;
 use Zenstruck\Foundry\Test\Factories;
 use Zenstruck\Foundry\Test\ResetDatabase;
 
@@ -17,6 +18,7 @@ class RegularUserTest extends AppTestCase
 
     private KernelBrowser $client;
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->client = static::createClient();
@@ -29,7 +31,7 @@ class RegularUserTest extends AppTestCase
         $this->client->loginUser($user);
 
         // Act
-        $this->client->request('GET', '/admin');
+        $this->client->request(Request::METHOD_GET, '/admin');
 
         // Assert
         $this->assertTrue($this->client->getResponse()->isForbidden());
@@ -42,7 +44,7 @@ class RegularUserTest extends AppTestCase
         $this->client->loginUser($user);
 
         // Act
-        $this->client->request('GET', '/admin/users');
+        $this->client->request(Request::METHOD_GET, '/admin/users');
 
         // Assert
         $this->assertTrue($this->client->getResponse()->isForbidden());
@@ -55,7 +57,7 @@ class RegularUserTest extends AppTestCase
         $this->client->loginUser($user);
 
         // Act
-        $this->client->request('GET', '/admin/users/add');
+        $this->client->request(Request::METHOD_GET, '/admin/users/add');
 
         // Assert
         $this->assertTrue($this->client->getResponse()->isForbidden());
@@ -68,7 +70,7 @@ class RegularUserTest extends AppTestCase
         $this->client->loginUser($user);
 
         // Act
-        $this->client->request('POST', '/admin/users/add');
+        $this->client->request(Request::METHOD_POST, '/admin/users/add');
 
         // Assert
         $this->assertTrue($this->client->getResponse()->isForbidden());
@@ -81,7 +83,7 @@ class RegularUserTest extends AppTestCase
         $this->client->loginUser($user);
 
         // Act
-        $this->client->request('GET', '/admin/users/' . $user->getId() . '/edit');
+        $this->client->request(Request::METHOD_GET, '/admin/users/' . $user->getId() . '/edit');
 
         // Assert
         $this->assertTrue($this->client->getResponse()->isForbidden());
@@ -94,7 +96,7 @@ class RegularUserTest extends AppTestCase
         $this->client->loginUser($user);
 
         // Act
-        $this->client->request('POST', '/admin/users/' . $user->getId() . '/edit');
+        $this->client->request(Request::METHOD_POST, '/admin/users/' . $user->getId() . '/edit');
 
         // Assert
         $this->assertTrue($this->client->getResponse()->isForbidden());
@@ -107,7 +109,7 @@ class RegularUserTest extends AppTestCase
         $this->client->loginUser($user);
 
         // Act
-        $this->client->request('POST', '/admin/users/' . $user->getId() . '/delete');
+        $this->client->request(Request::METHOD_POST, '/admin/users/' . $user->getId() . '/delete');
 
         // Assert
         $this->assertTrue($this->client->getResponse()->isForbidden());
@@ -120,7 +122,7 @@ class RegularUserTest extends AppTestCase
         $this->client->loginUser($user);
 
         // Act
-        $this->client->request('POST', '/admin/configuration');
+        $this->client->request(Request::METHOD_POST, '/admin/configuration');
 
         // Assert
         $this->assertTrue($this->client->getResponse()->isForbidden());

@@ -10,6 +10,7 @@ use Zenstruck\Foundry\Persistence\PersistentProxyObjectFactory;
 
 final class AlbumFactory extends PersistentProxyObjectFactory
 {
+    #[\Override]
     protected function defaults(): array|callable
     {
         return [
@@ -36,6 +37,7 @@ final class AlbumFactory extends PersistentProxyObjectFactory
         ];
     }
 
+    #[\Override]
     protected function initialize(): static
     {
         return $this
@@ -46,6 +48,7 @@ final class AlbumFactory extends PersistentProxyObjectFactory
         ;
     }
 
+    #[\Override]
     public static function class(): string
     {
         return Album::class;

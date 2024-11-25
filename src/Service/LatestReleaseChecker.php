@@ -24,7 +24,7 @@ class LatestReleaseChecker
 
     public function __construct(
         private readonly HttpClientInterface $client,
-        #[Autowire('%release%')] private readonly string $currentRelease
+        #[Autowire(param: 'release')] private readonly string $currentRelease
     ) {
     }
 

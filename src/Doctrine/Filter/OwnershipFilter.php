@@ -10,6 +10,7 @@ use Doctrine\ORM\Query\Filter\SQLFilter;
 
 class OwnershipFilter extends SQLFilter
 {
+    #[\Override]
     public function addFilterConstraint(ClassMetadata $targetEntity, $targetTableAlias): string
     {
         if ($targetEntity->getReflectionClass()->hasProperty('owner')) {

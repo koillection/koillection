@@ -9,6 +9,7 @@ use Twig\TwigFunction;
 
 class EnumExtension extends AbstractExtension
 {
+    #[\Override]
     public function getFunctions(): array
     {
         return [

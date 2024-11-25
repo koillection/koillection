@@ -16,7 +16,7 @@ class BreadcrumbRuntime implements RuntimeExtensionInterface
     ) {
     }
 
-    public function buildBreadcrumb(array $root = [], object $entity = null, string $action = null, $parent = null): array
+    public function buildBreadcrumb(array $root = [], ?object $entity = null, ?string $action = null, $parent = null): array
     {
         $breadcrumb = [];
 

@@ -12,10 +12,11 @@ use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 class AvailableLocaleValidator extends ChoiceValidator
 {
     public function __construct(
-        #[Autowire('%kernel.enabled_locales%')] private readonly array $enabledLocales
+        #[Autowire(param: 'kernel.enabled_locales')] private readonly array $enabledLocales
     ) {
     }
 
+    #[\Override]
     public function validate($value, Constraint $constraint): void
     {
         if (!$constraint instanceof AvailableLocale) {

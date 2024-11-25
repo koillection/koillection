@@ -11,6 +11,7 @@ use App\Tests\Factory\WishFactory;
 use App\Tests\Factory\WishlistFactory;
 use PHPUnit\Framework\Attributes\TestWith;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Zenstruck\Foundry\Test\Factories;
 use Zenstruck\Foundry\Test\ResetDatabase;
@@ -22,6 +23,7 @@ class WishlistVisibilityAccessTest extends AppTestCase
 
     private KernelBrowser $client;
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->client = static::createClient();
@@ -37,7 +39,7 @@ class WishlistVisibilityAccessTest extends AppTestCase
         WishlistFactory::createOne(['owner' => $user, 'visibility' => VisibilityEnum::VISIBILITY_PRIVATE]);
 
         // Act
-        $crawler = $this->client->request('GET', "/user/{$user->getUsername()}/wishlists");
+        $crawler = $this->client->request(Request::METHOD_GET, "/user/{$user->getUsername()}/wishlists");
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -57,7 +59,7 @@ class WishlistVisibilityAccessTest extends AppTestCase
         $this->client->loginUser($otherUser);
 
         // Act
-        $crawler = $this->client->request('GET', "/user/{$user->getUsername()}/wishlists");
+        $crawler = $this->client->request(Request::METHOD_GET, "/user/{$user->getUsername()}/wishlists");
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -75,7 +77,7 @@ class WishlistVisibilityAccessTest extends AppTestCase
 
         // Act
         $this->client->loginUser($user);
-        $crawler = $this->client->request('GET', "/wishlists");
+        $crawler = $this->client->request(Request::METHOD_GET, "/wishlists");
 
         // Assert
         $this->assertResponseIsSuccessful();
@@ -101,8 +103,8 @@ class WishlistVisibilityAccessTest extends AppTestCase
         WishFactory::createOne(['owner' => $user, 'wishlist' => $wishlist, 'visibility' => VisibilityEnum::VISIBILITY_PRIVATE]);
 
         // Act
-        $this->client->request('GET', "/user/{$user->getUsername()}/wishlists"); //Don't know why it's needed, it seems like $wishlist isn't properly initialized, maybe from some cache
-        $crawler = $this->client->request('GET', "/user/{$user->getUsername()}/wishlists/{$wishlist->getId()}");
+        $this->client->request(Request::METHOD_GET, "/user/{$user->getUsername()}/wishlists"); //Don't know why it's needed, it seems like $wishlist isn't properly initialized, maybe from some cache
+        $crawler = $this->client->request(Request::METHOD_GET, "/user/{$user->getUsername()}/wishlists/{$wishlist->getId()}");
 
         // Assert
         if ($shouldSucceed) {
@@ -135,8 +137,9 @@ class WishlistVisibilityAccessTest extends AppTestCase
         // Act
         $otherUser = UserFactory::createOne()->_real();
         $this->client->loginUser($otherUser);
-        $this->client->request('GET', "/user/{$user->getUsername()}/wishlists"); //Don't know why it's needed, it seems like $wishlist isn't properly initialized, maybe from some cache
-        $crawler = $this->client->request('GET', "/user/{$user->getUsername()}/wishlists/{$wishlist->getId()}");
+        $this->client->request(Request::METHOD_GET, "/user/{$user->getUsername()}/wishlists");
+         //Don't know why it's needed, it seems like $wishlist isn't properly initialized, maybe from some cache
+        $crawler = $this->client->request(Request::METHOD_GET, "/user/{$user->getUsername()}/wishlists/{$wishlist->getId()}");
 
         // Assert
         if ($shouldSucceed) {
@@ -168,7 +171,7 @@ class WishlistVisibilityAccessTest extends AppTestCase
 
         // Act
         $this->client->loginUser($user);
-        $crawler = $this->client->request('GET', "/wishlists/{$wishlist->getId()}");
+        $crawler = $this->client->request(Request::METHOD_GET, "/wishlists/{$wishlist->getId()}");
 
         // Assert
         $this->assertResponseIsSuccessful();

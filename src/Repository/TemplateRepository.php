@@ -16,6 +16,7 @@ class TemplateRepository extends ServiceEntityRepository
         parent::__construct($registry, Template::class);
     }
 
+    #[\Override]
     public function findAll(): array
     {
         return $this

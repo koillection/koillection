@@ -19,6 +19,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ScraperType extends AbstractType
 {
+    #[\Override]
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $scraper = $builder->getData();
@@ -81,6 +82,7 @@ class ScraperType extends AbstractType
         );
     }
 
+    #[\Override]
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([

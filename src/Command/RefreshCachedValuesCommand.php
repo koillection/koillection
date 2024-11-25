@@ -22,6 +22,7 @@ class RefreshCachedValuesCommand extends Command
         parent::__construct();
     }
 
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->cachedValuesCalculator->refreshAllCaches($output);

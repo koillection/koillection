@@ -79,11 +79,13 @@ class TagCategory implements BreadcrumbableInterface, LoggableInterface, \String
         $this->tags = new ArrayCollection();
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return $this->getLabel() ?? '';
     }
 
+    #[\Override]
     public function getId(): ?string
     {
         return $this->id;
@@ -149,6 +151,7 @@ class TagCategory implements BreadcrumbableInterface, LoggableInterface, \String
         return $this;
     }
 
+    #[\Override]
     public function getOwner(): ?User
     {
         return $this->owner;

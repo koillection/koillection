@@ -12,6 +12,7 @@ class Base64ToImageTransformer implements DataTransformerInterface
 {
     private ?string $originalBase64 = null;
 
+    #[\Override]
     public function transform($file): ?string
     {
         if ($file instanceof File && $file->getRealPath()) {
@@ -25,6 +26,7 @@ class Base64ToImageTransformer implements DataTransformerInterface
         return null;
     }
 
+    #[\Override]
     public function reverseTransform($base64): ?UploadedFile
     {
         if (null === $base64 || $base64 === $this->originalBase64) {

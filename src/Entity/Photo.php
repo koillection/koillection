@@ -121,11 +121,13 @@ class Photo implements CacheableInterface, LoggableInterface, VisibleInterface, 
         $this->id = Uuid::v7()->toRfc4122();
     }
 
+    #[\Override]
     public function getId(): ?string
     {
         return $this->id;
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return $this->getTitle() ?? '';
@@ -216,6 +218,7 @@ class Photo implements CacheableInterface, LoggableInterface, VisibleInterface, 
         return $this;
     }
 
+    #[\Override]
     public function getOwner(): ?User
     {
         return $this->owner;
@@ -272,6 +275,7 @@ class Photo implements CacheableInterface, LoggableInterface, VisibleInterface, 
         return $this;
     }
 
+    #[\Override]
     public function updateDescendantsVisibility(): self
     {
         return $this;

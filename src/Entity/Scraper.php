@@ -64,11 +64,13 @@ class Scraper implements BreadcrumbableInterface, \Stringable
         $this->dataPaths = new ArrayCollection();
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return $this->getName() ?? '';
     }
 
+    #[\Override]
     public function getId(): ?string
     {
         return $this->id;
@@ -162,6 +164,7 @@ class Scraper implements BreadcrumbableInterface, \Stringable
         return $this;
     }
 
+    #[\Override]
     public function getOwner(): ?User
     {
         return $this->owner;
