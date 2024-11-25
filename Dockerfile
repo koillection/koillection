@@ -33,17 +33,17 @@ RUN apt-get update && \
     unzip \
     nginx-light \
     openssl \
-    php8.3 \
-    php8.3-apcu \
-    php8.3-curl \
-    php8.3-pgsql \
-    php8.3-mysql \
-    php8.3-mbstring \
-    php8.3-gd \
-    php8.3-xml \
-    php8.3-zip \
-    php8.3-fpm \
-    php8.3-intl \
+    php8.4 \
+    php8.4-apcu \
+    php8.4-curl \
+    php8.4-pgsql \
+    php8.4-mysql \
+    php8.4-mbstring \
+    php8.4-gd \
+    php8.4-xml \
+    php8.4-zip \
+    php8.4-fpm \
+    php8.4-intl \
     nodejs && \
 #Install composer dependencies
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
@@ -70,13 +70,13 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* && \
     rm -rf /usr/local/bin/composer && \
 # Set permissions \
-    sed -i "s/user = www-data/user = $USER/g" /etc/php/8.3/fpm/pool.d/www.conf && \
-    sed -i "s/group = www-data/group = $USER/g" /etc/php/8.3/fpm/pool.d/www.conf && \
+    sed -i "s/user = www-data/user = $USER/g" /etc/php/8.4/fpm/pool.d/www.conf && \
+    sed -i "s/group = www-data/group = $USER/g" /etc/php/8.4/fpm/pool.d/www.conf && \
     chown -R "$USER":"$USER" /var/www/koillection && \
     chmod +x /var/www/koillection/docker/entrypoint.sh && \
 # Add nginx and PHP config files
     cp /var/www/koillection/docker/default.conf /etc/nginx/nginx.conf && \
-    cp /var/www/koillection/docker/php.ini /etc/php/8.3/fpm/conf.d/php.ini
+    cp /var/www/koillection/docker/php.ini /etc/php/8.4/fpm/conf.d/php.ini
 
 EXPOSE 80
 

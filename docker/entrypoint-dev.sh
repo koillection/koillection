@@ -28,12 +28,12 @@ echo "DB_VERSION=${DB_VERSION:-}" >> "/var/www/koillection/.env.local"
 
 echo "CORS_ALLOW_ORIGIN=${CORS_ALLOW_ORIGIN:-'^https?://(localhost|127\.0\.0\.1)(:[0-9]+)?$'}" >> "/var/www/koillection/.env.local"
 
-echo "session.cookie_secure=${HTTPS_ENABLED}" >> /etc/php/8.3/fpm/conf.d/php.ini
-echo "date.timezone=${PHP_TZ}" >> /etc/php/8.3/fpm/conf.d/php.ini
-echo "memory_limit=${PHP_MEMORY_LIMIT:-'512M'}" >> /etc/php/8.3/fpm/conf.d/php.ini
+echo "session.cookie_secure=${HTTPS_ENABLED}" >> /etc/php/8.4/fpm/conf.d/php.ini
+echo "date.timezone=${PHP_TZ}" >> /etc/php/8.4/fpm/conf.d/php.ini
+echo "memory_limit=${PHP_MEMORY_LIMIT:-'512M'}" >> /etc/php/8.4/fpm/conf.d/php.ini
 
-echo "upload_max_filesize=${UPLOAD_MAX_FILESIZE:-'100M'}" >> /etc/php/8.3/fpm/conf.d/php.ini
-echo "post_max_size=${UPLOAD_MAX_FILESIZE:-'100M'}" >> /etc/php/8.3/fpm/conf.d/php.ini
+echo "upload_max_filesize=${UPLOAD_MAX_FILESIZE:-'100M'}" >> /etc/php/8.4/fpm/conf.d/php.ini
+echo "post_max_size=${UPLOAD_MAX_FILESIZE:-'100M'}" >> /etc/php/8.4/fpm/conf.d/php.ini
 sed -i "s/client_max_body_size 100M;/client_max_body_size ${UPLOAD_MAX_FILESIZE:-'100M'};/g" /etc/nginx/nginx.conf
 
 echo "**** Install dependencies ****"
@@ -53,6 +53,6 @@ mkdir -p /logs/nginx
 chown -R www-data:www-data /logs/nginx
 
 echo "**** Setup complete, starting the server. ****"
-php-fpm8.3
+php-fpm8.4
 chown -R www-data:www-data /var/www/koillection/public/uploads
 exec $@
