@@ -256,7 +256,7 @@
     <unit id="8ujnJmR" name="message.wishlist_deleted">
       <segment state="translated">
         <source>Wishlist {wishlist} has been deleted</source>
-        <target>La lista de deseaos {wishlist} ha sido eliminada</target>
+        <target>La lista de deseos {wishlist} ha sido eliminada</target>
       </segment>
     </unit>
     <unit id="zfOqV80" name="form.item_sorting.default_value">

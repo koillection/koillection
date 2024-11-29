@@ -133,64 +133,46 @@
         <target>Закрити</target>
       </segment>
     </unit>
-    <unit id="cEDaX3_" name="statistics.items">
-      <segment state="translated">
-        <source>{count, plural, one {# item} other {# items}}</source>
-        <target>{count, plural, one {# item} other {# items}}</target>
-      </segment>
-    </unit>
     <unit id="w0J8w0G" name="select2.no_results">
       <segment state="translated">
         <source>No results found</source>
-        <target>No results found</target>
+        <target>Результатів не знайдено</target>
       </segment>
     </unit>
     <unit id="vX0eXJK" name="select2.searching">
       <segment state="translated">
         <source>Searching...</source>
-        <target>Searching...</target>
+        <target>Пошук...</target>
       </segment>
     </unit>
     <unit id="VWNWjeJ" name="select2.none">
       <segment state="translated">
         <source>None</source>
-        <target>None</target>
-      </segment>
-    </unit>
-    <unit id="Em6KHMM" name="global.search.more_results">
-      <segment state="translated">
-        <source>{count, plural, one { + # more result} other { + # more results}}</source>
-        <target>{count, plural, one { + # more result} other { + # more results}}</target>
+        <target>Немає</target>
       </segment>
     </unit>
     <unit id="nfDV3tB" name="global.search.no_results">
       <segment state="translated">
         <source>No results</source>
-        <target>No results</target>
+        <target>Нічого не знайдено</target>
       </segment>
     </unit>
     <unit id="V4dRe88" name="global.visibilities.internal.description">
       <segment state="translated">
         <source>Only authenticated users can see this page</source>
-        <target>Only authenticated users can see this page</target>
+        <target>Тільки автентифіковані користувачі можуть бачити цю сторінку</target>
       </segment>
     </unit>
     <unit id="RU9kBPV" name="global.visibilities.public.description">
       <segment state="translated">
         <source>Anyone can see this page</source>
-        <target>Anyone can see this page</target>
+        <target>Будь-хто може побачити цю сторінку</target>
       </segment>
     </unit>
     <unit id="GA2PrMk" name="global.visibilities.private.description">
       <segment state="translated">
         <source>Only I can see this page</source>
-        <target>Only I can see this page</target>
-      </segment>
-    </unit>
-    <unit id="a048xMx" name="label.list_element_value">
-      <segment state="translated">
-        <source>List element value</source>
-        <target>List element value</target>
+        <target>Тільки я можу бачити цю сторінку</target>
       </segment>
     </unit>
   </file>

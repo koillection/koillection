@@ -1,113 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="uk">
   <file id="validators.en">
-    <unit id="3IyvSxa" name="error.datum.cant_be_used_by_both_collections_and_items">
-      <segment state="translated">
-        <source>A datum cannot be used with both item and collection</source>
-        <target>A datum cannot be used with both item and collection</target>
-      </segment>
-    </unit>
-    <unit id="AUVR8TR" name="error.datum.must_provide_collection_or_item">
-      <segment state="translated">
-        <source>A collection or an item must be provided</source>
-        <target>A collection or an item must be provided</target>
-      </segment>
-    </unit>
-    <unit id="7OcgSlg" name="error.email.not_unique">
-      <segment state="translated">
-        <source>Email address already used</source>
-        <target>Email address already used</target>
-      </segment>
-    </unit>
-    <unit id="qoRxC7z" name="error.username.not_unique">
-      <segment state="translated">
-        <source>Username already used</source>
-        <target>Username already used</target>
-      </segment>
-    </unit>
-    <unit id="PjAj0XF" name="error.username.incorrect">
-      <segment state="translated">
-        <source>Username must have between 2 and 32 characters (only letters, numbers and underscores are allowed)</source>
-        <target>Username must have between 2 and 32 characters (only letters, numbers and underscores are allowed)</target>
-      </segment>
-    </unit>
-    <unit id="4Bdfyy1" name="error.password.incorrect">
-      <segment state="translated">
-        <source>Your password must contain at least 8 characters (with at least 1 letter and 1 number)</source>
-        <target>Your password must contain at least 8 characters (with at least 1 letter and 1 number)</target>
-      </segment>
-    </unit>
-    <unit id="4m1Sgo3" name="error.password.not_matching">
-      <segment state="translated">
-        <source>The two passwords are not identical</source>
-        <target>The two passwords are not identical</target>
-      </segment>
-    </unit>
-    <unit id=".OeR.gK" name="error.search.too_short">
-      <segment state="translated">
-        <source>You must enter at least 2 characters</source>
-        <target>You must enter at least 2 characters</target>
-      </segment>
-    </unit>
-    <unit id="_d89Gke" name="error.search.empty">
-      <segment state="translated">
-        <source>Please fill at least one of the fields</source>
-        <target>Please fill at least one of the fields</target>
-      </segment>
-    </unit>
-    <unit id="DVztPk_" name="error.label.must_be_unique">
-      <segment state="translated">
-        <source>"{label}" label is used multiple times, all labels must be unique</source>
-        <target>"{label}" label is used multiple times, all labels must be unique</target>
-      </segment>
-    </unit>
-    <unit id="IV3649l" name="error.parent.is_child_of_current_object">
-      <segment state="translated">
-        <source>The parent can't be one of the children</source>
-        <target>The parent can't be one of the children</target>
-      </segment>
-    </unit>
-    <unit id="tg4uV16" name="error.upload.not_enough_space">
-      <segment state="translated">
-        <source>There is not enough space left on your account to execute this action</source>
-        <target>There is not enough space left on your account to execute this action</target>
-      </segment>
-    </unit>
-    <unit id="vwTDAxs" name="error.datum.value.rating">
-      <segment state="translated">
-        <source>Value must be a string representation of an integer between '0' and '10'</source>
-        <target>Value must be a string representation of an integer between '0' and '10'</target>
-      </segment>
-    </unit>
-    <unit id="1ptFEJZ" name="error.datum.value.checkbox">
-      <segment state="translated">
-        <source>Value must be '0' or '1'</source>
-        <target>Value must be '0' or '1'</target>
-      </segment>
-    </unit>
-    <unit id="Sm7SLSo" name="error.datum.value.price">
-      <segment state="translated">
-        <source>Value must be a string representation of a positive number</source>
-        <target>Value must be a string representation of a positive number</target>
-      </segment>
-    </unit>
-    <unit id="Ho12PpQ" name="error.datum.value.number">
-      <segment state="translated">
-        <source>Value must be a string representation of a number like '3', '3.24', '-4'</source>
-        <target>Value must be a string representation of a number like '3', '3.24', '-4'</target>
-      </segment>
-    </unit>
-    <unit id="TGNG5G2" name="error.datum.value.country">
-      <segment state="translated">
-        <source>Value must be a valid 2 letters country code like 'FR'</source>
-        <target>Value must be a valid 2 letters country code like 'FR'</target>
-      </segment>
-    </unit>
-    <unit id="bZ6z5fo" name="error.datum.value.date">
-      <segment state="translated">
-        <source>Value must be a Y-m-d formated string like '2024-06-10'</source>
-        <target>Value must be a Y-m-d formated string like '2024-06-10'</target>
-      </segment>
-    </unit>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
   </file>
 </xliff>
