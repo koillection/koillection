@@ -20,7 +20,7 @@
         "doctrine/doctrine-migrations-bundle": "3.3.1",
         "doctrine/orm": "3.3.0",
         "doctrine/dbal": "4.2.1",
-        "doctrine/persistence": "3.4.0",
+        "doctrine/persistence": "4.0.0",
         "lexik/jwt-authentication-bundle": "3.1.0",
         "maennchen/zipstream-php": "3.1.1",
         "nelmio/cors-bundle": "2.5.0",
