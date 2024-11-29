@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.5.16] / 2024-11-29
+
+### Miscellaneous
+- Update Docker images to Ubuntu Jammy (benjaminjonard)
+
 ## [1.5.15] / 2024-11-22
 
 ### Features
