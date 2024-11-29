@@ -3424,7 +3424,7 @@ __metadata:
     hotkeys-js: "npm:^3.10.2"
     intl-messageformat: "npm:10.7.7"
     regenerator-runtime: "npm:0.14.1"
-    sortablejs: "npm:1.15.3"
+    sortablejs: "npm:1.15.6"
     stimulus-lightbox: "npm:3.2.0"
     stimulus-use: "npm:0.52.2"
     ts-select2: "npm:^0.2.5"
@@ -4645,10 +4645,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sortablejs@npm:1.15.3":
-  version: 1.15.3
-  resolution: "sortablejs@npm:1.15.3"
-  checksum: 10/85d39a172ef47adedf273afa65daa8aefcbaafd43a5b5c480d8637add93033f5784da697d0d3545d9bb6e11fd71f1847f307ee26be452942f3785a683fd44bb5
+"sortablejs@npm:1.15.6":
+  version: 1.15.6
+  resolution: "sortablejs@npm:1.15.6"
+  checksum: 10/3179071352662e6cff20d7d10792a934fc892a83a01ae09c7e604d2dd51daaf07283b00a8f2b13025f27959ff68a1469959bc94ef2a7049723d4c381a368a5ac
   languageName: node
   linkType: hard
 

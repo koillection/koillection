@@ -20,7 +20,7 @@
     "croppie": "2.6.5",
     "echarts": "5.5.1",
     "regenerator-runtime": "0.14.1",
-    "sortablejs": "1.15.3",
+    "sortablejs": "1.15.6",
     "stimulus-lightbox": "3.2.0",
     "stimulus-use": "0.52.2",
     "webpack": "5.96.1",
@@ -39,5 +39,5 @@
     "intl-messageformat": "10.7.7",
     "ts-select2": "^0.2.5"
   },
-  "packageManager": "yarn@4.5.2"
+  "packageManager": "yarn@4.5.3"
 }
