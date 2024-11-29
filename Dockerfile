@@ -1,4 +1,4 @@
-FROM ubuntu:noble
+FROM ubuntu:jammy
 
 ARG DEBIAN_FRONTEND=noninteractive
 
