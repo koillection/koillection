@@ -481,118 +481,70 @@
         <target>{used} / {total} kullanıldı</target>
       </segment>
     </unit>
-    <unit id="FIesMhl" name="counter.without_number.users">
-      <segment state="translated">
-        <source>{count, plural, one {# user} other {# users}}</source>
-        <target>{count, plural, one {# user} other {# users}}</target>
-      </segment>
-    </unit>
-    <unit id="uVNjha9" name="counter.without_number.collections">
-      <segment state="translated">
-        <source>{count, plural, one {# collection} other {# collections}}</source>
-        <target>{count, plural, one {# collection} other {# collections}}</target>
-      </segment>
-    </unit>
     <unit id="VrJk8jp" name="counter.without_number.items">
       <segment state="translated">
         <source>{count, plural, one {# item} other {# items}}</source>
-        <target>{count, plural, one {# item} other {# items}}</target>
-      </segment>
-    </unit>
-    <unit id="hjM7hgU" name="counter.without_number.tags">
-      <segment state="translated">
-        <source>{count, plural, one {# tag} other {# tags}}</source>
-        <target>{count, plural, one {# tag} other {# tags}}</target>
-      </segment>
-    </unit>
-    <unit id="cw0nkO5" name="counter.without_number.wishlists">
-      <segment state="translated">
-        <source>{count, plural, one {# wishlist} other {# wishlists}}</source>
-        <target>{count, plural, one {# wishlist} other {# wishlists}}</target>
-      </segment>
-    </unit>
-    <unit id="zzagaMI" name="counter.without_number.wishes">
-      <segment state="translated">
-        <source>{count, plural, one {# wish} other {# wishes}}</source>
-        <target>{count, plural, one {# wish} other {# wishes}}</target>
-      </segment>
-    </unit>
-    <unit id="QJMsz.z" name="counter.without_number.albums">
-      <segment state="translated">
-        <source>{count, plural, one {# album} other {# albums}}</source>
-        <target>{count, plural, one {# album} other {# albums}}</target>
-      </segment>
-    </unit>
-    <unit id="YKRNql5" name="counter.without_number.photos">
-      <segment state="translated">
-        <source>{count, plural, one {# photo} other {# photos}}</source>
-        <target>{count, plural, one {# photo} other {# photos}}</target>
-      </segment>
-    </unit>
-    <unit id="aCCqbt1" name="counter.without_number.signs">
-      <segment state="translated">
-        <source>{count, plural, one {# signature} other {# signatures}}</source>
-        <target>{count, plural, one {# signature} other {# signatures}}</target>
+        <target>{count, plural, one {# öğe} other {# öğe}}</target>
       </segment>
     </unit>
     <unit id="jNAS_YE" name="label.space_used_by_koillection">
       <segment state="translated">
         <source>Total space used by Koillection</source>
-        <target>Total space used by Koillection</target>
+        <target>Koillection tarafından kullanılan toplam alan</target>
       </segment>
     </unit>
     <unit id="_wv_IKT" name="title.config">
       <segment state="translated">
         <source>Configuration</source>
-        <target>Configuration</target>
+        <target>Yapılandırma</target>
       </segment>
     </unit>
     <unit id="Z39v_44" name="label.release">
       <segment state="translated">
         <source>Koillection version</source>
-        <target>Koillection version</target>
+        <target>Koillection sürümü</target>
       </segment>
     </unit>
     <unit id="eqnKfFG" name="label.outdated_release">
       <segment state="translated">
         <source>Version {release} is available</source>
-        <target>Version {release} is available</target>
+        <target>{release} sürümü mevcut</target>
       </segment>
     </unit>
     <unit id="EvNVLVb" name="label.required_php_version">
       <segment state="translated">
         <source>PHP {version} is required</source>
-        <target>PHP {version} is required</target>
+        <target>PHP {version} gereklidir</target>
       </segment>
     </unit>
     <unit id="J1HjVfO" name="label.up_to_date_release">
       <segment state="translated">
         <source>The latest version is installed</source>
-        <target>The latest version is installed</target>
+        <target>En son sürüm yüklendi</target>
       </segment>
     </unit>
     <unit id="fGUHPE5" name="label.php_version">
       <segment state="translated">
         <source>PHP version</source>
-        <target>PHP version</target>
+        <target>PHP Versiyonu</target>
       </segment>
     </unit>
     <unit id="nWdqGKI" name="label.symfony_version">
       <segment state="translated">
         <source>Symfony version</source>
-        <target>Symfony version</target>
+        <target>Symfony sürümü</target>
       </segment>
     </unit>
     <unit id="9qQ81pM" name="label.is_opcache_available">
       <segment state="translated">
         <source>Opcache enabled</source>
-        <target>Opcache enabled</target>
+        <target>Opcache etkin</target>
       </segment>
     </unit>
     <unit id="qnAM2jd" name="title.tools">
       <segment state="translated">
         <source>Tools</source>
-        <target>Tools</target>
+        <target>Araçlar</target>
       </segment>
     </unit>
     <unit id="LSyzK7f" name="btn.export_sql">
@@ -604,49 +556,49 @@
     <unit id="Jd.jsk." name="btn.export_images">
       <segment state="translated">
         <source>Images</source>
-        <target>Images</target>
+        <target>Görseller</target>
       </segment>
     </unit>
     <unit id="FcXvWL8" name="title.add_user">
       <segment state="translated">
         <source>Add a user</source>
-        <target>Add a user</target>
+        <target>Kullanıcı ekle</target>
       </segment>
     </unit>
     <unit id="fRQmA2t" name="btn.submit">
       <segment state="translated">
         <source>Submit</source>
-        <target>Submit</target>
+        <target>Gönder</target>
       </segment>
     </unit>
     <unit id="u5LRF8p" name="btn.cancel">
       <segment state="translated">
         <source>Cancel</source>
-        <target>Cancel</target>
+        <target>İptal</target>
       </segment>
     </unit>
     <unit id="wZpNYOE" name="label.space_used_by_user">
       <segment state="translated">
         <source>Total space used by user</source>
-        <target>Total space used by user</target>
+        <target>Kullanıcı tarafından kullanılan toplam alan</target>
       </segment>
     </unit>
     <unit id="1sstKF9" name="title.edit_user">
       <segment state="translated">
         <source>Edit user {user}</source>
-        <target>Edit user {user}</target>
+        <target>{user} kullanıcısını düzenle</target>
       </segment>
     </unit>
     <unit id="fKgc.kW" name="title.users">
       <segment state="translated">
         <source>Users</source>
-        <target>Users</target>
+        <target>Kullanıcılar</target>
       </segment>
     </unit>
     <unit id="ZouqthR" name="btn.add_user">
       <segment state="translated">
         <source>Add a user</source>
-        <target>Add a user</target>
+        <target>Kullanıcı ekle</target>
       </segment>
     </unit>
     <unit id="txRonia" name="label.id">
@@ -658,2935 +610,415 @@
     <unit id="LDhDPrF" name="label.username">
       <segment state="translated">
         <source>Username</source>
-        <target>Username</target>
+        <target>Kullanıcı Adı</target>
       </segment>
     </unit>
     <unit id="O59lP5d" name="label.role">
       <segment state="translated">
         <source>Role</source>
-        <target>Role</target>
+        <target>Rol</target>
       </segment>
     </unit>
     <unit id="D2N6_cP" name="label.email">
       <segment state="translated">
         <source>Email</source>
-        <target>Email</target>
+        <target>E-Posta</target>
       </segment>
     </unit>
     <unit id="Tv.rI94" name="label.disk_space_used">
       <segment state="translated">
         <source>Disk space used</source>
-        <target>Disk space used</target>
+        <target>Kullanılan disk alanı</target>
       </segment>
     </unit>
     <unit id="p1Fs6iF" name="label.disk_space_allowed">
       <segment state="translated">
         <source>Disk space allowed</source>
-        <target>Disk space allowed</target>
+        <target>İzin verilen disk alanı</target>
       </segment>
     </unit>
     <unit id="vMjoUw7" name="label.last_date_of_activity">
       <segment state="translated">
         <source>Last activity</source>
-        <target>Last activity</target>
+        <target>Son etkinlik</target>
       </segment>
     </unit>
     <unit id="zldXQq6" name="label.actions">
       <segment state="translated">
         <source>Actions</source>
-        <target>Actions</target>
+        <target>İşlemler</target>
       </segment>
     </unit>
     <unit id="nbcWSI3" name="tooltip.edit">
       <segment state="translated">
         <source>Edit</source>
-        <target>Edit</target>
+        <target>Düzenle</target>
       </segment>
     </unit>
     <unit id="335X_OI" name="tab.overview">
       <segment state="translated">
         <source>Overview</source>
-        <target>Overview</target>
+        <target>Genel Bakış</target>
       </segment>
     </unit>
     <unit id="MJ22R1T" name="tab.users">
       <segment state="translated">
         <source>Users</source>
-        <target>Users</target>
-      </segment>
-    </unit>
-    <unit id="1NZRNj4" name="counter.photo">
-      <segment state="translated">
-        <source>{count, plural, one {# photo} other {# photos}}</source>
-        <target>{count, plural, one {# photo} other {# photos}}</target>
+        <target>Kullanıcılar</target>
       </segment>
     </unit>
     <unit id="rd2X72s" name="message.delete.photo">
       <segment state="translated">
         <source>Are you sure you want to delete this photo ? It will be permanently lost...</source>
-        <target>Are you sure you want to delete this photo ? It will be permanently lost...</target>
+        <target>Bu fotoğrafı silmek istediğinizden emin misiniz? Kalıcı olarak kaybolacak...</target>
       </segment>
     </unit>
     <unit id="UrRn8xj" name="label.title">
       <segment state="translated">
         <source>Title</source>
-        <target>Title</target>
+        <target>Başlık</target>
       </segment>
     </unit>
     <unit id="H3WsEKh" name="label.visibility">
       <segment state="translated">
         <source>Visibility</source>
-        <target>Visibility</target>
+        <target>Görünürlülük</target>
       </segment>
     </unit>
     <unit id="pRl.hWU" name="title.add_album">
       <segment state="translated">
         <source>Add a new album</source>
-        <target>Add a new album</target>
+        <target>Yeni bir albüm ekle</target>
       </segment>
     </unit>
     <unit id="domeXiF" name="title.edit_album">
       <segment state="translated">
         <source>Edit album {title}</source>
-        <target>Edit album {title}</target>
+        <target>{title} albümünü düzenle</target>
       </segment>
     </unit>
     <unit id="nQDmBI4" name="menu.collections_shared">
       <segment state="translated">
         <source>{username}'s collection</source>
-        <target>{username}'s collection</target>
+        <target>{username} kullanıcısının koleksiyonu</target>
       </segment>
     </unit>
     <unit id="5hMk7ux" name="menu.albums">
       <segment state="translated">
         <source>Albums</source>
-        <target>Albums</target>
-      </segment>
-    </unit>
-    <unit id="9N4x.TV" name="counter.album">
-      <segment state="translated">
-        <source>{count, plural, one {# album} other {# albums}}</source>
-        <target>{count, plural, one {# album} other {# albums}}</target>
+        <target>Albümler</target>
       </segment>
     </unit>
     <unit id="NOenNu3" name="tooltip.add_album">
       <segment state="translated">
         <source>Add a new album</source>
-        <target>Add a new album</target>
+        <target>Yeni bir albüm ekle</target>
       </segment>
     </unit>
     <unit id="A5gFwZv" name="filter.by_name">
       <segment state="translated">
         <source>Filter by name</source>
-        <target>Filter by name</target>
+        <target>İsme göre filtrele</target>
       </segment>
     </unit>
     <unit id="AHajX3P" name="tooltip.add_photo">
       <segment state="translated">
         <source>Add a new photo</source>
-        <target>Add a new photo</target>
+        <target>Yeni bir fotoğraf ekle</target>
       </segment>
     </unit>
     <unit id="ryRhoHH" name="title.album_children">
       <segment state="translated">
         <source>Sub-albums</source>
-        <target>Sub-albums</target>
+        <target>Alt albümler</target>
       </segment>
     </unit>
     <unit id="wP6FDOU" name="title.photos">
       <segment state="translated">
         <source>Photos</source>
-        <target>Photos</target>
+        <target>Fotoğraflar</target>
       </segment>
     </unit>
     <unit id="w9FF849" name="title.choices">
       <segment state="translated">
         <source>Choices</source>
-        <target>Choices</target>
+        <target>Seçenekler</target>
       </segment>
     </unit>
     <unit id="CYUJ8qZ" name="btn.add_choice">
       <segment state="translated">
         <source>Add a new choice</source>
-        <target>Add a new choice</target>
+        <target>Yeni bir seçenek ekle</target>
       </segment>
     </unit>
     <unit id="oOiO8Dn" name="label.choice">
       <segment state="translated">
         <source>Choice</source>
-        <target>Choice</target>
+        <target>Seçenek</target>
       </segment>
     </unit>
     <unit id="uLlCnaG" name="title.new_choice_list">
       <segment state="translated">
         <source>Add a new choice list</source>
-        <target>Add a new choice list</target>
+        <target>Yeni bir seçenek listesi ekle</target>
       </segment>
     </unit>
     <unit id="60Mvg7w" name="title.edit_choice_list">
       <segment state="translated">
         <source>Edit choice list {list}</source>
-        <target>Edit choice list {list}</target>
+        <target>{list} seçenek listesini düzenle</target>
       </segment>
     </unit>
     <unit id="em8w1x." name="menu.choice_lists">
       <segment state="translated">
         <source>Choice lists</source>
-        <target>Choice lists</target>
+        <target>Seçenek listeleri</target>
       </segment>
     </unit>
     <unit id="SMPEMjp" name="counter.choice_lists">
       <segment state="translated">
         <source>{count, plural, one {# choice list} other {# choice lists}}</source>
-        <target>{count, plural, one {# choice list} other {# choice lists}}</target>
+        <target>{count, plural, one {# seçenek listesi} other {# seçenek listesi}}</target>
       </segment>
     </unit>
     <unit id="3yuF9Sl" name="tooltip.add_choice_list">
       <segment state="translated">
         <source>Add a new choice lists</source>
-        <target>Add a new choice lists</target>
+        <target>Yeni bir seçenek listesi ekle</target>
       </segment>
     </unit>
     <unit id="ysOvPSq" name="label.name">
       <segment state="translated">
         <source>Name</source>
-        <target>Name</target>
+        <target>Ad</target>
       </segment>
     </unit>
     <unit id="Mr44cEu" name="label.choices">
       <segment state="translated">
         <source>Choices</source>
-        <target>Choices</target>
+        <target>Seçenekler</target>
       </segment>
     </unit>
     <unit id="I5NrvAz" name="collection.items_settings">
       <segment state="translated">
         <source>Items settings</source>
-        <target>Items settings</target>
-      </segment>
-    </unit>
-    <unit id="7Y63wwX" name="collection.children_settings">
-      <segment state="translated">
-        <source>Sub-collections settings</source>
-        <target>Sub-collections settings</target>
-      </segment>
-    </unit>
-    <unit id="uJUJ6Ir" name="title.data">
-      <segment state="translated">
-        <source>Data</source>
-        <target>Data</target>
-      </segment>
-    </unit>
-    <unit id="ixrxzme" name="label.add_field">
-      <segment state="translated">
-        <source>Add field :</source>
-        <target>Add field :</target>
-      </segment>
-    </unit>
-    <unit id="5l_KSLb" name="btn.add_text">
-      <segment state="translated">
-        <source>Text</source>
-        <target>Text</target>
-      </segment>
-    </unit>
-    <unit id="6wqecTf" name="btn.add_number">
-      <segment state="translated">
-        <source>Number</source>
-        <target>Number</target>
-      </segment>
-    </unit>
-    <unit id="FD827k7" name="btn.add_country">
-      <segment state="translated">
-        <source>Country</source>
-        <target>Country</target>
-      </segment>
-    </unit>
-    <unit id="otAT7D6" name="btn.add_date">
-      <segment state="translated">
-        <source>Date</source>
-        <target>Date</target>
-      </segment>
-    </unit>
-    <unit id="1bwI2L." name="btn.add_file">
-      <segment state="translated">
-        <source>File</source>
-        <target>File</target>
-      </segment>
-    </unit>
-    <unit id="VUlGgVE" name="label.add_choice_list">
-      <segment state="translated">
-        <source>Add choice list :</source>
-        <target>Add choice list :</target>
+        <target>Öğe ayarları</target>
       </segment>
     </unit>
     <unit id=".eH3OZY" name="counter.item">
       <segment state="translated">
         <source>{count, plural, one {# item} other {# items}}</source>
-        <target>{count, plural, one {# item} other {# items}}</target>
-      </segment>
-    </unit>
-    <unit id="AiXAfVP" name="title.add_collection">
-      <segment state="translated">
-        <source>Add a new collection</source>
-        <target>Add a new collection</target>
-      </segment>
-    </unit>
-    <unit id="8yVQg94" name="title.tag_collection">
-      <segment state="translated">
-        <source>Batch tagging {collection}</source>
-        <target>Batch tagging {collection}</target>
-      </segment>
-    </unit>
-    <unit id="KlxVsBD" name="title.edit_collection">
-      <segment state="translated">
-        <source>Edit collection {collection}</source>
-        <target>Edit collection {collection}</target>
-      </segment>
-    </unit>
-    <unit id="MW4FPxn" name="menu.collections">
-      <segment state="translated">
-        <source>Collections</source>
-        <target>Collections</target>
-      </segment>
-    </unit>
-    <unit id="Ttj5ZLt" name="counter.collection">
-      <segment state="translated">
-        <source>{count, plural, one {# collection} other {# collections}}</source>
-        <target>{count, plural, one {# collection} other {# collections}}</target>
-      </segment>
-    </unit>
-    <unit id="0Vhz2n." name="tooltip.add_collection">
-      <segment state="translated">
-        <source>Add a new collection</source>
-        <target>Add a new collection</target>
-      </segment>
-    </unit>
-    <unit id="YHlU3_1" name="title.items">
-      <segment state="translated">
-        <source>Items</source>
-        <target>Items</target>
-      </segment>
-    </unit>
-    <unit id="FTnVc5X" name="tooltip.add_item">
-      <segment state="translated">
-        <source>Add a new item</source>
-        <target>Add a new item</target>
-      </segment>
-    </unit>
-    <unit id="6H1fBLk" name="tooltip.tag">
-      <segment state="translated">
-        <source>Tag</source>
-        <target>Tag</target>
-      </segment>
-    </unit>
-    <unit id="bQoqYij" name="tooltip.items">
-      <segment state="translated">
-        <source>See all items</source>
-        <target>See all items</target>
-      </segment>
-    </unit>
-    <unit id="StAuTu9" name="title.infos">
-      <segment state="translated">
-        <source>Info</source>
-        <target>Info</target>
-      </segment>
-    </unit>
-    <unit id="5_Yv1gK" name="title.children">
-      <segment state="translated">
-        <source>Sub-collections</source>
-        <target>Sub-collections</target>
-      </segment>
-    </unit>
-    <unit id="szWUC0C" name="label.value">
-      <segment state="translated">
-        <source>Value</source>
-        <target>Value</target>
-      </segment>
-    </unit>
-    <unit id="Kp3d.qQ" name="label.label">
-      <segment state="translated">
-        <source>Label</source>
-        <target>Label</target>
-      </segment>
-    </unit>
-    <unit id="yIfRfhZ" name="filter.title.types">
-      <segment state="translated">
-        <source>Types</source>
-        <target>Types</target>
+        <target>{count, plural, one {# öğe} other {# öğe}}</target>
       </segment>
     </unit>
     <unit id="F5Sk8YT" name="filter.title.actions">
       <segment state="translated">
         <source>Actions</source>
-        <target>Actions</target>
-      </segment>
-    </unit>
-    <unit id="0n2CBIS" name="label.event">
-      <segment state="translated">
-        <source>Event</source>
-        <target>Event</target>
-      </segment>
-    </unit>
-    <unit id="WwKLHxh" name="label.logged_at">
-      <segment state="translated">
-        <source>Date</source>
-        <target>Date</target>
-      </segment>
-    </unit>
-    <unit id="Q.3FoSC" name="menu.history">
-      <segment state="translated">
-        <source>History</source>
-        <target>History</target>
+        <target>İşlemler</target>
       </segment>
     </unit>
     <unit id="IxgpiDC" name="counter.total_items">
       <segment state="translated">
         <source>{count, plural, one {# item} other {# items}}</source>
-        <target>{count, plural, one {# item} other {# items}}</target>
-      </segment>
-    </unit>
-    <unit id="EZsGAxN" name="counter.checked_items">
-      <segment state="translated">
-        <source>{count, plural, one {# checked item} other {# checked items}}</source>
-        <target>{count, plural, one {# checked item} other {# checked items}}</target>
-      </segment>
-    </unit>
-    <unit id="gVjxaJZ" name="label.completion_rate">
-      <segment state="translated">
-        <source>{rate}% completed</source>
-        <target>{rate}% completed</target>
-      </segment>
-    </unit>
-    <unit id="i9VapGy" name="title.add_inventory">
-      <segment state="translated">
-        <source>Create a new inventory</source>
-        <target>Create a new inventory</target>
-      </segment>
-    </unit>
-    <unit id="78xJTtJ" name="title.collections">
-      <segment state="translated">
-        <source>Collections</source>
-        <target>Collections</target>
-      </segment>
-    </unit>
-    <unit id="5Tlipav" name="global.all_collections">
-      <segment state="translated">
-        <source>All collections</source>
-        <target>All collections</target>
-      </segment>
-    </unit>
-    <unit id="ACWH3_S" name="label.item.from_collection">
-      <segment state="translated">
-        <source>From collection :</source>
-        <target>From collection :</target>
-      </segment>
-    </unit>
-    <unit id="4O6JaLx" name="tooltip.loan_item">
-      <segment state="translated">
-        <source>Loan this item</source>
-        <target>Loan this item</target>
-      </segment>
-    </unit>
-    <unit id="HmUuNCa" name="label.main_image">
-      <segment state="translated">
-        <source>Main image</source>
-        <target>Main image</target>
-      </segment>
-    </unit>
-    <unit id="Q14jRAj" name="label.list_related_items">
-      <segment state="translated">
-        <source>Related items</source>
-        <target>Related items</target>
-      </segment>
-    </unit>
-    <unit id="DCLoAZA" name="title.additional_fields">
-      <segment state="translated">
-        <source>Additional fields</source>
-        <target>Additional fields</target>
-      </segment>
-    </unit>
-    <unit id="uAfIh0u" name="btn.apply_common_fields">
-      <segment state="translated">
-        <source>Load common fields</source>
-        <target>Load common fields</target>
-      </segment>
-    </unit>
-    <unit id="ImSHWcX" name="btn.apply_collection_fields">
-      <segment state="translated">
-        <source>Load collection fields</source>
-        <target>Load collection fields</target>
-      </segment>
-    </unit>
-    <unit id="ME6A6U0" name="title.related_items">
-      <segment state="translated">
-        <source>Related items</source>
-        <target>Related items</target>
-      </segment>
-    </unit>
-    <unit id="Hxk36Kv" name="btn.submit_and_add_another">
-      <segment state="translated">
-        <source>Submit and add another item</source>
-        <target>Submit and add another item</target>
-      </segment>
-    </unit>
-    <unit id="xlowWy6" name="btn.add_textarea">
-      <segment state="translated">
-        <source>Long text</source>
-        <target>Long text</target>
-      </segment>
-    </unit>
-    <unit id="9qwO627" name="btn.add_rating">
-      <segment state="translated">
-        <source>Rating</source>
-        <target>Rating</target>
-      </segment>
-    </unit>
-    <unit id="g0hND3o" name="btn.add_link">
-      <segment state="translated">
-        <source>Link</source>
-        <target>Link</target>
+        <target>{count, plural, one {# öğe} other {# öğe}}</target>
       </segment>
     </unit>
     <unit id="bWfooH2" name="title.item_images">
       <segment state="translated">
         <source>Images</source>
-        <target>Images</target>
-      </segment>
-    </unit>
-    <unit id="7s.6nrQ" name="btn.add_image">
-      <segment state="translated">
-        <source>Image</source>
-        <target>Image</target>
-      </segment>
-    </unit>
-    <unit id="zCTHmk." name="btn.add_sign">
-      <segment state="translated">
-        <source>Signature</source>
-        <target>Signature</target>
-      </segment>
-    </unit>
-    <unit id="nXRtrJb" name="title.add_item">
-      <segment state="translated">
-        <source>Add a new item</source>
-        <target>Add a new item</target>
-      </segment>
-    </unit>
-    <unit id="0w7FrTh" name="title.edit_item">
-      <segment state="translated">
-        <source>Edit item {item}</source>
-        <target>Edit item {item}</target>
-      </segment>
-    </unit>
-    <unit id="U4lp2Ma" name="global.created_at">
-      <segment state="translated">
-        <source>Creation : {date}</source>
-        <target>Creation : {date}</target>
-      </segment>
-    </unit>
-    <unit id="ylc8ODN" name="global.updated_at">
-      <segment state="translated">
-        <source>Last update : {date}</source>
-        <target>Last update : {date}</target>
-      </segment>
-    </unit>
-    <unit id="VFvXW.m" name="menu.loans">
-      <segment state="translated">
-        <source>Loans</source>
-        <target>Loans</target>
-      </segment>
-    </unit>
-    <unit id="nlD7D9j" name="counter.loan">
-      <segment state="translated">
-        <source>{count, plural, one {# loan} other {# loans}}</source>
-        <target>{count, plural, one {# loan} other {# loans}}</target>
-      </segment>
-    </unit>
-    <unit id="0Nr1G8_" name="counter.returned">
-      <segment state="translated">
-        <source>{count, plural, one {# loan returned} other {# loans returned}}</source>
-        <target>{count, plural, one {# loan returned} other {# loans returned}}</target>
-      </segment>
-    </unit>
-    <unit id="1Jpq5QX" name="tab.loans">
-      <segment state="translated">
-        <source>Loans</source>
-        <target>Loans</target>
-      </segment>
-    </unit>
-    <unit id="F60bUq_" name="tab.returned_items">
-      <segment state="translated">
-        <source>Returned</source>
-        <target>Returned</target>
-      </segment>
-    </unit>
-    <unit id="lYyKRwZ" name="label.loaned_to">
-      <segment state="final">
-        <source>Borrower</source>
-        <target>Borrower</target>
-      </segment>
-    </unit>
-    <unit id="2ZgbVvL" name="label.loaned_at">
-      <segment state="translated">
-        <source>Lent on</source>
-        <target>Lent on</target>
-      </segment>
-    </unit>
-    <unit id="EWnP8ZQ" name="label.loaned_ago">
-      <segment state="translated">
-        <source>Ago</source>
-        <target>Ago</target>
-      </segment>
-    </unit>
-    <unit id="uFEIsab" name="tooltip.returned">
-      <segment state="translated">
-        <source>Returned</source>
-        <target>Returned</target>
-      </segment>
-    </unit>
-    <unit id="R25XMb2" name="label.return_date">
-      <segment state="translated">
-        <source>Return date</source>
-        <target>Return date</target>
-      </segment>
-    </unit>
-    <unit id="Az510BV" name="label.loan_duration">
-      <segment state="translated">
-        <source>Loan duration</source>
-        <target>Loan duration</target>
-      </segment>
-    </unit>
-    <unit id="bmt.5SD" name="title.loan_item">
-      <segment state="translated">
-        <source>Loan item {item}</source>
-        <target>Loan item {item}</target>
-      </segment>
-    </unit>
-    <unit id="tpcX1HE" name="title.add_album_photo">
-      <segment state="translated">
-        <source>Add a new photo to the album {album}</source>
-        <target>Add a new photo to the album {album}</target>
-      </segment>
-    </unit>
-    <unit id="yXxCCBI" name="title.edit_album_photo">
-      <segment state="translated">
-        <source>Edit photo {photo}</source>
-        <target>Edit photo {photo}</target>
-      </segment>
-    </unit>
-    <unit id="XSS5BT8" name="menu.profile">
-      <segment state="translated">
-        <source>Profile</source>
-        <target>Profile</target>
-      </segment>
-    </unit>
-    <unit id="qh23U11" name="title.disk_usage">
-      <segment state="translated">
-        <source>Disk usage</source>
-        <target>Disk usage</target>
-      </segment>
-    </unit>
-    <unit id="PMuodit" name="title.update_profile">
-      <segment state="translated">
-        <source>Edit profile</source>
-        <target>Edit profile</target>
+        <target>Görseller</target>
       </segment>
     </unit>
     <unit id="k6VxCsO" name="menu.search">
       <segment state="translated">
         <source>Search</source>
-        <target>Search</target>
-      </segment>
-    </unit>
-    <unit id="ZtbL6rD" name="title.wishlists">
-      <segment state="translated">
-        <source>Wishlists</source>
-        <target>Wishlists</target>
+        <target>Ara</target>
       </segment>
     </unit>
     <unit id="Gki98oO" name="title.albums">
       <segment state="translated">
         <source>Albums</source>
-        <target>Albums</target>
-      </segment>
-    </unit>
-    <unit id="uzSzjYY" name="title.tags">
-      <segment state="translated">
-        <source>Tags</source>
-        <target>Tags</target>
-      </segment>
-    </unit>
-    <unit id="4cEApe1" name="label.description">
-      <segment state="translated">
-        <source>Description</source>
-        <target>Description</target>
-      </segment>
-    </unit>
-    <unit id="ak1St8x" name="label.number_of_items">
-      <segment state="translated">
-        <source># of items</source>
-        <target># of items</target>
-      </segment>
-    </unit>
-    <unit id="dFDOuk." name="label.percent_of_items">
-      <segment state="translated">
-        <source>Percent of items</source>
-        <target>Percent of items</target>
+        <target>Albümler</target>
       </segment>
     </unit>
     <unit id="xw23vtl" name="message.search_empty">
       <segment state="translated">
         <source>No results</source>
-        <target>No results</target>
-      </segment>
-    </unit>
-    <unit id="wwFFPXP" name="title.first_connection.user">
-      <segment state="translated">
-        <source>First connection</source>
-        <target>First connection</target>
-      </segment>
-    </unit>
-    <unit id="11HETEc" name="global.welcome">
-      <segment state="translated">
-        <source>Welcome to Koillection</source>
-        <target>Welcome to Koillection</target>
-      </segment>
-    </unit>
-    <unit id="S92egy5" name="title.sign_in">
-      <segment state="translated">
-        <source>Sign in</source>
-        <target>Sign in</target>
-      </segment>
-    </unit>
-    <unit id="ZAtrhtu" name="label.login">
-      <segment state="translated">
-        <source>Username or email</source>
-        <target>Username or email</target>
-      </segment>
-    </unit>
-    <unit id="9pvowqn" name="label.password">
-      <segment state="translated">
-        <source>Password</source>
-        <target>Password</target>
-      </segment>
-    </unit>
-    <unit id="B0loISu" name="label.remember_me">
-      <segment state="translated">
-        <source>Keep me logged in</source>
-        <target>Keep me logged in</target>
-      </segment>
-    </unit>
-    <unit id="IPh2SKn" name="btn.sign_in">
-      <segment state="translated">
-        <source>Sign in</source>
-        <target>Sign in</target>
-      </segment>
-    </unit>
-    <unit id="4UTsL.X" name="menu.settings">
-      <segment state="translated">
-        <source>Settings</source>
-        <target>Settings</target>
-      </segment>
-    </unit>
-    <unit id="RDD2bMy" name="title.update_settings">
-      <segment state="translated">
-        <source>Edit settings</source>
-        <target>Edit settings</target>
-      </segment>
-    </unit>
-    <unit id="9dYyUYD" name="title.update_visibility">
-      <segment state="translated">
-        <source>Edit visibility</source>
-        <target>Edit visibility</target>
-      </segment>
-    </unit>
-    <unit id="eG38lKI" name="message.visibility">
-      <segment state="translated">
-        <source>If you set visibility to public, your collection will be accessible by anyone using the following link :</source>
-        <target>If you set visibility to public, your collection will be accessible by anyone using the following link :</target>
-      </segment>
-    </unit>
-    <unit id="RjUO3kd" name="message.visibility_per_item">
-      <segment state="translated">
-        <source>You can then set visibility per item or collection. To do so, please go on the element edition page.</source>
-        <target>You can then set visibility per item or collection. To do so, please go on the element edition page.</target>
-      </segment>
-    </unit>
-    <unit id="fQNztng" name="title.update_features">
-      <segment state="translated">
-        <source>Edit active features</source>
-        <target>Edit active features</target>
-      </segment>
-    </unit>
-    <unit id="HLevxj." name="menu.signs">
-      <segment state="translated">
-        <source>Signatures</source>
-        <target>Signatures</target>
-      </segment>
-    </unit>
-    <unit id="e9psgbF" name="counter.signs">
-      <segment state="translated">
-        <source>{count, plural, one {# signature} other {# signatures}}</source>
-        <target>{count, plural, one {# signature} other {# signatures}}</target>
-      </segment>
-    </unit>
-    <unit id="Bhx8Fvg" name="menu.statistics">
-      <segment state="translated">
-        <source>Statistics</source>
-        <target>Statistics</target>
-      </segment>
-    </unit>
-    <unit id="If3y3hC" name="counter.tag">
-      <segment state="translated">
-        <source>{count, plural, one {# tag} other {# tags}}</source>
-        <target>{count, plural, one {# tag} other {# tags}}</target>
-      </segment>
-    </unit>
-    <unit id="Ul2mR7j" name="counter.sign">
-      <segment state="translated">
-        <source>{count, plural, one {# signature} other {# signatures}}</source>
-        <target>{count, plural, one {# signature} other {# signatures}}</target>
-      </segment>
-    </unit>
-    <unit id="ssT2wiw" name="title.activity">
-      <segment state="translated">
-        <source>Activity</source>
-        <target>Activity</target>
-      </segment>
-    </unit>
-    <unit id="_tdjWIj" name="title.charts.month_days">
-      <segment state="translated">
-        <source>Items added per day of month</source>
-        <target>Items added per day of month</target>
-      </segment>
-    </unit>
-    <unit id="svM3vNY" name="title.charts.hours">
-      <segment state="translated">
-        <source>Items added per day hour</source>
-        <target>Items added per day hour</target>
-      </segment>
-    </unit>
-    <unit id="jZqCZ_K" name="title.charts.months">
-      <segment state="translated">
-        <source>Items added per month</source>
-        <target>Items added per month</target>
-      </segment>
-    </unit>
-    <unit id="yfwVi.I" name="title.charts.week_days">
-      <segment state="translated">
-        <source>Items added per weekday</source>
-        <target>Items added per weekday</target>
-      </segment>
-    </unit>
-    <unit id="9it4sqQ" name="title.charts.items_evolution">
-      <segment state="translated">
-        <source>Items evolution</source>
-        <target>Items evolution</target>
-      </segment>
-    </unit>
-    <unit id="Rb73VaV" name="title.charts.radial_tree">
-      <segment state="translated">
-        <source>Radial representation of your collection</source>
-        <target>Radial representation of your collection</target>
-      </segment>
-    </unit>
-    <unit id=".ZHhONJ" name="label.tag_category">
-      <segment state="translated">
-        <source>Category</source>
-        <target>Category</target>
-      </segment>
-    </unit>
-    <unit id="p4z8GI6" name="title.edit_tag">
-      <segment state="translated">
-        <source>Edit tag {tag}</source>
-        <target>Edit tag {tag}</target>
-      </segment>
-    </unit>
-    <unit id="yo4f8Kh" name="menu.tags">
-      <segment state="translated">
-        <source>Tags</source>
-        <target>Tags</target>
-      </segment>
-    </unit>
-    <unit id="7SH9MME" name="tooltip.manage_tag_categories">
-      <segment state="translated">
-        <source>Manage tag categories</source>
-        <target>Manage tag categories</target>
-      </segment>
-    </unit>
-    <unit id="a_xpPl1" name="message.delete.unused_tag">
-      <segment state="translated">
-        <source>This will delete all tags with no items attached. Are you sure you want to delete those tags ? They will be permanently lost...</source>
-        <target>This will delete all tags with no items attached. Are you sure you want to delete those tags ? They will be permanently lost...</target>
-      </segment>
-    </unit>
-    <unit id="LgGHl1z" name="btn.delete_unused_tags">
-      <segment state="translated">
-        <source>Delete unused tags</source>
-        <target>Delete unused tags</target>
-      </segment>
-    </unit>
-    <unit id="e8GAd_z" name="title.related_tags">
-      <segment state="translated">
-        <source>Related tags</source>
-        <target>Related tags</target>
-      </segment>
-    </unit>
-    <unit id="YklQlf8" name="btn.show_more">
-      <segment state="translated">
-        <source>Show more ({count})</source>
-        <target>Show more ({count})</target>
-      </segment>
-    </unit>
-    <unit id="zOA0UTD" name="btn.show_less">
-      <segment state="translated">
-        <source>Show less</source>
-        <target>Show less</target>
-      </segment>
-    </unit>
-    <unit id="JI8jvUd" name="title.add_tag_category">
-      <segment state="translated">
-        <source>Add tag category</source>
-        <target>Add tag category</target>
-      </segment>
-    </unit>
-    <unit id="4z_wk_J" name="title.edit_tag_category">
-      <segment state="translated">
-        <source>Edit tag category {category}</source>
-        <target>Edit tag category {category}</target>
-      </segment>
-    </unit>
-    <unit id="MDaq3GB" name="menu.tag_categories">
-      <segment state="translated">
-        <source>Tag categories</source>
-        <target>Tag categories</target>
-      </segment>
-    </unit>
-    <unit id="NSHmU0h" name="counter.tag_categories">
-      <segment state="translated">
-        <source>{count, plural, one {# category} other {# categories}}</source>
-        <target>{count, plural, one {# category} other {# categories}}</target>
-      </segment>
-    </unit>
-    <unit id="d3LXAOu" name="tooltip.add_tag_category">
-      <segment state="translated">
-        <source>Add a new tag category</source>
-        <target>Add a new tag category</target>
-      </segment>
-    </unit>
-    <unit id="YTSS_Q1" name="label.color">
-      <segment state="translated">
-        <source>Color</source>
-        <target>Color</target>
-      </segment>
-    </unit>
-    <unit id="8QFZX9d" name="title.fields">
-      <segment state="translated">
-        <source>Fields</source>
-        <target>Fields</target>
-      </segment>
-    </unit>
-    <unit id="6AcgRXg" name="btn.add_field">
-      <segment state="translated">
-        <source>Add a field</source>
-        <target>Add a field</target>
-      </segment>
-    </unit>
-    <unit id="zXS9TNU" name="title.new_template">
-      <segment state="translated">
-        <source>Add a new template</source>
-        <target>Add a new template</target>
-      </segment>
-    </unit>
-    <unit id="w4I3.hu" name="title.edit_template">
-      <segment state="translated">
-        <source>Edit template {template}</source>
-        <target>Edit template {template}</target>
-      </segment>
-    </unit>
-    <unit id="kXYXu7R" name="menu.templates">
-      <segment state="translated">
-        <source>Templates</source>
-        <target>Templates</target>
-      </segment>
-    </unit>
-    <unit id="hIdqfHr" name="counter.template">
-      <segment state="translated">
-        <source>{count, plural, one {# template} other {# templates}}</source>
-        <target>{count, plural, one {# template} other {# templates}}</target>
-      </segment>
-    </unit>
-    <unit id=".pBdt4A" name="tooltip.add_template">
-      <segment state="translated">
-        <source>Create a new template</source>
-        <target>Create a new template</target>
-      </segment>
-    </unit>
-    <unit id="bYyoqn6" name="label.fields">
-      <segment state="translated">
-        <source>Fields</source>
-        <target>Fields</target>
-      </segment>
-    </unit>
-    <unit id="1MYrutS" name="counter.field">
-      <segment state="translated">
-        <source>{count, plural, one {# field} other {# fields}}</source>
-        <target>{count, plural, one {# field} other {# fields}}</target>
-      </segment>
-    </unit>
-    <unit id="pnGDFmf" name="label.type">
-      <segment state="translated">
-        <source>Type</source>
-        <target>Type</target>
-      </segment>
-    </unit>
-    <unit id="k3.gBP." name="label.choice_list">
-      <segment state="translated">
-        <source>Choice list</source>
-        <target>Choice list</target>
+        <target>Sonuç bulunamadı</target>
       </segment>
     </unit>
     <unit id="W6Rvzmb" name="menu.tools">
       <segment state="translated">
         <source>Tools</source>
-        <target>Tools</target>
-      </segment>
-    </unit>
-    <unit id="OTxNY59" name="title.exports">
-      <segment state="translated">
-        <source>Exports</source>
-        <target>Exports</target>
-      </segment>
-    </unit>
-    <unit id="e.bXzZd" name="btn.export_printable_list">
-      <segment state="translated">
-        <source>Printable list</source>
-        <target>Printable list</target>
-      </segment>
-    </unit>
-    <unit id="IKVpbk5" name="btn.export_csv">
-      <segment state="translated">
-        <source>CSV</source>
-        <target>CSV</target>
-      </segment>
-    </unit>
-    <unit id="89rjttf" name="title.inventories">
-      <segment state="translated">
-        <source>Inventories</source>
-        <target>Inventories</target>
-      </segment>
-    </unit>
-    <unit id="W6YfaKo" name="btn.add_inventory">
-      <segment state="translated">
-        <source>New inventory</source>
-        <target>New inventory</target>
-      </segment>
-    </unit>
-    <unit id="8iRfcsb" name="label.completion">
-      <segment state="translated">
-        <source>Completion</source>
-        <target>Completion</target>
-      </segment>
-    </unit>
-    <unit id="v5SWCuI" name="label.created_at">
-      <segment state="translated">
-        <source>Created at</source>
-        <target>Created at</target>
-      </segment>
-    </unit>
-    <unit id="DYfAFeM" name="tooltip.print">
-      <segment state="translated">
-        <source>Print</source>
-        <target>Print</target>
-      </segment>
-    </unit>
-    <unit id="H0D7KGB" name="title.add_wishlist_item">
-      <segment state="translated">
-        <source>Add a new item to the wishlist {wishlist}</source>
-        <target>Add a new item to the wishlist {wishlist}</target>
-      </segment>
-    </unit>
-    <unit id="9dYc4WP" name="title.edit_wishlist_item">
-      <segment state="translated">
-        <source>Edit wish {name}</source>
-        <target>Edit wish {name}</target>
-      </segment>
-    </unit>
-    <unit id="50TT5tp" name="title.transfer_wish">
-      <segment state="translated">
-        <source>Transfer wish to a collection</source>
-        <target>Transfer wish to a collection</target>
-      </segment>
-    </unit>
-    <unit id="XjUwmT9" name="counter.wish">
-      <segment state="translated">
-        <source>{count, plural, one {# wish} other {# wishes}}</source>
-        <target>{count, plural, one {# wish} other {# wishes}}</target>
-      </segment>
-    </unit>
-    <unit id="aCKOxah" name="title.new_wishlist">
-      <segment state="translated">
-        <source>Add a new wishlist</source>
-        <target>Add a new wishlist</target>
-      </segment>
-    </unit>
-    <unit id="1Uc4qIA" name="title.edit_wishlist">
-      <segment state="translated">
-        <source>Edit wishlist {wishlist}</source>
-        <target>Edit wishlist {wishlist}</target>
-      </segment>
-    </unit>
-    <unit id="iaYlgE1" name="menu.wishlists">
-      <segment state="translated">
-        <source>Wishlists</source>
-        <target>Wishlists</target>
-      </segment>
-    </unit>
-    <unit id="Joxd_.h" name="counter.wishlist">
-      <segment state="translated">
-        <source>{count, plural, one {# wishlist} other {# wishlists}}</source>
-        <target>{count, plural, one {# wishlist} other {# wishlists}}</target>
-      </segment>
-    </unit>
-    <unit id="U27QnHb" name="tooltip.add_wishlist">
-      <segment state="translated">
-        <source>Add a new wishlist</source>
-        <target>Add a new wishlist</target>
-      </segment>
-    </unit>
-    <unit id="VRKRvlp" name="tooltip.add_wish">
-      <segment state="translated">
-        <source>Add a new wish</source>
-        <target>Add a new wish</target>
-      </segment>
-    </unit>
-    <unit id="c9cNWH4" name="title.wishlist_children">
-      <segment state="translated">
-        <source>Sub-wishlists</source>
-        <target>Sub-wishlists</target>
-      </segment>
-    </unit>
-    <unit id="KhJnPFW" name="title.wishes">
-      <segment state="translated">
-        <source>Wishes</source>
-        <target>Wishes</target>
-      </segment>
-    </unit>
-    <unit id="rapb2ag" name="label.image">
-      <segment state="translated">
-        <source>Image</source>
-        <target>Image</target>
-      </segment>
-    </unit>
-    <unit id="arTFX42" name="label.price">
-      <segment state="translated">
-        <source>Price</source>
-        <target>Price</target>
-      </segment>
-    </unit>
-    <unit id="WqTho4C" name="label.comment">
-      <segment state="translated">
-        <source>Comment</source>
-        <target>Comment</target>
-      </segment>
-    </unit>
-    <unit id="K4CLmzU" name="tooltip.transfer_to_collection">
-      <segment state="translated">
-        <source>Transfer to collection</source>
-        <target>Transfer to collection</target>
-      </segment>
-    </unit>
-    <unit id="YEoCETJ" name="label.thumbnail">
-      <segment state="translated">
-        <source>Thumbnail</source>
-        <target>Thumbnail</target>
-      </segment>
-    </unit>
-    <unit id="92pQmfM" name="label.suggestions">
-      <segment state="translated">
-        <source>Suggestions :</source>
-        <target>Suggestions :</target>
-      </segment>
-    </unit>
-    <unit id="qWc975i" name="tooltip.delete">
-      <segment state="translated">
-        <source>Delete</source>
-        <target>Delete</target>
-      </segment>
-    </unit>
-    <unit id="3AT7pPP" name="tooltip.share">
-      <segment state="translated">
-        <source>Share</source>
-        <target>Share</target>
-      </segment>
-    </unit>
-    <unit id="zNdHjVZ" name="meta.description">
-      <segment state="translated">
-        <source>A single place to manage all your collections.</source>
-        <target>A single place to manage all your collections.</target>
-      </segment>
-    </unit>
-    <unit id="XVATSGt" name="modal.title.delete">
-      <segment state="translated">
-        <source>Delete confirmation</source>
-        <target>Delete confirmation</target>
-      </segment>
-    </unit>
-    <unit id="eMPgFR5" name="message.user_is_private">
-      <segment state="translated">
-        <source>Your profile is set to private, you can't share this page.</source>
-        <target>Your profile is set to private, you can't share this page.</target>
-      </segment>
-    </unit>
-    <unit id="J0RnHHK" name="message.share_link">
-      <segment state="translated">
-        <source>You can share this link so people can see this page (private items will be hidden) :</source>
-        <target>You can share this link so people can see this page (private items will be hidden) :</target>
-      </segment>
-    </unit>
-    <unit id="9Vg2S6n" name="modal.title.share">
-      <segment state="translated">
-        <source>Share link</source>
-        <target>Share link</target>
-      </segment>
-    </unit>
-    <unit id="wBTFKFR" name="menu.logout">
-      <segment state="translated">
-        <source>Logout</source>
-        <target>Logout</target>
-      </segment>
-    </unit>
-    <unit id="tezmizK" name="menu.return_to_user_collection">
-      <segment state="translated">
-        <source>Return to my collection</source>
-        <target>Return to my collection</target>
-      </segment>
-    </unit>
-    <unit id="jEeQjDx" name="message.offline">
-      <segment state="translated">
-        <source>You are offline, please check your connection.</source>
-        <target>You are offline, please check your connection.</target>
-      </segment>
-    </unit>
-    <unit id="lSRJ.UY" name="error.default">
-      <segment state="translated">
-        <source>Oops, something went wrong :(</source>
-        <target>Oops, something went wrong :(</target>
-      </segment>
-    </unit>
-    <unit id="l9GnTBr" name="error.404">
-      <segment state="translated">
-        <source>Oops, page not found :(</source>
-        <target>Oops, page not found :(</target>
-      </segment>
-    </unit>
-    <unit id="nIFzees" name="error.500">
-      <segment state="translated">
-        <source>Oops, a critical error occurred :(</source>
-        <target>Oops, a critical error occurred :(</target>
-      </segment>
-    </unit>
-    <unit id="o7VW0kO" name="message.return_to_homepage">
-      <segment state="translated">
-        <source>Return to homepage</source>
-        <target>Return to homepage</target>
+        <target>Araçlar</target>
       </segment>
     </unit>
     <unit id="ZS8DP_P" name="breadcrumb.add_album">
       <segment state="translated">
         <source>Add a new album</source>
-        <target>Add a new album</target>
-      </segment>
-    </unit>
-    <unit id="BgP_6X7" name="breadcrumb.add_collection">
-      <segment state="translated">
-        <source>Add a new collection</source>
-        <target>Add a new collection</target>
-      </segment>
-    </unit>
-    <unit id="QP9HnQT" name="breadcrumb.add_item">
-      <segment state="translated">
-        <source>Add a new item</source>
-        <target>Add a new item</target>
+        <target>Yeni bir albüm ekle</target>
       </segment>
     </unit>
     <unit id="HN3MXIl" name="breadcrumb.add_photo">
       <segment state="translated">
         <source>Add a new photo</source>
-        <target>Add a new photo</target>
-      </segment>
-    </unit>
-    <unit id="TsOMFfZ" name="breadcrumb.add_template">
-      <segment state="translated">
-        <source>Create a new template</source>
-        <target>Create a new template</target>
-      </segment>
-    </unit>
-    <unit id="1tk3BkL" name="breadcrumb.add_wish">
-      <segment state="translated">
-        <source>Add a new wish</source>
-        <target>Add a new wish</target>
-      </segment>
-    </unit>
-    <unit id="MeiAPvl" name="breadcrumb.add_wishlist">
-      <segment state="translated">
-        <source>Add a new wishlist</source>
-        <target>Add a new wishlist</target>
-      </segment>
-    </unit>
-    <unit id="wsZg2PB" name="breadcrumb.batch_tagging">
-      <segment state="translated">
-        <source>Batch tagging</source>
-        <target>Batch tagging</target>
+        <target>Yeni bir fotoğraf ekle</target>
       </segment>
     </unit>
     <unit id="FBXvLM8" name="breadcrumb.edit_album">
       <segment state="translated">
         <source>Edit</source>
-        <target>Edit</target>
+        <target>Düzenle</target>
       </segment>
     </unit>
     <unit id="4FXosb_" name="breadcrumb.edit_collection">
       <segment state="translated">
         <source>Edit</source>
-        <target>Edit</target>
+        <target>Düzenle</target>
       </segment>
     </unit>
     <unit id="dQjPnaL" name="breadcrumb.edit_template">
       <segment state="translated">
         <source>Edit</source>
-        <target>Edit</target>
+        <target>Düzenle</target>
       </segment>
     </unit>
     <unit id="wJbJaxc" name="breadcrumb.edit_item">
       <segment state="translated">
         <source>Edit</source>
-        <target>Edit</target>
+        <target>Düzenle</target>
       </segment>
     </unit>
     <unit id="sARt1zq" name="breadcrumb.edit_photo">
       <segment state="translated">
         <source>Edit</source>
-        <target>Edit</target>
+        <target>Düzenle</target>
       </segment>
     </unit>
     <unit id="YAIWLja" name="breadcrumb.edit_tag">
       <segment state="translated">
         <source>Edit</source>
-        <target>Edit</target>
+        <target>Düzenle</target>
       </segment>
     </unit>
     <unit id="MK15Ex5" name="breadcrumb.edit_wish">
       <segment state="translated">
         <source>Edit</source>
-        <target>Edit</target>
+        <target>Düzenle</target>
       </segment>
     </unit>
     <unit id="bzp39NU" name="breadcrumb.edit_wishlist">
       <segment state="translated">
         <source>Edit</source>
-        <target>Edit</target>
-      </segment>
-    </unit>
-    <unit id="hNB8Xw0" name="breadcrumb.history_collection">
-      <segment state="translated">
-        <source>History</source>
-        <target>History</target>
-      </segment>
-    </unit>
-    <unit id="1ruRfsb" name="breadcrumb.history_item">
-      <segment state="translated">
-        <source>History</source>
-        <target>History</target>
-      </segment>
-    </unit>
-    <unit id="Pnd0n71" name="breadcrumb.history_tag">
-      <segment state="translated">
-        <source>History</source>
-        <target>History</target>
-      </segment>
-    </unit>
-    <unit id="eG2_sfn" name="breadcrumb.items_collection">
-      <segment state="translated">
-        <source>Items</source>
-        <target>Items</target>
-      </segment>
-    </unit>
-    <unit id="ERFTL0f" name="breadcrumb.lend_item">
-      <segment state="translated">
-        <source>Lend</source>
-        <target>Lend</target>
-      </segment>
-    </unit>
-    <unit id="T3BhL7X" name="global.entities.album">
-      <segment state="translated">
-        <source>Album</source>
-        <target>Album</target>
-      </segment>
-    </unit>
-    <unit id="YTxyJQJ" name="global.entities.collection">
-      <segment state="translated">
-        <source>Collection</source>
-        <target>Collection</target>
-      </segment>
-    </unit>
-    <unit id="ecDv.KB" name="global.entities.item">
-      <segment state="translated">
-        <source>Item</source>
-        <target>Item</target>
-      </segment>
-    </unit>
-    <unit id="yt20IWO" name="global.entities.tag">
-      <segment state="translated">
-        <source>Tag</source>
-        <target>Tag</target>
-      </segment>
-    </unit>
-    <unit id="iFOTgZ3" name="global.entities.template">
-      <segment state="translated">
-        <source>Template</source>
-        <target>Template</target>
-      </segment>
-    </unit>
-    <unit id="JKLodag" name="global.entities.user">
-      <segment state="translated">
-        <source>User</source>
-        <target>User</target>
-      </segment>
-    </unit>
-    <unit id="1MevJac" name="global.entities.wish">
-      <segment state="translated">
-        <source>Wish</source>
-        <target>Wish</target>
-      </segment>
-    </unit>
-    <unit id="nFTPCfN" name="global.entities.wishlist">
-      <segment state="translated">
-        <source>Wishlist</source>
-        <target>Wishlist</target>
-      </segment>
-    </unit>
-    <unit id="S3BSG8X" name="global.time.year">
-      <segment state="translated">
-        <source>{count, plural, one {# year} other {# years}}</source>
-        <target>{count, plural, one {# year} other {# years}}</target>
-      </segment>
-    </unit>
-    <unit id="I6EoiYa" name="global.time.month">
-      <segment state="translated">
-        <source>{count, plural, one {# month} other {# months}}</source>
-        <target>{count, plural, one {# month} other {# months}}</target>
-      </segment>
-    </unit>
-    <unit id="BXLOUij" name="global.time.week">
-      <segment state="translated">
-        <source>{count, plural, one {# week} other {# weeks}}</source>
-        <target>{count, plural, one {# week} other {# weeks}}</target>
-      </segment>
-    </unit>
-    <unit id="r1RqqRg" name="global.time.day">
-      <segment state="translated">
-        <source>{count, plural, one {# day} other {# days}}</source>
-        <target>{count, plural, one {# day} other {# days}}</target>
-      </segment>
-    </unit>
-    <unit id="QeraM7P" name="global.time.hour">
-      <segment state="translated">
-        <source>{count, plural, one {# hour} other {# hours}}</source>
-        <target>{count, plural, one {# hour} other {# hours}}</target>
-      </segment>
-    </unit>
-    <unit id="UN2onP4" name="global.time.minute">
-      <segment state="translated">
-        <source>{count, plural, one {# minute} other {# minutes}}</source>
-        <target>{count, plural, one {# minute} other {# minutes}}</target>
-      </segment>
-    </unit>
-    <unit id="JQSurmk" name="global.time.second">
-      <segment state="translated">
-        <source>{count, plural, one {# second} other {# seconds}}</source>
-        <target>{count, plural, one {# second} other {# seconds}}</target>
-      </segment>
-    </unit>
-    <unit id="fSiEIlQ" name="global.visibilities.public">
-      <segment state="translated">
-        <source>Public</source>
-        <target>Public</target>
-      </segment>
-    </unit>
-    <unit id="ky9YEBY" name="global.visibilities.private">
-      <segment state="translated">
-        <source>Private</source>
-        <target>Private</target>
-      </segment>
-    </unit>
-    <unit id="obhh9xq" name="label.added_at">
-      <segment state="translated">
-        <source>Added at</source>
-        <target>Added at</target>
-      </segment>
-    </unit>
-    <unit id="kfURNUL" name="label.album">
-      <segment state="translated">
-        <source>Album</source>
-        <target>Album</target>
-      </segment>
-    </unit>
-    <unit id="OMwE8EU" name="label.apply_template">
-      <segment state="translated">
-        <source>Apply a template</source>
-        <target>Apply a template</target>
-      </segment>
-    </unit>
-    <unit id="YQjIBl7" name="label.children_title">
-      <segment state="translated">
-        <source>Sub-collections section label</source>
-        <target>Sub-collections section label</target>
-      </segment>
-    </unit>
-    <unit id="fWI8IQm" name="label.collection">
-      <segment state="translated">
-        <source>Collection</source>
-        <target>Collection</target>
-      </segment>
-    </unit>
-    <unit id="Jjqrud5" name="label.collections">
-      <segment state="translated">
-        <source>Collections</source>
-        <target>Collections</target>
-      </segment>
-    </unit>
-    <unit id="otd2FZd" name="label.currency">
-      <segment state="translated">
-        <source>Currency</source>
-        <target>Currency</target>
-      </segment>
-    </unit>
-    <unit id="zfmgf2l" name="label.items">
-      <segment state="translated">
-        <source>Items</source>
-        <target>Items</target>
-      </segment>
-    </unit>
-    <unit id="frik1CZ" name="label.items_title">
-      <segment state="translated">
-        <source>Items section label</source>
-        <target>Items section label</target>
-      </segment>
-    </unit>
-    <unit id="NGzz2k3" name="label.parent">
-      <segment state="translated">
-        <source>Parent</source>
-        <target>Parent</target>
-      </segment>
-    </unit>
-    <unit id="2.APxMI" name="label.place">
-      <segment state="translated">
-        <source>Place</source>
-        <target>Place</target>
-      </segment>
-    </unit>
-    <unit id="ymgENEq" name="label.quantity">
-      <segment state="translated">
-        <source>Quantity</source>
-        <target>Quantity</target>
-      </segment>
-    </unit>
-    <unit id="HVZAEc7" name="label.recursive">
-      <segment state="translated">
-        <source>Recursive</source>
-        <target>Recursive</target>
-      </segment>
-    </unit>
-    <unit id="rU9cSfq" name="label.repeat_password">
-      <segment state="translated">
-        <source>Repeat password</source>
-        <target>Repeat password</target>
-      </segment>
-    </unit>
-    <unit id="w5u.bJo" name="label.sign">
-      <segment state="translated">
-        <source>Signature</source>
-        <target>Signature</target>
-      </segment>
-    </unit>
-    <unit id="vpeY2jo" name="label.taken_at">
-      <segment state="translated">
-        <source>Taken the</source>
-        <target>Taken the</target>
-      </segment>
-    </unit>
-    <unit id="ijQyGRo" name="label.tags">
-      <segment state="translated">
-        <source>Tags</source>
-        <target>Tags</target>
-      </segment>
-    </unit>
-    <unit id="UQI8T0S" name="label.text">
-      <segment state="translated">
-        <source>Text</source>
-        <target>Text</target>
-      </segment>
-    </unit>
-    <unit id="UJDm2vF" name="label.url">
-      <segment state="translated">
-        <source>Url</source>
-        <target>Url</target>
-      </segment>
-    </unit>
-    <unit id="hmlddlA" name="label.wishlist">
-      <segment state="translated">
-        <source>Wishlist</source>
-        <target>Wishlist</target>
-      </segment>
-    </unit>
-    <unit id="vVTVy9_" name="label.wishlists">
-      <segment state="translated">
-        <source>Wishlists</source>
-        <target>Wishlists</target>
-      </segment>
-    </unit>
-    <unit id="oq5I4KJ" name="log.collection.created">
-      <segment state="translated">
-        <source>Collection {label} was created</source>
-        <target>Collection {label} was created</target>
-      </segment>
-    </unit>
-    <unit id="kJVARQs" name="log.collection.deleted">
-      <segment state="translated">
-        <source>Collection {label} was deleted</source>
-        <target>Collection {label} was deleted</target>
-      </segment>
-    </unit>
-    <unit id="CQhzBXW" name="log.item.created">
-      <segment state="translated">
-        <source>Item {label} was created</source>
-        <target>Item {label} was created</target>
-      </segment>
-    </unit>
-    <unit id="rV1McBT" name="log.item.deleted">
-      <segment state="translated">
-        <source>Item {label} was deleted</source>
-        <target>Item {label} was deleted</target>
-      </segment>
-    </unit>
-    <unit id="rZbNjjk" name="log.tag.created">
-      <segment state="translated">
-        <source>Tag {label} was created</source>
-        <target>Tag {label} was created</target>
-      </segment>
-    </unit>
-    <unit id="C6hJE7c" name="log.tag.deleted">
-      <segment state="translated">
-        <source>Tag {label} was deleted</source>
-        <target>Tag {label} was deleted</target>
-      </segment>
-    </unit>
-    <unit id="NLlL04M" name="help.recursive">
-      <segment state="translated">
-        <source>If checked, tags will be applied to all sub-collections as well</source>
-        <target>If checked, tags will be applied to all sub-collections as well</target>
-      </segment>
-    </unit>
-    <unit id="cQsMebl" name="breadcrumb.transfer_wish">
-      <segment state="translated">
-        <source>Transfer wish to a collection</source>
-        <target>Transfer wish to a collection</target>
-      </segment>
-    </unit>
-    <unit id="Dpg9wp." name="role.user">
-      <segment state="translated">
-        <source>User</source>
-        <target>User</target>
-      </segment>
-    </unit>
-    <unit id="tlZBAKL" name="role.admin">
-      <segment state="translated">
-        <source>Admin</source>
-        <target>Admin</target>
-      </segment>
-    </unit>
-    <unit id="7o9hj19" name="first_connection.user">
-      <segment state="translated">
-        <source>User information</source>
-        <target>User information</target>
-      </segment>
-    </unit>
-    <unit id="dmtPdwq" name="label.timezone">
-      <segment state="translated">
-        <source>Timezone</source>
-        <target>Timezone</target>
-      </segment>
-    </unit>
-    <unit id="U4y7aZO" name="message.delete.tag">
-      <segment state="translated">
-        <source>Are you sure you want to delete this tag ? It will be permanently lost...</source>
-        <target>Are you sure you want to delete this tag ? It will be permanently lost...</target>
-      </segment>
-    </unit>
-    <unit id="v5OgDgx" name="message.delete.item">
-      <segment state="translated">
-        <source>Are you sure you want to delete this item ? It will be permanently lost...</source>
-        <target>Are you sure you want to delete this item ? It will be permanently lost...</target>
-      </segment>
-    </unit>
-    <unit id="zHvuaSF" name="message.delete.album">
-      <segment state="translated">
-        <source>Are you sure you want to delete this album ? All photos it contains will be permanently lost...</source>
-        <target>Are you sure you want to delete this album ? All photos it contains will be permanently lost...</target>
-      </segment>
-    </unit>
-    <unit id="F5mLnYt" name="message.delete.template">
-      <segment state="translated">
-        <source>Are you sure you want to delete this template ? It will be permanently lost...</source>
-        <target>Are you sure you want to delete this template ? It will be permanently lost...</target>
-      </segment>
-    </unit>
-    <unit id="JMVpPAR" name="message.delete.wishlist">
-      <segment state="translated">
-        <source>Are you sure you want to delete this wishlist ? All wishes it contains will be permanently lost...</source>
-        <target>Are you sure you want to delete this wishlist ? All wishes it contains will be permanently lost...</target>
-      </segment>
-    </unit>
-    <unit id="YTTkLLK" name="message.delete.wish">
-      <segment state="translated">
-        <source>Are you sure you want to delete this wish ? It will be permanently lost...</source>
-        <target>Are you sure you want to delete this wish ? It will be permanently lost...</target>
-      </segment>
-    </unit>
-    <unit id="5Z0Lnp." name="message.delete.collection">
-      <segment state="translated">
-        <source>Are you sure you want to delete this collection ? All items it contains will be permanently lost...</source>
-        <target>Are you sure you want to delete this collection ? All items it contains will be permanently lost...</target>
-      </segment>
-    </unit>
-    <unit id="_HekiQE" name="message.delete.loan">
-      <segment state="translated">
-        <source>Are you sure you want to delete this loan ? It will be permanently lost...</source>
-        <target>Are you sure you want to delete this loan ? It will be permanently lost...</target>
-      </segment>
-    </unit>
-    <unit id="kAXzPyc" name="global.seen_counter.album">
-      <segment state="translated">
-        <source>{count, plural, one {Album consulted # time} other {Album consulted # times}}</source>
-        <target>{count, plural, one {Album consulted # time} other {Album consulted # times}}</target>
-      </segment>
-    </unit>
-    <unit id="HWAnnvq" name="global.seen_counter.collection">
-      <segment state="translated">
-        <source>{count, plural, one {Collection consulted # time} other {Collection consulted # times}}</source>
-        <target>{count, plural, one {Collection consulted # time} other {Collection consulted # times}}</target>
-      </segment>
-    </unit>
-    <unit id="hW.mDrh" name="global.seen_counter.item">
-      <segment state="translated">
-        <source>{count, plural, one {Item consulted # time} other {Item consulted # times}}</source>
-        <target>{count, plural, one {Item consulted # time} other {Item consulted # times}}</target>
-      </segment>
-    </unit>
-    <unit id="RXjwOtL" name="global.seen_counter.tag">
-      <segment state="translated">
-        <source>{count, plural, one {Tag consulted # time} other {Tag consulted # times}}</source>
-        <target>{count, plural, one {Tag consulted # time} other {Tag consulted # times}}</target>
-      </segment>
-    </unit>
-    <unit id="_5ewjw9" name="global.seen_counter.wishlist">
-      <segment state="translated">
-        <source>{count, plural, one {Wishlist consulted # time} other {Wishlist consulted # times}}</source>
-        <target>{count, plural, one {Wishlist consulted # time} other {Wishlist consulted # times}}</target>
-      </segment>
-    </unit>
-    <unit id="rrIqTJJ" name="global.date_formats.slash_dmy">
-      <segment state="translated">
-        <source>dd/mm/yyyy</source>
-        <target>dd/mm/yyyy</target>
-      </segment>
-    </unit>
-    <unit id="ZajD1iq" name="global.date_formats.slash_mdy">
-      <segment state="translated">
-        <source>mm/dd/yyyy</source>
-        <target>mm/dd/yyyy</target>
-      </segment>
-    </unit>
-    <unit id="YlAUA0n" name="global.date_formats.slash_ymd">
-      <segment state="translated">
-        <source>yyyy/mm/dd</source>
-        <target>yyyy/mm/dd</target>
-      </segment>
-    </unit>
-    <unit id="bCHcuOE" name="global.date_formats.hyphen_dmy">
-      <segment state="translated">
-        <source>dd-mm-yyyy</source>
-        <target>dd-mm-yyyy</target>
-      </segment>
-    </unit>
-    <unit id="SlR19of" name="global.date_formats.hyphen_mdy">
-      <segment state="translated">
-        <source>mm-dd-yyyy</source>
-        <target>mm-dd-yyyy</target>
-      </segment>
-    </unit>
-    <unit id="_NUVI5O" name="global.date_formats.hyphen_ymd">
-      <segment state="translated">
-        <source>yyyy-mm-dd</source>
-        <target>yyyy-mm-dd</target>
-      </segment>
-    </unit>
-    <unit id="VqbMfZ0" name="label.date_format">
-      <segment state="translated">
-        <source>Date format</source>
-        <target>Date format</target>
-      </segment>
-    </unit>
-    <unit id="V5iMey4" name="global.optgroup.date_formats.slash">
-      <segment state="translated">
-        <source>Slash separated</source>
-        <target>Slash separated</target>
-      </segment>
-    </unit>
-    <unit id="oYuZ6vx" name="global.optgroup.date_formats.hyphen">
-      <segment state="translated">
-        <source>Hyphen separated</source>
-        <target>Hyphen separated</target>
-      </segment>
-    </unit>
-    <unit id="_.ADUgd" name="breadcrumb.add_inventory">
-      <segment state="translated">
-        <source>Create a new inventory</source>
-        <target>Create a new inventory</target>
-      </segment>
-    </unit>
-    <unit id="Wjv..OL" name="menu.inventories">
-      <segment state="translated">
-        <source>Inventories</source>
-        <target>Inventories</target>
-      </segment>
-    </unit>
-    <unit id="iOJaZ01" name="global.entities.inventory">
-      <segment state="translated">
-        <source>Inventory</source>
-        <target>Inventory</target>
-      </segment>
-    </unit>
-    <unit id="O6z2.Zr" name="message.delete.inventory">
-      <segment state="translated">
-        <source>Are you sure you want to delete this inventory ?</source>
-        <target>Are you sure you want to delete this inventory ?</target>
-      </segment>
-    </unit>
-    <unit id="HFhQzXX" name="breadcrumb.add_tag_category">
-      <segment state="translated">
-        <source>Add tag category</source>
-        <target>Add tag category</target>
-      </segment>
-    </unit>
-    <unit id="bjhCeK0" name="message.delete.tag_category">
-      <segment state="translated">
-        <source>Are you sure you want to delete this tag category ? It will be permanently lost...</source>
-        <target>Are you sure you want to delete this tag category ? It will be permanently lost...</target>
-      </segment>
-    </unit>
-    <unit id="G97C3_o" name="global.entities.tag_category">
-      <segment state="translated">
-        <source>Tag category</source>
-        <target>Tag category</target>
+        <target>Düzenle</target>
       </segment>
     </unit>
     <unit id="rW7Hxqk" name="breadcrumb.edit_tag_category">
       <segment state="translated">
         <source>Edit</source>
-        <target>Edit</target>
-      </segment>
-    </unit>
-    <unit id="k7MJQ82" name="label.country">
-      <segment state="translated">
-        <source>Country</source>
-        <target>Country</target>
+        <target>Düzenle</target>
       </segment>
     </unit>
     <unit id="U8IBiON" name="menu.overview">
       <segment state="translated">
         <source>Overview</source>
-        <target>Overview</target>
-      </segment>
-    </unit>
-    <unit id="mEDsKHk" name="label.locale">
-      <segment state="translated">
-        <source>Locale</source>
-        <target>Locale</target>
-      </segment>
-    </unit>
-    <unit id="FA5XLbh" name="enum.history_filter_class.collection">
-      <segment state="translated">
-        <source>Collection</source>
-        <target>Collection</target>
-      </segment>
-    </unit>
-    <unit id=".s91X7z" name="enum.history_filter_class.item">
-      <segment state="translated">
-        <source>Item</source>
-        <target>Item</target>
-      </segment>
-    </unit>
-    <unit id="Bbv77ja" name="enum.history_filter_class.tag">
-      <segment state="translated">
-        <source>Tag</source>
-        <target>Tag</target>
-      </segment>
-    </unit>
-    <unit id="XKMAo1i" name="enum.history_filter_type.create">
-      <segment state="translated">
-        <source>Create</source>
-        <target>Create</target>
-      </segment>
-    </unit>
-    <unit id="4AoD3Gf" name="enum.history_filter_type.delete">
-      <segment state="translated">
-        <source>Delete</source>
-        <target>Delete</target>
-      </segment>
-    </unit>
-    <unit id="2j7vQYy" name="breadcrumb.history_album">
-      <segment state="translated">
-        <source>History</source>
-        <target>History</target>
-      </segment>
-    </unit>
-    <unit id="v31H5lC" name="log.album.created">
-      <segment state="translated">
-        <source>Album {label} was created</source>
-        <target>Album {label} was created</target>
-      </segment>
-    </unit>
-    <unit id="tCaXH8D" name="enum.history_filter_class.album">
-      <segment state="translated">
-        <source>Album</source>
-        <target>Album</target>
-      </segment>
-    </unit>
-    <unit id="CHK7Dzf" name="enum.history_filter_class.wishlist">
-      <segment state="translated">
-        <source>Wishlist</source>
-        <target>Wishlist</target>
-      </segment>
-    </unit>
-    <unit id="SBtfHBi" name="log.album.deleted">
-      <segment state="translated">
-        <source>Album {label} was deleted</source>
-        <target>Album {label} was deleted</target>
-      </segment>
-    </unit>
-    <unit id="su92SFL" name="log.wishlist.deleted">
-      <segment state="translated">
-        <source>Wishlist {label} was deleted</source>
-        <target>Wishlist {label} was deleted</target>
-      </segment>
-    </unit>
-    <unit id="HJFRPmK" name="breadcrumb.history_wishlist">
-      <segment state="translated">
-        <source>History</source>
-        <target>History</target>
-      </segment>
-    </unit>
-    <unit id="GBK.flU" name="log.wishlist.created">
-      <segment state="translated">
-        <source>Wishlist {label} was created</source>
-        <target>Wishlist {label} was created</target>
+        <target>Genel Bakış</target>
       </segment>
     </unit>
     <unit id="GXrTvzK" name="label.albums">
       <segment state="translated">
         <source>Albums</source>
-        <target>Albums</target>
-      </segment>
-    </unit>
-    <unit id="Qo7wr5F" name="label.wishlists_feature_enabled">
-      <segment state="translated">
-        <source>Wishlists</source>
-        <target>Wishlists</target>
-      </segment>
-    </unit>
-    <unit id="d7dTHZ." name="label.tags_feature_enabled">
-      <segment state="translated">
-        <source>Tags</source>
-        <target>Tags</target>
-      </segment>
-    </unit>
-    <unit id="5g5Fm08" name="label.signs_feature_enabled">
-      <segment state="translated">
-        <source>Signatures</source>
-        <target>Signatures</target>
+        <target>Albümler</target>
       </segment>
     </unit>
     <unit id="VDd2HS6" name="label.albums_feature_enabled">
       <segment state="translated">
         <source>Albums</source>
-        <target>Albums</target>
-      </segment>
-    </unit>
-    <unit id="hE9F5PK" name="label.loans_feature_enabled">
-      <segment state="translated">
-        <source>Loans</source>
-        <target>Loans</target>
-      </segment>
-    </unit>
-    <unit id="_HAg.fc" name="label.templates_feature_enabled">
-      <segment state="translated">
-        <source>Templates</source>
-        <target>Templates</target>
-      </segment>
-    </unit>
-    <unit id="FfhJCxR" name="label.history_feature_enabled">
-      <segment state="translated">
-        <source>History</source>
-        <target>History</target>
-      </segment>
-    </unit>
-    <unit id="_G1H7r2" name="label.statistics_feature_enabled">
-      <segment state="translated">
-        <source>Statistics</source>
-        <target>Statistics</target>
-      </segment>
-    </unit>
-    <unit id="H1qEi4d" name="label.date">
-      <segment state="translated">
-        <source>Date</source>
-        <target>Date</target>
-      </segment>
-    </unit>
-    <unit id="YkTUtk1" name="label.file">
-      <segment state="translated">
-        <source>File</source>
-        <target>File</target>
-      </segment>
-    </unit>
-    <unit id="BgCxgOK" name="label.related_items">
-      <segment state="translated">
-        <source>Add a related item</source>
-        <target>Add a related item</target>
-      </segment>
-    </unit>
-    <unit id="nXb.5Pm" name="error.user_not_enabled">
-      <segment state="translated">
-        <source>User not activated</source>
-        <target>User not activated</target>
-      </segment>
-    </unit>
-    <unit id="zFu6NvC" name="message.delete.user">
-      <segment state="translated">
-        <source>Are you sure you want to delete this user ? It will be permanently lost...</source>
-        <target>Are you sure you want to delete this user ? It will be permanently lost...</target>
-      </segment>
-    </unit>
-    <unit id="JD2NF8b" name="label.rating">
-      <segment state="translated">
-        <source>Rating</source>
-        <target>Rating</target>
-      </segment>
-    </unit>
-    <unit id="39AtPxQ" name="label.number">
-      <segment state="translated">
-        <source>Number</source>
-        <target>Number</target>
-      </segment>
-    </unit>
-    <unit id="6faiqOu" name="global.visibilities.internal">
-      <segment state="translated">
-        <source>Internal</source>
-        <target>Internal</target>
-      </segment>
-    </unit>
-    <unit id="iiWFLaI" name="label.new_password">
-      <segment state="translated">
-        <source>New password</source>
-        <target>New password</target>
-      </segment>
-    </unit>
-    <unit id="uG3LLvE" name="label.repeat_new_password">
-      <segment state="translated">
-        <source>Repeat new password</source>
-        <target>Repeat new password</target>
-      </segment>
-    </unit>
-    <unit id="jbdcgnz" name="label.link">
-      <segment state="translated">
-        <source>Link</source>
-        <target>Link</target>
-      </segment>
-    </unit>
-    <unit id="vyczzVz" name="global.display_mode.grid">
-      <segment state="translated">
-        <source>Grid</source>
-        <target>Grid</target>
-      </segment>
-    </unit>
-    <unit id="cWn8jLd" name="global.display_mode.list">
-      <segment state="translated">
-        <source>List</source>
-        <target>List</target>
-      </segment>
-    </unit>
-    <unit id="qcUvWAj" name="label.items_display_mode">
-      <segment state="translated">
-        <source>Display items in a</source>
-        <target>Display items in a</target>
-      </segment>
-    </unit>
-    <unit id="maYJbRz" name="label.photos_display_mode">
-      <segment state="translated">
-        <source>Display photos in a</source>
-        <target>Display photos in a</target>
-      </segment>
-    </unit>
-    <unit id="Eqd5CcJ" name="label.items_sorting_property">
-      <segment state="translated">
-        <source>Sort items by</source>
-        <target>Sort items by</target>
-      </segment>
-    </unit>
-    <unit id="5RTM2D6" name="label.items_sorting_direction">
-      <segment state="translated">
-        <source>Sort items order</source>
-        <target>Sort items order</target>
-      </segment>
-    </unit>
-    <unit id="g53kXhj" name="global.sorting_direction.asc">
-      <segment state="translated">
-        <source>Ascending</source>
-        <target>Ascending</target>
-      </segment>
-    </unit>
-    <unit id="a3O9P2o" name="global.sorting_direction.desc">
-      <segment state="translated">
-        <source>Descending</source>
-        <target>Descending</target>
-      </segment>
-    </unit>
-    <unit id="wPplZ1u" name="label.items_default_template">
-      <segment state="translated">
-        <source>Default template applied to items</source>
-        <target>Default template applied to items</target>
-      </segment>
-    </unit>
-    <unit id="M6VfIb7" name="label.textarea">
-      <segment state="translated">
-        <source>Long text</source>
-        <target>Long text</target>
-      </segment>
-    </unit>
-    <unit id="0ZXz2Ap" name="label.items_list_columns">
-      <segment state="translated">
-        <source>List columns</source>
-        <target>List columns</target>
-      </segment>
-    </unit>
-    <unit id="RI32F3o" name="enum.history_filter_class.template">
-      <segment state="translated">
-        <source>Template</source>
-        <target>Template</target>
-      </segment>
-    </unit>
-    <unit id="cmatIVa" name="enum.history_filter_class.choice_list">
-      <segment state="translated">
-        <source>Choice list</source>
-        <target>Choice list</target>
-      </segment>
-    </unit>
-    <unit id="Oapz0PO" name="enum.history_filter_class.inventory">
-      <segment state="translated">
-        <source>Inventory</source>
-        <target>Inventory</target>
-      </segment>
-    </unit>
-    <unit id="BfIpT_W" name="enum.history_filter_class.tag_category">
-      <segment state="translated">
-        <source>Tag category</source>
-        <target>Tag category</target>
-      </segment>
-    </unit>
-    <unit id="7xj7gJl" name="enum.history_filter_class.photo">
-      <segment state="translated">
-        <source>Photo</source>
-        <target>Photo</target>
-      </segment>
-    </unit>
-    <unit id="8EqSejP" name="enum.history_filter_class.wish">
-      <segment state="translated">
-        <source>Wish</source>
-        <target>Wish</target>
-      </segment>
-    </unit>
-    <unit id="qbaO3DI" name="log.photo.created">
-      <segment state="translated">
-        <source>Photo {label} was created</source>
-        <target>Photo {label} was created</target>
-      </segment>
-    </unit>
-    <unit id="LFxS4N." name="log.photo.deleted">
-      <segment state="translated">
-        <source>Photo {label} was deleted</source>
-        <target>Photo {label} was deleted</target>
-      </segment>
-    </unit>
-    <unit id="FetHbDe" name="log.tag_category.created">
-      <segment state="translated">
-        <source>Tag category {label} was created</source>
-        <target>Tag category {label} was created</target>
-      </segment>
-    </unit>
-    <unit id="fQ0vpBr" name="log.tag_category.deleted">
-      <segment state="translated">
-        <source>Tag category {label} was deleted</source>
-        <target>Tag category {label} was deleted</target>
-      </segment>
-    </unit>
-    <unit id="NXWixPs" name="log.template.created">
-      <segment state="translated">
-        <source>Template {label} was created</source>
-        <target>Template {label} was created</target>
-      </segment>
-    </unit>
-    <unit id="ewUDkTE" name="log.template.deleted">
-      <segment state="translated">
-        <source>Template {label} was deleted</source>
-        <target>Template {label} was deleted</target>
-      </segment>
-    </unit>
-    <unit id="_eUCsYY" name="log.inventory.created">
-      <segment state="translated">
-        <source>Inventory {label} was created</source>
-        <target>Inventory {label} was created</target>
-      </segment>
-    </unit>
-    <unit id="poWDB.l" name="log.inventory.deleted">
-      <segment state="translated">
-        <source>Inventory {label} was deleted</source>
-        <target>Inventory {label} was deleted</target>
-      </segment>
-    </unit>
-    <unit id="mtFIeHM" name="log.choice_list.created">
-      <segment state="translated">
-        <source>Choice list {label} was created</source>
-        <target>Choice list {label} was created</target>
-      </segment>
-    </unit>
-    <unit id="rlvIomT" name="log.choice_list.deleted">
-      <segment state="translated">
-        <source>Choice list {label} was deleted</source>
-        <target>Choice list {label} was deleted</target>
-      </segment>
-    </unit>
-    <unit id="upWFjf_" name="log.wish.created">
-      <segment state="translated">
-        <source>Wish {label} was created</source>
-        <target>Wish {label} was created</target>
-      </segment>
-    </unit>
-    <unit id="7la3BTO" name="log.wish.deleted">
-      <segment state="translated">
-        <source>Wish {label} was deleted</source>
-        <target>Wish {label} was deleted</target>
-      </segment>
-    </unit>
-    <unit id="o.z2uRm" name="label.list">
-      <segment state="translated">
-        <source>List</source>
-        <target>List</target>
+        <target>Albümler</target>
       </segment>
     </unit>
     <unit id="yXp44Ls" name="breadcrumb.add_choice_list">
       <segment state="translated">
         <source>Add a new choice list</source>
-        <target>Add a new choice list</target>
+        <target>Yeni bir seçenek listesi ekle</target>
       </segment>
     </unit>
     <unit id="nMiYLFJ" name="breadcrumb.edit_choice_list">
       <segment state="translated">
         <source>Edit</source>
-        <target>Edit</target>
-      </segment>
-    </unit>
-    <unit id="ltgwfbq" name="menu.signs_shared">
-      <segment state="translated">
-        <source>{username}'s signatures</source>
-        <target>{username}'s signatures</target>
-      </segment>
-    </unit>
-    <unit id="tk6udpx" name="menu.statistics_shared">
-      <segment state="translated">
-        <source>{username}'s statistics</source>
-        <target>{username}'s statistics</target>
-      </segment>
-    </unit>
-    <unit id="xLcWFGm" name="menu.tags_shared">
-      <segment state="translated">
-        <source>{username}'s tags</source>
-        <target>{username}'s tags</target>
-      </segment>
-    </unit>
-    <unit id="vd.6dAz" name="menu.wishlists_shared">
-      <segment state="translated">
-        <source>{username}'s wishlists</source>
-        <target>{username}'s wishlists</target>
-      </segment>
-    </unit>
-    <unit id="Nl_I6SL" name="menu.albums_shared">
-      <segment state="translated">
-        <source>{username}'s albums</source>
-        <target>{username}'s albums</target>
-      </segment>
-    </unit>
-    <unit id="aTQXfVF" name="label.list_show_visibility">
-      <segment state="translated">
-        <source>Show visibility column</source>
-        <target>Show visibility column</target>
-      </segment>
-    </unit>
-    <unit id="tq3yBdM" name="label.list_show_actions">
-      <segment state="translated">
-        <source>Show actions column</source>
-        <target>Show actions column</target>
-      </segment>
-    </unit>
-    <unit id="MWCAWm0" name="label.sub_collections_display_mode">
-      <segment state="translated">
-        <source>Display sub-collections in a</source>
-        <target>Display sub-collections in a</target>
-      </segment>
-    </unit>
-    <unit id="UKwQt9f" name="label.sub_albums_display_mode">
-      <segment state="translated">
-        <source>Display sub-albums in a</source>
-        <target>Display sub-albums in a</target>
-      </segment>
-    </unit>
-    <unit id="vAUGNHi" name="label.sub_wishlists_display_mode">
-      <segment state="translated">
-        <source>Display sub-wishlists in a</source>
-        <target>Display sub-wishlists in a</target>
-      </segment>
-    </unit>
-    <unit id="x6kN4XJ" name="label.list_show_number_of_children">
-      <segment state="translated">
-        <source>Show number of children</source>
-        <target>Show number of children</target>
-      </segment>
-    </unit>
-    <unit id="HtDGsd0" name="label.list_show_number_of_items">
-      <segment state="translated">
-        <source>Show number of items</source>
-        <target>Show number of items</target>
-      </segment>
-    </unit>
-    <unit id="8LEwIMR" name="label.wishes">
-      <segment state="translated">
-        <source>Wishes</source>
-        <target>Wishes</target>
+        <target>Düzenle</target>
       </segment>
     </unit>
     <unit id="rsBlJD0" name="label.photos">
       <segment state="translated">
         <source>Photos</source>
-        <target>Photos</target>
-      </segment>
-    </unit>
-    <unit id="sQ83en6" name="label.wishlists_display_mode">
-      <segment state="translated">
-        <source>Display wishlists in a</source>
-        <target>Display wishlists in a</target>
-      </segment>
-    </unit>
-    <unit id="paiZ6qs" name="label.collections_display_mode">
-      <segment state="translated">
-        <source>Display collections in a</source>
-        <target>Display collections in a</target>
-      </segment>
-    </unit>
-    <unit id="kHAvmu7" name="label.albums_display_mode">
-      <segment state="translated">
-        <source>Display albums in a</source>
-        <target>Display albums in a</target>
+        <target>Fotoğraflar</target>
       </segment>
     </unit>
     <unit id="z6Bkyzi" name="breadcrumb.edit_collections_index">
       <segment state="translated">
         <source>Edit</source>
-        <target>Edit</target>
+        <target>Düzenle</target>
       </segment>
     </unit>
     <unit id="FGS9ySo" name="title.edit_collections_index">
       <segment state="translated">
         <source>Edit</source>
-        <target>Edit</target>
+        <target>Düzenle</target>
       </segment>
     </unit>
     <unit id="hJBVuAk" name="breadcrumb.edit_albums_index">
       <segment state="translated">
         <source>Edit</source>
-        <target>Edit</target>
+        <target>Düzenle</target>
       </segment>
     </unit>
     <unit id="DomzBkb" name="title.edit_albums_index">
       <segment state="translated">
         <source>Edit</source>
-        <target>Edit</target>
+        <target>Düzenle</target>
       </segment>
     </unit>
     <unit id="CLs5oQy" name="breadcrumb.edit_wishlists_index">
       <segment state="translated">
         <source>Edit</source>
-        <target>Edit</target>
+        <target>Düzenle</target>
       </segment>
     </unit>
     <unit id="WEd3Zlc" name="title.edit_wishlists_index">
       <segment state="translated">
         <source>Edit</source>
-        <target>Edit</target>
-      </segment>
-    </unit>
-    <unit id="TnuDaOl" name="btn.add_price">
-      <segment state="translated">
-        <source>Price</source>
-        <target>Price</target>
-      </segment>
-    </unit>
-    <unit id="dYObaVv" name="message.caches_refreshed">
-      <segment state="translated">
-        <source>Caches successfully refreshed</source>
-        <target>Caches successfully refreshed</target>
-      </segment>
-    </unit>
-    <unit id="NPKaPRX" name="btn.refresh_caches">
-      <segment state="translated">
-        <source>Refresh caches</source>
-        <target>Refresh caches</target>
-      </segment>
-    </unit>
-    <unit id="DsMeFhY" name="form.item_sorting.number_of_children">
-      <segment state="translated">
-        <source>Number of children</source>
-        <target>Number of children</target>
-      </segment>
-    </unit>
-    <unit id="O6Z2J6m" name="form.item_sorting.number_of_items">
-      <segment state="translated">
-        <source>Number of items</source>
-        <target>Number of items</target>
+        <target>Düzenle</target>
       </segment>
     </unit>
     <unit id="0vnK4DY" name="menu.users">
       <segment state="translated">
         <source>Users</source>
-        <target>Users</target>
-      </segment>
-    </unit>
-    <unit id="TfMejxQ" name="label.search_in_data">
-      <segment state="translated">
-        <source>Search in data (for items and collections)</source>
-        <target>Search in data (for items and collections)</target>
-      </segment>
-    </unit>
-    <unit id="hnKIpTQ" name="label.apiplatform_version">
-      <segment state="translated">
-        <source>API Platform version</source>
-        <target>API Platform version</target>
-      </segment>
-    </unit>
-    <unit id="gx6LCyR" name="global.themes.browser">
-      <segment state="translated">
-        <source>Default browser theme</source>
-        <target>Default browser theme</target>
-      </segment>
-    </unit>
-    <unit id="Vug3DkG" name="global.themes.light">
-      <segment state="translated">
-        <source>Light</source>
-        <target>Light</target>
-      </segment>
-    </unit>
-    <unit id="8e9LycZ" name="global.themes.dark">
-      <segment state="translated">
-        <source>Dark</source>
-        <target>Dark</target>
-      </segment>
-    </unit>
-    <unit id="TWYZ00L" name="label.theme">
-      <segment state="translated">
-        <source>Theme</source>
-        <target>Theme</target>
-      </segment>
-    </unit>
-    <unit id="m4zbXKM" name="btn.add_checkbox">
-      <segment state="translated">
-        <source>Checkbox</source>
-        <target>Checkbox</target>
-      </segment>
-    </unit>
-    <unit id="3XftsPN" name="label.search_in_data_by_default_enabled">
-      <segment state="translated">
-        <source>Search in data by default</source>
-        <target>Search in data by default</target>
-      </segment>
-    </unit>
-    <unit id="JL3jH0w" name="menu.api_documention">
-      <segment state="translated">
-        <source>API documentation</source>
-        <target>API documentation</target>
+        <target>Kullanıcılar</target>
       </segment>
     </unit>
     <unit id="wcFJTRH" name="tab.configuration">
       <segment state="translated">
         <source>Configuration</source>
-        <target>Configuration</target>
+        <target>Yapılandırma</target>
       </segment>
     </unit>
     <unit id="l4xWhN8" name="menu.configuration">
       <segment state="translated">
         <source>Configuration</source>
-        <target>Configuration</target>
+        <target>Yapılandırma</target>
       </segment>
     </unit>
     <unit id="4Q5t9Zu" name="title.edit_configuration">
       <segment state="translated">
         <source>Configuration</source>
-        <target>Configuration</target>
-      </segment>
-    </unit>
-    <unit id="ACW22BU" name="global.configuration.thumbnails_format.keep_original">
-      <segment state="translated">
-        <source>Keep original</source>
-        <target>Keep original</target>
-      </segment>
-    </unit>
-    <unit id="UtfkHZy" name="global.configuration.thumbnails_format.jpeg">
-      <segment state="translated">
-        <source>JPEG</source>
-        <target>JPEG</target>
-      </segment>
-    </unit>
-    <unit id="ILesFNS" name="global.configuration.thumbnails_format.png">
-      <segment state="translated">
-        <source>PNG</source>
-        <target>PNG</target>
-      </segment>
-    </unit>
-    <unit id="FNiUGVN" name="global.configuration.thumbnails_format.webp">
-      <segment state="translated">
-        <source>WEBP</source>
-        <target>WEBP</target>
-      </segment>
-    </unit>
-    <unit id="Ttjm83x" name="global.configuration.thumbnails_format.avif">
-      <segment state="translated">
-        <source>AVIF</source>
-        <target>AVIF</target>
-      </segment>
-    </unit>
-    <unit id="btvfChU" name="label.thumbnails_format">
-      <segment state="translated">
-        <source>Thumbnails format</source>
-        <target>Thumbnails format</target>
-      </segment>
-    </unit>
-    <unit id="r58OOnk" name="message.configuration_updated">
-      <segment state="translated">
-        <source>Configuration updated</source>
-        <target>Configuration updated</target>
-      </segment>
-    </unit>
-    <unit id="YX0yhdx" name="tooltip.cancel_modifications">
-      <segment state="translated">
-        <source>Cancel modifications</source>
-        <target>Cancel modifications</target>
-      </segment>
-    </unit>
-    <unit id="oAD2Kex" name="tooltip.remove_thumbnail">
-      <segment state="translated">
-        <source>Remove thumbnail</source>
-        <target>Remove thumbnail</target>
-      </segment>
-    </unit>
-    <unit id="8QwwFtM" name="title.custom_css">
-      <segment state="translated">
-        <source>Custom CSS</source>
-        <target>Custom CSS</target>
-      </segment>
-    </unit>
-    <unit id="OCFAuxO" name="label.custom_light_theme_css">
-      <segment state="translated">
-        <source>Custom CSS for light theme</source>
-        <target>Custom CSS for light theme</target>
-      </segment>
-    </unit>
-    <unit id="iSj6Yq6" name="label.custom_dark_theme_css">
-      <segment state="translated">
-        <source>Custom CSS for dark theme</source>
-        <target>Custom CSS for dark theme</target>
-      </segment>
-    </unit>
-    <unit id="tgAUZOn" name="message.custom_css_colors_help">
-      <segment state="translated">
-        <source>To change the theme colors, copy and paste the following code in the text area and update the colors as needed.</source>
-        <target>To change the theme colors, copy and paste the following code in the text area and update the colors as needed.</target>
-      </segment>
-    </unit>
-    <unit id="Odut9ks" name="message.custom_css_properties_help">
-      <segment state="translated">
-        <source>For more fine-grained modifications, you can also add custom CSS properties.</source>
-        <target>For more fine-grained modifications, you can also add custom CSS properties.</target>
-      </segment>
-    </unit>
-    <unit id="tQOO9SX" name="title.customize_light_theme">
-      <segment state="translated">
-        <source>Customize light theme</source>
-        <target>Customize light theme</target>
-      </segment>
-    </unit>
-    <unit id="VwEpz4c" name="title.customize_dark_theme">
-      <segment state="translated">
-        <source>Customize dark theme</source>
-        <target>Customize dark theme</target>
-      </segment>
-    </unit>
-    <unit id="UZ5psYq" name="message.show_help_for_light_theme">
-      <segment state="translated">
-        <source>Show help for light theme</source>
-        <target>Show help for light theme</target>
-      </segment>
-    </unit>
-    <unit id="LlfrKW3" name="message.show_help_for_dark_theme">
-      <segment state="translated">
-        <source>Show help for dark theme</source>
-        <target>Show help for dark theme</target>
-      </segment>
-    </unit>
-    <unit id="VzBOkPf" name="label.checkbox">
-      <segment state="translated">
-        <source>Checkbox</source>
-        <target>Checkbox</target>
-      </segment>
-    </unit>
-    <unit id="TfoPMdx" name="btn.add_list">
-      <segment state="translated">
-        <source>List</source>
-        <target>List</target>
-      </segment>
-    </unit>
-    <unit id="hbMADfF" name="btn.add_list_element">
-      <segment state="translated">
-        <source>Add list element</source>
-        <target>Add list element</target>
-      </segment>
-    </unit>
-    <unit id="3UpvF8S" name="menu.scrapers">
-      <segment state="translated">
-        <source>Scrapers</source>
-        <target>Scrapers</target>
-      </segment>
-    </unit>
-    <unit id="c8N1gqs" name="tooltip.add_scraper">
-      <segment state="translated">
-        <source>Add a new scraper</source>
-        <target>Add a new scraper</target>
-      </segment>
-    </unit>
-    <unit id="0Skvou0" name="breadcrumb.add_scraper">
-      <segment state="translated">
-        <source>Add a new scraper</source>
-        <target>Add a new scraper</target>
-      </segment>
-    </unit>
-    <unit id="orjuiFY" name="title.add_scraper">
-      <segment state="translated">
-        <source>Add a new scraper</source>
-        <target>Add a new scraper</target>
-      </segment>
-    </unit>
-    <unit id="fCfS5h4" name="label.name_path">
-      <segment state="translated">
-        <source>Name path</source>
-        <target>Name path</target>
-      </segment>
-    </unit>
-    <unit id="TQZi6HZ" name="label.image_path">
-      <segment state="translated">
-        <source>Image path</source>
-        <target>Image path</target>
-      </segment>
-    </unit>
-    <unit id="j4zVta3" name="label.path">
-      <segment state="translated">
-        <source>Path</source>
-        <target>Path</target>
-      </segment>
-    </unit>
-    <unit id="UxUN4hz" name="btn.add_data_path">
-      <segment state="translated">
-        <source>Add data path</source>
-        <target>Add data path</target>
-      </segment>
-    </unit>
-    <unit id="WoECGqp" name="btn.scrap">
-      <segment state="translated">
-        <source>Scrap</source>
-        <target>Scrap</target>
-      </segment>
-    </unit>
-    <unit id="JJiTxDb" name="title.scrap">
-      <segment state="translated">
-        <source>Scrap</source>
-        <target>Scrap</target>
-      </segment>
-    </unit>
-    <unit id="YGKpgy8" name="label.scraper">
-      <segment state="translated">
-        <source>Scraper</source>
-        <target>Scraper</target>
-      </segment>
-    </unit>
-    <unit id="rfCyU5h" name="message.delete.scraper">
-      <segment state="translated">
-        <source>Are you sure you want to delete this scraper ? It will be permanently lost...</source>
-        <target>Are you sure you want to delete this scraper ? It will be permanently lost...</target>
-      </segment>
-    </unit>
-    <unit id="pVpG91b" name="global.entities.scraper">
-      <segment state="translated">
-        <source>Scraper</source>
-        <target>Scraper</target>
+        <target>Yapılandırma</target>
       </segment>
     </unit>
     <unit id="lJcMu7j" name="breadcrumb.edit_scraper">
       <segment state="translated">
         <source>Edit</source>
-        <target>Edit</target>
-      </segment>
-    </unit>
-    <unit id="PwaCRxg" name="title.edit_scraper">
-      <segment state="translated">
-        <source>Edit scraper {scraper}</source>
-        <target>Edit scraper {scraper}</target>
-      </segment>
-    </unit>
-    <unit id="pQMd2KQ" name="message.wiki.scrapper">
-      <segment state="translated">
-        <source>See wiki for help</source>
-        <target>See wiki for help</target>
-      </segment>
-    </unit>
-    <unit id="2T801sa" name="tooltip.export">
-      <segment state="translated">
-        <source>Export</source>
-        <target>Export</target>
-      </segment>
-    </unit>
-    <unit id="0qbEAs0" name="tooltip.import">
-      <segment state="translated">
-        <source>Import</source>
-        <target>Import</target>
-      </segment>
-    </unit>
-    <unit id="4q1Sf3P" name="btn.upload">
-      <segment state="translated">
-        <source>Upload</source>
-        <target>Upload</target>
-      </segment>
-    </unit>
-    <unit id="M7PzMIt" name="title.import_scraper">
-      <segment state="translated">
-        <source>Import scraper from JSON file</source>
-        <target>Import scraper from JSON file</target>
-      </segment>
-    </unit>
-    <unit id="Hklmnjp" name="btn.import">
-      <segment state="translated">
-        <source>Import</source>
-        <target>Import</target>
-      </segment>
-    </unit>
-    <unit id="gGSqvwG" name="message.scraper_added">
-      <segment state="translated">
-        <source>Scraper {scraper} has been added</source>
-        <target>Scraper {scraper} has been added</target>
-      </segment>
-    </unit>
-    <unit id="r7aNcN4" name="message.scraper_edited">
-      <segment state="translated">
-        <source>Scraper {scraper} has been updated</source>
-        <target>Scraper {scraper} has been updated</target>
-      </segment>
-    </unit>
-    <unit id="rX55M3v" name="message.scraper_deleted">
-      <segment state="translated">
-        <source>Scraper {scraper} was deleted</source>
-        <target>Scraper {scraper} was deleted</target>
-      </segment>
-    </unit>
-    <unit id="DuFvrmE" name="message.scraper_imported">
-      <segment state="translated">
-        <source>Scraper {scraper} was imported</source>
-        <target>Scraper {scraper} was imported</target>
-      </segment>
-    </unit>
-    <unit id="k4Ssjg4" name="label.scraping_feature_enabled">
-      <segment state="translated">
-        <source>Scraping</source>
-        <target>Scraping</target>
-      </segment>
-    </unit>
-    <unit id="zrNqfUb" name="label.scrap_name">
-      <segment state="translated">
-        <source>Scrap name</source>
-        <target>Scrap name</target>
-      </segment>
-    </unit>
-    <unit id="DCx9jQb" name="label.scrap_image">
-      <segment state="translated">
-        <source>Scrap image</source>
-        <target>Scrap image</target>
-      </segment>
-    </unit>
-    <unit id="0rmld0o" name="message.scraper_import_error">
-      <segment state="translated">
-        <source>Error while importing, incorrect file format</source>
-        <target>Error while importing, incorrect file format</target>
-      </segment>
-    </unit>
-    <unit id="aQEHOsY" name="label.scraped_from_url">
-      <segment state="translated">
-        <source>Scraped from</source>
-        <target>Scraped from</target>
-      </segment>
-    </unit>
-    <unit id="EUgbudS" name="btn.scrap_html_file">
-      <segment state="translated">
-        <source>Scrap HTML file</source>
-        <target>Scrap HTML file</target>
-      </segment>
-    </unit>
-    <unit id="jy9YnDE" name="btn.scrap_url">
-      <segment state="translated">
-        <source>Scrap URL</source>
-        <target>Scrap URL</target>
-      </segment>
-    </unit>
-    <unit id="0ET5fPK" name="label.url_pattern">
-      <segment state="translated">
-        <source>Url pattern</source>
-        <target>Url pattern</target>
-      </segment>
-    </unit>
-    <unit id="FPWuWud" name="btn.ok">
-      <segment state="translated">
-        <source>OK</source>
-        <target>OK</target>
-      </segment>
-    </unit>
-    <unit id="i5Tdb0O" name="message.delete.choice-list">
-      <segment state="translated">
-        <source>Are you sure you want to delete this choice list ? It will be permanently lost...</source>
-        <target>Are you sure you want to delete this choice list ? It will be permanently lost...</target>
-      </segment>
-    </unit>
-    <unit id="1SR04M0" name="breadcrumb.item_scrapers">
-      <segment state="translated">
-        <source>Item scrapers</source>
-        <target>Item scrapers</target>
-      </segment>
-    </unit>
-    <unit id="rce3nth" name="breadcrumb.collection_scrapers">
-      <segment state="translated">
-        <source>Collection scrapers</source>
-        <target>Collection scrapers</target>
-      </segment>
-    </unit>
-    <unit id="lWm9FV3" name="breadcrumb.wish_scrapers">
-      <segment state="translated">
-        <source>Wish scrapers</source>
-        <target>Wish scrapers</target>
-      </segment>
-    </unit>
-    <unit id="NK6205q" name="tab.item_scrapers">
-      <segment state="translated">
-        <source>Item scrapers</source>
-        <target>Item scrapers</target>
-      </segment>
-    </unit>
-    <unit id="QLWFaEE" name="tab.collection_scrapers">
-      <segment state="translated">
-        <source>Collection scrapers</source>
-        <target>Collection scrapers</target>
-      </segment>
-    </unit>
-    <unit id="RB94Jlx" name="tab.wish_scrapers">
-      <segment state="translated">
-        <source>Wish scrapers</source>
-        <target>Wish scrapers</target>
-      </segment>
-    </unit>
-    <unit id="OJ77gpR" name="counter.item_scrapers">
-      <segment state="translated">
-        <source>{count, plural, one {# item scraper} other {# item scrapers}}</source>
-        <target>{count, plural, one {# item scraper} other {# item scrapers}}</target>
-      </segment>
-    </unit>
-    <unit id="noR9AMY" name="counter.collection_scrapers">
-      <segment state="translated">
-        <source>{count, plural, one {# collection scraper} other {# collection scrapers}}</source>
-        <target>{count, plural, one {# collection scraper} other {# collection scrapers}}</target>
-      </segment>
-    </unit>
-    <unit id="cwiiTlV" name="counter.wish_scrapers">
-      <segment state="translated">
-        <source>{count, plural, one {# wish scraper} other {# wish scrapers}}</source>
-        <target>{count, plural, one {# wish scraper} other {# wish scrapers}}</target>
-      </segment>
-    </unit>
-    <unit id="KLXszaB" name="label.price_path">
-      <segment state="translated">
-        <source>Price path</source>
-        <target>Price path</target>
-      </segment>
-    </unit>
-    <unit id="qR8RuNn" name="label.display_items_name_in_grid_view">
-      <segment state="translated">
-        <source>Display items name in grid view</source>
-        <target>Display items name in grid view</target>
-      </segment>
-    </unit>
-    <unit id="QEwp7eI" name="label.frankenphp_version">
-      <segment state="translated">
-        <source>FrankenPHP version</source>
-        <target>FrankenPHP version</target>
-      </segment>
-    </unit>
-    <unit id="Xi6swbH" name="btn.add_video">
-      <segment state="translated">
-        <source>Video</source>
-        <target>Video</target>
-      </segment>
-    </unit>
-    <unit id="K5G7aFy" name="label.show_item_quantities">
-      <segment state="translated">
-        <source>Show item quantities</source>
-        <target>Show item quantities</target>
-      </segment>
-    </unit>
-    <unit id="wgg5Wgv" name="form.item_sorting.quantity">
-      <segment state="translated">
-        <source>Quantity</source>
-        <target>Quantity</target>
-      </segment>
-    </unit>
-    <unit id="npBJeAW" name="label.enable_metrics">
-      <segment state="translated">
-        <source>Enable metrics</source>
-        <target>Enable metrics</target>
-      </segment>
-    </unit>
-    <unit id="zNpYLvW" name="label.display_mode">
-      <segment state="translated">
-        <source>Display mode</source>
-        <target>Display mode</target>
+        <target>Düzenle</target>
       </segment>
     </unit>
   </file>
