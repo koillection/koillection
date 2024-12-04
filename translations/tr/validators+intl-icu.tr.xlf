@@ -79,35 +79,5 @@
         <target>Hesabınızda bu işlemi gerçekleştirmek için yeterli alan yok</target>
       </segment>
     </unit>
-    <unit id="1ptFEJZ" name="error.datum.value.checkbox">
-      <segment state="translated">
-        <source>Value must be '0' or '1'</source>
-        <target>Value must be '0' or '1'</target>
-      </segment>
-    </unit>
-    <unit id="Sm7SLSo" name="error.datum.value.price">
-      <segment state="translated">
-        <source>Value must be a string representation of a positive number</source>
-        <target>Value must be a string representation of a positive number</target>
-      </segment>
-    </unit>
-    <unit id="Ho12PpQ" name="error.datum.value.number">
-      <segment state="translated">
-        <source>Value must be a string representation of a number like '3', '3.24', '-4'</source>
-        <target>Value must be a string representation of a number like '3', '3.24', '-4'</target>
-      </segment>
-    </unit>
-    <unit id="TGNG5G2" name="error.datum.value.country">
-      <segment state="translated">
-        <source>Value must be a valid 2 letters country code like 'FR'</source>
-        <target>Value must be a valid 2 letters country code like 'FR'</target>
-      </segment>
-    </unit>
-    <unit id="bZ6z5fo" name="error.datum.value.date">
-      <segment state="translated">
-        <source>Value must be a Y-m-d formated string like '2024-06-10'</source>
-        <target>Value must be a Y-m-d formated string like '2024-06-10'</target>
-      </segment>
-    </unit>
   </file>
 </xliff>
