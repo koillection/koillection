@@ -75,7 +75,7 @@
         "justinrainbow/json-schema": "6.0.0",
         "phpunit/php-code-coverage": "11.0.7",
         "phpunit/phpunit": "11.4.4",
-        "rector/rector": "1.2.10",
+        "rector/rector": "2.0.3",
         "symfony/maker-bundle": "1.61.0",
         "symfony/stopwatch": "7.2.0",
         "symfony/var-dumper": "7.2.0",
