@@ -34,6 +34,13 @@ class Error
     #[ORM\Column(type: Types::JSON)]
     private array $trace;
 
+    #[ORM\Column(type: Types::INTEGER)]
+    private int $count;
+
+    #[ORM\Column(type: Types::DATETIME_IMMUTABLE)]
+    #[Groups(['item:read'])]
+    private \DateTimeImmutable $lastOccurrenceAt;
+
     #[ORM\Column(type: Types::DATETIME_IMMUTABLE)]
     #[Groups(['item:read'])]
     private \DateTimeImmutable $createdAt;
@@ -41,6 +48,7 @@ class Error
     public function __construct()
     {
         $this->id = Uuid::v7()->toRfc4122();
+        $this->count = 0;
     }
 
     public function getId(): ?string
@@ -92,6 +100,30 @@ class Error
     public function setTrace(array $trace): Error
     {
         $this->trace = $trace;
+
+        return $this;
+    }
+
+    public function getCount(): int
+    {
+        return $this->count;
+    }
+
+    public function setCount(int $count): Error
+    {
+        $this->count = $count;
+
+        return $this;
+    }
+
+    public function getLastOccurrenceAt(): \DateTimeImmutable
+    {
+        return $this->lastOccurrenceAt;
+    }
+
+    public function setLastOccurrenceAt(\DateTimeImmutable $lastOccurrenceAt): Error
+    {
+        $this->lastOccurrenceAt = $lastOccurrenceAt;
 
         return $this;
     }

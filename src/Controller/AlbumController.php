@@ -23,6 +23,7 @@ class AlbumController extends AbstractController
     #[Route(path: '/user/{username}/albums', name: 'app_shared_album_index', methods: ['GET'])]
     public function index(AlbumRepository $albumRepository, CachedValuesGetter $cachedValuesGetter): Response
     {
+        dsfdsf;
         $this->denyAccessUnlessFeaturesEnabled(['albums']);
         $albums = $albumRepository->findBy(['parent' => null], ['title' => Criteria::ASC]);
 

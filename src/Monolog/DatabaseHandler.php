@@ -22,17 +22,47 @@ class DatabaseHandler extends AbstractProcessingHandler
             return;
         }
 
+        $existingError = $this->getExistingError($record);
+
+        if (!$existingError) {
+            $sql = "
+                INSERT INTO koi_error (id, message, level, level_name, trace, created_at, last_occurrence_at, count) VALUES (?, ?, ?, ?, ?, ?, ?, 0)
+            ";
+
+            $stmt = $this->managerRegistry->getConnection()->prepare($sql);
+            $stmt->bindValue(1, Uuid::v7()->toRfc4122());
+            $stmt->bindValue(2, $record['message']);
+            $stmt->bindValue(3, $record['level']);
+            $stmt->bindValue(4, $record['level_name']);
+            $stmt->bindValue(5, json_encode($record['context']['exception']->getTrace()));
+            $stmt->bindValue(6, new \DateTimeImmutable()->format('Y-m-d H:i:s'));
+            $stmt->bindValue(7, new \DateTimeImmutable()->format('Y-m-d H:i:s'));
+        } else {
+            $sql = "
+                UPDATE koi_error 
+                SET count = ?, last_occurrence_at = ?
+                WHERE id = ?
+            ";
+
+            $stmt = $this->managerRegistry->getConnection()->prepare($sql);
+            $stmt->bindValue(1, $existingError['count'] + 1);
+            $stmt->bindValue(2, new \DateTimeImmutable()->format('Y-m-d H:i:s'));
+            $stmt->bindValue(3, $existingError['id']);
+        }
+
+        $stmt->executeQuery();
+    }
+
+    private function getExistingError(array|LogRecord $record): ?array
+    {
         $sql = "
-            INSERT INTO koi_error (id, message, level, level_name, trace, created_at) VALUES (?, ?, ?, ?, ?, ?)
+            SELECT * FROM koi_error WHERE message = ?;
         ";
 
         $stmt = $this->managerRegistry->getConnection()->prepare($sql);
-        $stmt->bindValue(1, Uuid::v7()->toRfc4122());
-        $stmt->bindValue(2, $record['message']);
-        $stmt->bindValue(3, $record['level']);
-        $stmt->bindValue(4, $record['level_name']);
-        $stmt->bindValue(5, json_encode($record['context']['exception']->getTrace()));
-        $stmt->bindValue(6, new \DateTimeImmutable()->format('Y-m-d H:i:s'));
-        $stmt->executeQuery();
+        $stmt->bindValue(1, $record['message']);
+        $result = $stmt->executeQuery()->fetchAssociative();
+
+        return is_array($result) ? $result : null;
     }
 }

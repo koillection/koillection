@@ -3637,5 +3637,23 @@
         <target>Error</target>
       </segment>
     </unit>
+    <unit id="VCoUwHa" name="label.last_occurrence">
+      <segment state="translated">
+        <source>Last occurrence</source>
+        <target>Last occurrence</target>
+      </segment>
+    </unit>
+    <unit id="UuNgqqe" name="label.count">
+      <segment state="translated">
+        <source>Count</source>
+        <target>Count</target>
+      </segment>
+    </unit>
+    <unit id="sfcoCPq" name="tooltip.details">
+      <segment state="translated">
+        <source>Details</source>
+        <target>Details</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

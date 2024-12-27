@@ -28,7 +28,8 @@
             <table class="centered striped">
                 <thead>
                     <tr>
-                        <th>{{ 'label.date'|trans }}</th>
+                        <th>{{ 'label.last_occurrence'|trans }}</th>
+                        <th>{{ 'label.count'|trans }}</th>
                         <th>{{ 'label.code'|trans }}</th>
                         <th>{{ 'label.level'|trans }}</th>
                         <th>{{ 'label.message'|trans }}</th>
@@ -39,7 +40,8 @@
                 <tbody>
                     {% for error in errors %}
                         <tr>
-                            <td>{{ error.createdAt|date('Y-m-d H:i:s') }}</td>
+                            <td>{{ error.lastOccurrenceAt|date('Y-m-d H:i:s') }}</td>
+                            <td>{{ error.count }}</td>
                             <td>{{ error.level }}</td>
                             <td>{{ error.levelName }}</td>
                             <td>{{ error.message }}</td>
