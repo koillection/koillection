@@ -156,7 +156,7 @@ abstract class HtmlScraper
 
     protected function guessHost(?string $url, ScrapingItem|ScrapingCollection|ScrapingWish $scraping): ?string
     {
-        if ($url === null) {
+        if ($url === null || $scraping->getUrl() === null) {
             return null;
         }
 

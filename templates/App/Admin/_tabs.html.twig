@@ -15,6 +15,11 @@
                 <span>{{ 'tab.configuration'|trans }}</span>
             </a>
         </li>
+        <li class="tab {{ current == "errors" ? 'current' }}">
+            <a href="{{ path('app_admin_error_index') }}">
+                <span>{{ 'tab.errors'|trans }}</span>
+            </a>
+        </li>
     </ul>
 </div>
 

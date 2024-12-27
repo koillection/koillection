@@ -17,7 +17,7 @@ class HtmlWishScraper extends HtmlScraper
         $image = $scraping->getScrapImage() ? $this->extract($scraper->getImagePath(), DatumTypeEnum::TYPE_TEXT, $crawler) : null;
         $image = $this->guessHost($image, $scraping);
 
-        $price = $scraping->getScrapName() ? $this->extract($scraper->getPricePath(), DatumTypeEnum::TYPE_TEXT, $crawler) : null;
+        $price = $scraping->getScrapPrice() ? $this->extract($scraper->getPricePath(), DatumTypeEnum::TYPE_TEXT, $crawler) : null;
         $price = preg_replace('/[^0-9-.,]+/ ', '', $price);
 
         return [

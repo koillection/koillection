@@ -3595,5 +3595,47 @@
         <target>Display mode</target>
       </segment>
     </unit>
+    <unit id="vC8jN7a" name="tab.errors">
+      <segment state="translated">
+        <source>Errors</source>
+        <target>Errors</target>
+      </segment>
+    </unit>
+    <unit id="fQRayPd" name="menu.errors">
+      <segment state="translated">
+        <source>Errors</source>
+        <target>Errors</target>
+      </segment>
+    </unit>
+    <unit id="CZTLE2r" name="title.errors">
+      <segment state="translated">
+        <source>Errors</source>
+        <target>Errors</target>
+      </segment>
+    </unit>
+    <unit id="syP2FBE" name="label.code">
+      <segment state="translated">
+        <source>Code</source>
+        <target>Code</target>
+      </segment>
+    </unit>
+    <unit id="4Acswj3" name="label.level">
+      <segment state="translated">
+        <source>Level</source>
+        <target>Level</target>
+      </segment>
+    </unit>
+    <unit id="BTCTYyM" name="label.message">
+      <segment state="translated">
+        <source>Message</source>
+        <target>Message</target>
+      </segment>
+    </unit>
+    <unit id="ueKYyVj" name="title.error">
+      <segment state="translated">
+        <source>Error</source>
+        <target>Error</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

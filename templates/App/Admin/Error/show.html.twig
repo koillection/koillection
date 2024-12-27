@@ -1,0 +1,41 @@
+{% extends 'layout.html.twig' %}
+
+{% set breadcrumb = buildBreadcrumb([
+    {'route': 'app_admin_index', 'trans': 'menu.admin'},
+    {'route': 'app_admin_error_index', 'trans': 'menu.errors'}
+]) %}
+
+{% block title %}
+    {{ renderTitle(breadcrumb) }}
+{% endblock %}
+
+{% block breadcrumb %}
+    {{ renderBreadcrumb(breadcrumb) }}
+{% endblock %}
+
+{% block content %}
+    <div class="title-block">
+        <h1>{{ 'menu.admin'|trans }}</h1>
+    </div>
+
+    <div class="content-block">
+        {{ include('/App/Admin/_tabs.html.twig', {current: 'errors'}) }}
+        <div class="block-element">
+            <h2 class="header">{{ 'title.error'|trans }}</h2>
+
+            {{ error.createdAt|date('Y-m-d H:i:s') }}
+            {{ error.level }}
+            {{ error.levelName }}
+            {{ error.message }}
+
+            <br><br>
+
+            {% for element in error.trace %}
+                <div>
+                    in {{ element.file }} -> {{ element.function }}({{ element.args|default([])|join(',') }}) (line {{ element.line }})
+                </div>
+                <br>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

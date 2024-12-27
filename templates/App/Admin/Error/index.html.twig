@@ -1,0 +1,57 @@
+{% extends 'layout.html.twig' %}
+
+{% set breadcrumb = buildBreadcrumb([
+    {'route': 'app_admin_index', 'trans': 'menu.admin'},
+    {'route': 'app_admin_error_index', 'trans': 'menu.errors'}
+]) %}
+
+{% block title %}
+    {{ renderTitle(breadcrumb) }}
+{% endblock %}
+
+{% block breadcrumb %}
+    {{ renderBreadcrumb(breadcrumb) }}
+{% endblock %}
+
+{% block content %}
+    <div class="title-block">
+        <h1>{{ 'menu.errors'|trans }}</h1>
+    </div>
+
+    <div class="content-block">
+        {{ include('/App/Admin/_tabs.html.twig', {current: 'errors'}) }}
+        <div class="block-element">
+            <h2 class="header">
+                {{ 'title.errors'|trans }}
+            </h2>
+
+            <table class="centered striped">
+                <thead>
+                    <tr>
+                        <th>{{ 'label.date'|trans }}</th>
+                        <th>{{ 'label.code'|trans }}</th>
+                        <th>{{ 'label.level'|trans }}</th>
+                        <th>{{ 'label.message'|trans }}</th>
+                        <th>{{ 'label.actions'|trans }}</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for error in errors %}
+                        <tr>
+                            <td>{{ error.createdAt|date('Y-m-d H:i:s') }}</td>
+                            <td>{{ error.level }}</td>
+                            <td>{{ error.levelName }}</td>
+                            <td>{{ error.message }}</td>
+                            <td>
+                                <a href="{{ path('app_admin_error_show', {id: error.id}) }}" title="{{ 'tooltip.details'|trans }}">
+                                    <i class="fa fa-eye fa-fw"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

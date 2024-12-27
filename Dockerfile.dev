@@ -12,7 +12,7 @@ COPY ./docker/entrypoint-dev.sh /entrypoint.sh
 
 # Install some basics dependencies
 RUN apt-get update && \
-    apt-get install -y curl lsb-release software-properties-common gnupg2 vim && \
+    apt-get install -y curl lsb-release software-properties-common gnupg2 vim libnss3 nss-plugin-pem ca-certificates && \
 # Add User and Groups
     addgroup --gid "$PGID" "$USER" && \
     adduser --gecos '' --no-create-home --disabled-password --uid "$PUID" --gid "$PGID" "$USER" && \

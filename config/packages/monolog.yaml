@@ -10,6 +10,10 @@ when@dev:
                 path: "%kernel.logs_dir%/%kernel.environment%.log"
                 level: debug
                 channels: [ "!event" ]
+                handler: db
+            db:
+                type: service
+                id: App\Monolog\DatabaseHandler
             console:
                 type: console
                 process_psr_3_messages: false
@@ -43,6 +47,10 @@ when@prod:
                 path: "%kernel.logs_dir%/%kernel.environment%.log"
                 level: error
                 formatter: monolog.formatter.json
+                handler: db
+            db:
+                type: service
+                id: App\Monolog\DatabaseHandler
             console:
                 type: console
                 process_psr_3_messages: false
