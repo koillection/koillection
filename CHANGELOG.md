@@ -1,8 +1,23 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [1.5.15] / 2024-11-22
+## [1.6.0] / 2024-12-29
+:warning: PHP 8.4 is now required
 
+### Features
+- Add error panel in Administration page (benjaminjonard)
+
+### Fixes
+- Fix error when using html file scrapper (benjaminjonard)
+
+### Miscellaneous
+- Display item names on public pages based on owner settings (benjaminjonard)
+- Update to PHP 8.4 (benjaminjonard)
+- Update to Symfony 7.2 (benjaminjonard)
+- Upgrade PHP and JS dependencies (benjaminjonard)
+- Update translations, thanks to all contributors on [Crowdin](https://crowdin.com/project/koillection)
+
+## [1.5.15] / 2024-11-22
 ### Features
 - Currency can now be changed on price data (benjaminjonard)
 
