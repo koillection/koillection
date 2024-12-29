@@ -76,7 +76,8 @@ RUN apt-get update && \
     chmod +x /var/www/koillection/docker/entrypoint.sh && \
 # Add nginx and PHP config files
     cp /var/www/koillection/docker/default.conf /etc/nginx/nginx.conf && \
-    cp /var/www/koillection/docker/php.ini /etc/php/8.4/fpm/conf.d/php.ini
+    cp /var/www/koillection/docker/php.ini /etc/php/8.4/fpm/conf.d/php.ini && \
+    mkdir /run/php
 
 EXPOSE 80
 
