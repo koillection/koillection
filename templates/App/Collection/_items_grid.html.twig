@@ -10,7 +10,7 @@
                 </a>
             </div>
 
-            {% if app.user.displayItemsNameInGridView|default(false) == true %}
+            {% if getContextUser().displayItemsNameInGridView|default(false) == true %}
                 <span class="item-name">{{ item.name }}</span>
             {% endif %}
         </div>
