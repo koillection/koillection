@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.6.2] / 2024-12-30
+### Fixes
+- Attempt to fix search error (benjaminjonard)
+
 ## [1.6.1] / 2024-12-30
 ### Fixes
 - Fix error on price counters (benjaminjonard)
