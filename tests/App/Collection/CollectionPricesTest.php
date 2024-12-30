@@ -53,6 +53,9 @@ class CollectionPricesTest extends AppTestCase
         DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'currency' => 'EUR', 'label' => 'Original price', 'value' => '100', 'item' => $item3, 'owner' => $user]);
         DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'currency' => 'EUR', 'label' => 'Current price', 'value' => '1000', 'item' => $item3, 'owner' => $user]);
 
+        $item3WithOtherCurrency = ItemFactory::createOne(['collection' => $collectionLevel3, 'owner' => $user]);
+        DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'currency' => 'JPY', 'label' => 'Other currency', 'value' => '1000', 'item' => $item3WithOtherCurrency, 'owner' => $user]);
+
         $collectionLevel4 = CollectionFactory::createOne(['parent' => $collectionLevel3, 'owner' => $user]);
         $item4 = ItemFactory::createOne(['collection' => $collectionLevel4, 'owner' => $user]);
         DatumFactory::createOne(['type' => DatumTypeEnum::TYPE_PRICE, 'currency' => 'EUR', 'label' => 'Original price', 'value' => '100', 'item' => $item4, 'owner' => $user]);
@@ -72,6 +75,7 @@ class CollectionPricesTest extends AppTestCase
         // Assert
         $this->assertEqualsWithDelta(200.0, $this->cachedValuesGetter->getCachedValues($newParentCollection->_real())['prices']['Original price']['EUR'], PHP_FLOAT_EPSILON);
         $this->assertEqualsWithDelta(2000.0, $this->cachedValuesGetter->getCachedValues($newParentCollection->_real())['prices']['Current price']['EUR'], PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(1000.0, $this->cachedValuesGetter->getCachedValues($newParentCollection->_real())['prices']['Other currency']['JPY'], PHP_FLOAT_EPSILON);
 
         $this->assertEqualsWithDelta(200.0, $this->cachedValuesGetter->getCachedValues($collectionLevel1->_real())['prices']['Original price']['EUR'], PHP_FLOAT_EPSILON);
         $this->assertEqualsWithDelta(2000.0, $this->cachedValuesGetter->getCachedValues($collectionLevel1->_real())['prices']['Current price']['EUR'], PHP_FLOAT_EPSILON);
@@ -81,6 +85,7 @@ class CollectionPricesTest extends AppTestCase
 
         $this->assertEqualsWithDelta(200.0, $this->cachedValuesGetter->getCachedValues($collectionLevel3->_real())['prices']['Original price']['EUR'], PHP_FLOAT_EPSILON);
         $this->assertEqualsWithDelta(2000.0, $this->cachedValuesGetter->getCachedValues($collectionLevel3->_real())['prices']['Current price']['EUR'], PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(1000.0, $this->cachedValuesGetter->getCachedValues($collectionLevel3->_real())['prices']['Other currency']['JPY'], PHP_FLOAT_EPSILON);
 
         $this->assertEqualsWithDelta(100.0, $this->cachedValuesGetter->getCachedValues($collectionLevel4->_real())['prices']['Original price']['EUR'], PHP_FLOAT_EPSILON);
         $this->assertEqualsWithDelta(1000.0, $this->cachedValuesGetter->getCachedValues($collectionLevel4->_real())['prices']['Current price']['EUR'], PHP_FLOAT_EPSILON);

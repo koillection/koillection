@@ -36,7 +36,7 @@ readonly class CachedValuesGetter
         }
 
         if ($this->security->getUser() === $collection->getOwner()) {
-            $prices = $this->mergeAndAdd($prices, $collection->getCachedValues()['prices']['privatePrices']);
+            $prices = $this->mergeAndAdd($prices, $collection->getCachedValues()['prices']['privatePrices'], true);
             $counters = $this->mergeAndAdd($counters, $collection->getCachedValues()['counters']['privateCounters']);
         }
 
@@ -78,20 +78,25 @@ readonly class CachedValuesGetter
         ];
     }
 
-    private function mergeAndAdd(array $array1, array $array2): array
+    private function mergeAndAdd(array $array1, array $array2, $debug = false): array
     {
-        $result = [];
+        // Initialize the result array with the first array
+        $result = $array1;
 
-        if ($array2 === []) {
-            return $array1;
-        }
-
-        if ($array1 === []) {
-            return $array2;
-        }
-
-        foreach (array_keys($array1 + $array2) as $value) {
-            $result[$value] = ($array1[$value] ?? 0) + ($array2[$value] ?? 0);
+        // Loop through all the keys of the second array
+        foreach ($array2 as $key => $value) {
+            // If the key exists in both arrays and both values are arrays, recurse
+            if (isset($result[$key]) && is_array($result[$key]) && is_array($value)) {
+                $result[$key] = $this->mergeAndAdd($result[$key], $value);
+            }
+            // If both values are integers or floats, add them together
+            elseif (isset($result[$key]) && (is_numeric($result[$key]) && is_numeric($value))) {
+                $result[$key] += $value;
+            }
+            // Otherwise, set the value from the second array
+            else {
+                $result[$key] = $value;
+            }
         }
 
         return $result;
