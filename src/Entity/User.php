@@ -285,6 +285,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Breadcr
         return DateFormatEnum::MAPPING[$this->dateFormat][DateFormatEnum::CONTEXT_FORM];
     }
 
+    // Fake property, used in search items page. As there is no global configuration for displaying items, just use an empty one
+    public function getItemsDisplayConfiguration(): ?DisplayConfiguration
+    {
+        return new DisplayConfiguration();
+    }
+
     #[\Override]
     public function getOwner(): ?self
     {

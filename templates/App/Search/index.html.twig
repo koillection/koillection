@@ -74,7 +74,7 @@
                 <div class="block-element">
                     {{ include('App/Collection/_items_' ~ search.displayMode ~ '.html.twig', {
                         'items': results.items,
-                        'displayConfiguration': getContextUser().collectionsDisplayConfiguration
+                        'displayConfiguration': getContextUser().itemsDisplayConfiguration
                     }) }}
                 </div>
             {% endif %}
