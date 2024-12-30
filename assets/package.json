@@ -24,7 +24,7 @@
     "stimulus-lightbox": "3.2.0",
     "stimulus-use": "0.52.3",
     "webpack": "5.97.1",
-    "webpack-cli": "5.1.4",
+    "webpack-cli": "6.0.1",
     "webpack-notifier": "1.15.0"
   },
   "scripts": {
