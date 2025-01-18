@@ -196,7 +196,7 @@
     <unit id="a048xMx" name="label.list_element_value">
       <segment state="translated">
         <source>List element value</source>
-        <target>Listar valore do elemento</target>
+        <target>Listar valor do elemento</target>
       </segment>
     </unit>
   </file>
