@@ -3595,5 +3595,65 @@
         <target>Mode d'affichage</target>
       </segment>
     </unit>
+    <unit id="vC8jN7a" name="tab.errors">
+      <segment state="translated">
+        <source>Errors</source>
+        <target>Erreurs</target>
+      </segment>
+    </unit>
+    <unit id="fQRayPd" name="menu.errors">
+      <segment state="translated">
+        <source>Errors</source>
+        <target>Erreurs</target>
+      </segment>
+    </unit>
+    <unit id="CZTLE2r" name="title.errors">
+      <segment state="translated">
+        <source>Errors</source>
+        <target>Erreurs</target>
+      </segment>
+    </unit>
+    <unit id="syP2FBE" name="label.code">
+      <segment state="translated">
+        <source>Code</source>
+        <target>Code</target>
+      </segment>
+    </unit>
+    <unit id="4Acswj3" name="label.level">
+      <segment state="translated">
+        <source>Level</source>
+        <target>Niveau</target>
+      </segment>
+    </unit>
+    <unit id="BTCTYyM" name="label.message">
+      <segment state="translated">
+        <source>Message</source>
+        <target>Message</target>
+      </segment>
+    </unit>
+    <unit id="ueKYyVj" name="title.error">
+      <segment state="translated">
+        <source>Error</source>
+        <target>Erreur</target>
+      </segment>
+    </unit>
+    <unit id="VCoUwHa" name="label.last_occurrence">
+      <segment state="translated">
+        <source>Last occurrence</source>
+        <target>Dernière occurrence</target>
+      </segment>
+    </unit>
+    <unit id="UuNgqqe" name="label.count">
+      <segment state="translated">
+        <source>Count</source>
+        <target># d'occurrences</target>
+      </segment>
+    </unit>
+    <unit id="sfcoCPq" name="tooltip.details">
+      <segment state="translated">
+        <source>Details</source>
+        <target>Details</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
