@@ -1,0 +1,4 @@
+<div class="input-field outlined">
+    <input type="number" id="{{ id|default('__id__') }}" name="{{ name|default('__name__') }}" {% if value is defined %} value="{{ value }}" {% endif %}>
+    <label for="{{ id|default('__id__') }}">{{ 'label.value'|trans }}</label>
+</div>

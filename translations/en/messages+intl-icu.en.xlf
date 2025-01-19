@@ -3667,6 +3667,30 @@
         <target>=</target>
       </segment>
     </unit>
+    <unit id="yrgsw9I" name="global.advanced_item_search.operator.superior">
+      <segment state="translated">
+        <source>Superior</source>
+        <target>Superior</target>
+      </segment>
+    </unit>
+    <unit id="cWoC6ft" name="global.advanced_item_search.operator.superior_or_equal">
+      <segment state="translated">
+        <source>Superior or equal</source>
+        <target>Superior or equal</target>
+      </segment>
+    </unit>
+    <unit id="HTWZ4VL" name="global.advanced_item_search.operator.inferior">
+      <segment state="translated">
+        <source>Inferior</source>
+        <target>Inferior</target>
+      </segment>
+    </unit>
+    <unit id="N2eRW7g" name="global.advanced_item_search.operator.inferior_or_equal">
+      <segment state="translated">
+        <source>Inferior or equal</source>
+        <target>Inferior or equal</target>
+      </segment>
+    </unit>
     <unit id="Ixftgmq" name="global.advanced_item_search.operator.contains">
       <segment state="translated">
         <source>Contains</source>

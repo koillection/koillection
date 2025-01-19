@@ -46,23 +46,15 @@ class AdvancedItemSearchController extends AbstractController
     {
         list($label, $type) = explode('_koillection_separator_', $value);
 
-        $operators = match ($type) {
-            DatumTypeEnum::TYPE_TEXT => [
-                OperatorEnum::OPERATOR_EQUAL => OperatorEnum::getLabelFromName(OperatorEnum::OPERATOR_EQUAL),
-                OperatorEnum::OPERATOR_CONTAINS => OperatorEnum::getLabelFromName(OperatorEnum::OPERATOR_CONTAINS)
-            ],
-            DatumTypeEnum::TYPE_COUNTRY => [
-                OperatorEnum::OPERATOR_EQUAL => OperatorEnum::getLabelFromName(OperatorEnum::OPERATOR_EQUAL)
-            ]
-        };
-
         $operatorInput = $this->render('App/AdvancedItemSearch/_input_operator.html.twig', [
-            'operators' => $operators,
+            'operators' => OperatorEnum::getOperatorsByType($type)
         ])->getContent();
 
         $valueInput = match ($type) {
             DatumTypeEnum::TYPE_TEXT, DatumTypeEnum::TYPE_TEXTAREA => $this->render('App/AdvancedItemSearch/_input_text.html.twig')->getContent(),
-            DatumTypeEnum::TYPE_COUNTRY => $this->render('App/AdvancedItemSearch/_input_country.html.twig')->getContent()
+            DatumTypeEnum::TYPE_COUNTRY => $this->render('App/AdvancedItemSearch/_input_country.html.twig')->getContent(),
+            DatumTypeEnum::TYPE_DATE => $this->render('App/AdvancedItemSearch/_input_date.html.twig')->getContent(),
+            DatumTypeEnum::TYPE_NUMBER => $this->render('App/AdvancedItemSearch/_input_number.html.twig')->getContent()
         };
 
         return new JsonResponse([

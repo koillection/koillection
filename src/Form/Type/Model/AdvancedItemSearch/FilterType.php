@@ -77,31 +77,15 @@ class FilterType extends AbstractType
                 $data = $event->getData();
                 list($label, $type) = explode('_koillection_separator_', $data['datum']);
 
-                match ($type) {
-                    DatumTypeEnum::TYPE_TEXT, DatumTypeEnum::TYPE_TEXTAREA => $form
-                        ->add('operator', ChoiceType::class, [
-                            'choices' => [
-                                OperatorEnum::getLabelFromName(OperatorEnum::OPERATOR_EQUAL) => OperatorEnum::OPERATOR_EQUAL,
-                                OperatorEnum::getLabelFromName(OperatorEnum::OPERATOR_CONTAINS) => OperatorEnum::OPERATOR_CONTAINS,
-                            ],
-                            'required' => true,
-                        ])
-                        ->add('value', TextType::class, [
-                            'required' => true,
-                        ])
-                    ,
-                    DatumTypeEnum::TYPE_COUNTRY => $form
-                        ->add('operator', ChoiceType::class, [
-                            'choices' => [
-                                OperatorEnum::getLabelFromName(OperatorEnum::OPERATOR_EQUAL) => OperatorEnum::OPERATOR_EQUAL
-                            ],
-                            'required' => true,
-                        ])
-                        ->add('value', TextType::class, [
-                            'required' => true,
-                        ])
-                ,
-                };
+                $form
+                    ->add('operator', ChoiceType::class, [
+                        'choices' => array_flip(OperatorEnum::getOperatorsByType($type)),
+                        'required' => true,
+                    ])
+                    ->add('value', TextType::class, [
+                        'required' => true,
+                    ])
+                ;
             }
         );
     }

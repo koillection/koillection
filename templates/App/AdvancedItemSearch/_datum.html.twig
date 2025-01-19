@@ -1,5 +1,9 @@
-{% if type == 'text' %}
+{% if type == 'text' or type == 'textarea' %}
     {{ include('/App/AdvancedItemSearch/_input_text.html.twig') }}
 {% elseif type == 'country' %}
     {{ include('/App/AdvancedItemSearch/_input_country.html.twig') }}
+{% elseif type == 'date' %}
+    {{ include('/App/AdvancedItemSearch/_input_date.html.twig') }}
+{% elseif type == 'number' %}
+    {{ include('/App/AdvancedItemSearch/_input_number.html.twig') }}
 {% endif %}

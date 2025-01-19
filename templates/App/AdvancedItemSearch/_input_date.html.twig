@@ -1,0 +1,9 @@
+<div class="input-field outlined" data-controller="datepicker">
+    <input type="text" id="{{ id|default('__id__') }}" name="{{ name|default('__name__') }}"
+           {% if value is defined %}value="{{ value ? value|date(app.user.dateFormat|default('Y-m-d')) : '' }}"{% endif %}
+           pattern="{{ getValidationRegexForDateFormat(app.user.dateFormat) }}"
+           data-datepicker-target="input"
+    >
+    <label for="{{ id|default('__id__') }}">{{ 'label.value'|trans }}</label>
+    <i class="fa fa-calendar fa-fw" data-action="click->datepicker#open"></i>
+</div>
