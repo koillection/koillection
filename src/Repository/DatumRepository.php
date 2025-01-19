@@ -89,4 +89,18 @@ class DatumRepository extends ServiceEntityRepository
 
         return $prices;
     }
+
+    public function findAllUniqueLabels()
+    {
+        return $this
+            ->createQueryBuilder('datum')
+            ->select('datum.label, datum.type')
+            ->where("datum.type NOT IN ('image', 'sign', 'video', 'file')")
+            ->addGroupBy('datum.label')
+            ->addGroupBy('datum.type')
+            ->addOrderBy('datum.label')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 }

@@ -1,0 +1,55 @@
+{% extends 'layout.html.twig' %}
+
+{% set breadcrumb = buildBreadcrumb([{'route': 'app_search_advanced_item_search', 'trans': 'menu.advanced_item_search'}], null, null) %}
+
+{% block title %}
+    {{ renderTitle(breadcrumb) }}
+{% endblock %}
+
+{% block breadcrumb %}
+    {{ renderBreadcrumb(breadcrumb) }}
+{% endblock %}
+
+{% block content %}
+    <div class="title-block">
+        <h1>{{ 'menu.advanced_item_search'|trans }}</h1>
+    </div>
+
+    <div class="content-block">
+        {{ form_start(form, {'method': 'POST'}) }}
+
+        {% for block in form.blocks %}
+            <div class="row search-block">
+                <div class="{% if loop.first %}hidden{% endif %}">
+                    {{ form_row(block.condition) }}
+                </div>
+
+                {% for filter in block.children.filters %}
+                    <div class="{% if loop.first %}hidden{% endif %}">{{ form_row(filter.condition) }}</div>
+
+                    <div class="s12 l4 offset-l1 xl2 offset-xl1">
+                        {{ form_row(filter.type, {'label' : 'label.type', 'attr': {'data-controller' : 'select--default' } }) }}
+                    </div>
+
+                    <div class="s12 l4 xl2">
+                        {{ form_row(filter.datum, {'label' : 'label.datum', 'attr': {'data-controller' : 'select--default' } }) }}
+                    </div>
+
+                    <div class="s12 l4 xl2">
+                        {{ form_row(filter.operator, {'label' : 'label.operator', 'attr': {'data-controller' : 'select--default' } }) }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+
+        <div class="row">
+            <div class="error-helper s12">
+                {{ form_errors(form) }}
+            </div>
+        </div>
+
+        <button name="submit" type="submit" class="btn waves-effect waves-light">{{ 'btn.submit'|trans }}</button>
+
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

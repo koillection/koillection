@@ -3655,5 +3655,29 @@
         <target>Details</target>
       </segment>
     </unit>
+    <unit id="Z3r5GZo" name="global.advanced_item_search.type.datum">
+      <segment state="translated">
+        <source>Item data</source>
+        <target>Item data</target>
+      </segment>
+    </unit>
+    <unit id="g8GYcYx" name="global.advanced_item_search.operator.equal">
+      <segment state="translated">
+        <source>=</source>
+        <target>=</target>
+      </segment>
+    </unit>
+    <unit id="Nnq80zp" name="global.advanced_item_search.condition.and">
+      <segment state="translated">
+        <source>AND</source>
+        <target>AND</target>
+      </segment>
+    </unit>
+    <unit id="tuMpJTi" name="global.advanced_item_search.condition.or">
+      <segment state="translated">
+        <source>OR</source>
+        <target>OR</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
