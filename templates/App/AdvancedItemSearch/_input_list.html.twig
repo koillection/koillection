@@ -1,0 +1,11 @@
+<div class="input-field outlined">
+    <select id="{{ id|default('__id__') }}" name="{{ name|default('__name__') }}" data-controller="select--default">
+        <option value=""></option>
+        {% for element in getListValuesFromDatumLabelAndType(datumLabel, datumType) %}
+            <option value="{{ element }}" {% if value is defined and value == element %}selected{% endif %}>
+                {{ element }}
+            </option>
+        {% endfor %}
+    </select>
+    <label for="{{ id|default('__id__') }}">{{ 'label.value'|trans }}</label>
+</div>

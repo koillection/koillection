@@ -32,7 +32,7 @@ class AdvancedItemSearchController extends AbstractController
              //dd($search, $request);
         }
 
-        //dd($form->createView()->children['blocks']->children[0]->children['filters']->children[0]->children['value']);
+        //dd($form->createView()->children['blocks']->children[0]->children['filters']->children[0]);
 
         return $this->render('App/AdvancedItemSearch/index.html.twig', [
             'form' => $form,
@@ -54,7 +54,8 @@ class AdvancedItemSearchController extends AbstractController
             DatumTypeEnum::TYPE_TEXT, DatumTypeEnum::TYPE_TEXTAREA => $this->render('App/AdvancedItemSearch/_input_text.html.twig')->getContent(),
             DatumTypeEnum::TYPE_COUNTRY => $this->render('App/AdvancedItemSearch/_input_country.html.twig')->getContent(),
             DatumTypeEnum::TYPE_DATE => $this->render('App/AdvancedItemSearch/_input_date.html.twig')->getContent(),
-            DatumTypeEnum::TYPE_NUMBER => $this->render('App/AdvancedItemSearch/_input_number.html.twig')->getContent()
+            DatumTypeEnum::TYPE_NUMBER => $this->render('App/AdvancedItemSearch/_input_number.html.twig')->getContent(),
+            DatumTypeEnum::TYPE_LIST, DatumTypeEnum::TYPE_CHOICE_LIST => $this->render('App/AdvancedItemSearch/_input_list.html.twig', ['datumLabel' => $label, 'datumType' => $type])->getContent(),
         };
 
         return new JsonResponse([

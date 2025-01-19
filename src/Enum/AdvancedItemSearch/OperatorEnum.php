@@ -53,7 +53,10 @@ class OperatorEnum
                 OperatorEnum::OPERATOR_SUPERIOR_OR_EQUAL => OperatorEnum::getLabelFromName(OperatorEnum::OPERATOR_SUPERIOR_OR_EQUAL),
                 OperatorEnum::OPERATOR_INFERIOR => OperatorEnum::getLabelFromName(OperatorEnum::OPERATOR_INFERIOR),
                 OperatorEnum::OPERATOR_INFERIOR_OR_EQUAL => OperatorEnum::getLabelFromName(OperatorEnum::OPERATOR_INFERIOR_OR_EQUAL),
-            ]
+            ],
+            DatumTypeEnum::TYPE_LIST, DatumTypeEnum::TYPE_CHOICE_LIST => [
+                OperatorEnum::OPERATOR_CONTAINS => OperatorEnum::getLabelFromName(OperatorEnum::OPERATOR_CONTAINS)
+            ],
         };
     }
 }

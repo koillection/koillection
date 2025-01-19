@@ -53,7 +53,9 @@
                                 id: filter.vars.id ~ '_value',
                                 value: filter.value.vars.value,
                                 name: filter.vars.full_name ~ '[value]',
-                                type: filter.vars.value.datumType
+                                type: filter.vars.value.datumType,
+                                datumLabel: filter.vars.value.datumLabel,
+                                datumType: filter.vars.value.datumType,
                             } only %}
 
                             {% do filter.value.setRendered %}

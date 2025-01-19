@@ -6,4 +6,6 @@
     {{ include('/App/AdvancedItemSearch/_input_date.html.twig') }}
 {% elseif type == 'number' %}
     {{ include('/App/AdvancedItemSearch/_input_number.html.twig') }}
+{% elseif type == 'list' or type == 'choice-list' %}
+    {{ include('/App/AdvancedItemSearch/_input_list.html.twig') }}
 {% endif %}
