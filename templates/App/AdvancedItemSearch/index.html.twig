@@ -48,8 +48,15 @@
                     </div>
 
                     <div class="s12 l4 xl2" data-search-filter-target="valueInput">
-                        {% if filter.operator is defined %}
-                            {{ form_row(filter.value, {'label' : 'label.value'}) }}
+                        {% if filter.value is defined %}
+                            {% include 'App/AdvancedItemSearch/_datum.html.twig' with {
+                                id: filter.vars.id ~ '_value',
+                                value: filter.value.vars.value,
+                                name: filter.vars.full_name ~ '[value]',
+                                type: filter.vars.value.datumType
+                            } only %}
+
+                            {% do filter.value.setRendered %}
                         {% endif %}
                     </div>
                 {% endfor %}

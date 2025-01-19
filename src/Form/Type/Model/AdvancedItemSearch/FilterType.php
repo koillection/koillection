@@ -90,6 +90,17 @@ class FilterType extends AbstractType
                             'required' => true,
                         ])
                     ,
+                    DatumTypeEnum::TYPE_COUNTRY => $form
+                        ->add('operator', ChoiceType::class, [
+                            'choices' => [
+                                OperatorEnum::getLabelFromName(OperatorEnum::OPERATOR_EQUAL) => OperatorEnum::OPERATOR_EQUAL
+                            ],
+                            'required' => true,
+                        ])
+                        ->add('value', TextType::class, [
+                            'required' => true,
+                        ])
+                ,
                 };
             }
         );

@@ -28,10 +28,11 @@ class AdvancedItemSearchController extends AbstractController
 
         $form->handleRequest($request);
 
-        //dd($form->createView()->children['blocks']->children[0]->children['filters']->children[0]->children['datum']);
         if ($form->isSubmitted() && $form->isValid()) {
-            //dd($search);
+             //dd($search, $request);
         }
+
+        //dd($form->createView()->children['blocks']->children[0]->children['filters']->children[0]->children['value']);
 
         return $this->render('App/AdvancedItemSearch/index.html.twig', [
             'form' => $form,
@@ -49,6 +50,9 @@ class AdvancedItemSearchController extends AbstractController
             DatumTypeEnum::TYPE_TEXT => [
                 OperatorEnum::OPERATOR_EQUAL => OperatorEnum::getLabelFromName(OperatorEnum::OPERATOR_EQUAL),
                 OperatorEnum::OPERATOR_CONTAINS => OperatorEnum::getLabelFromName(OperatorEnum::OPERATOR_CONTAINS)
+            ],
+            DatumTypeEnum::TYPE_COUNTRY => [
+                OperatorEnum::OPERATOR_EQUAL => OperatorEnum::getLabelFromName(OperatorEnum::OPERATOR_EQUAL)
             ]
         };
 
@@ -57,7 +61,8 @@ class AdvancedItemSearchController extends AbstractController
         ])->getContent();
 
         $valueInput = match ($type) {
-            DatumTypeEnum::TYPE_TEXT => $this->render('App/AdvancedItemSearch/_input_text.html.twig')->getContent()
+            DatumTypeEnum::TYPE_TEXT => $this->render('App/AdvancedItemSearch/_input_text.html.twig')->getContent(),
+            DatumTypeEnum::TYPE_COUNTRY => $this->render('App/AdvancedItemSearch/_input_country.html.twig')->getContent()
         };
 
         return new JsonResponse([

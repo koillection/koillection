@@ -1,0 +1,11 @@
+<div class="input-field outlined">
+    <select id="{{ id|default('__id__') }}" name="{{ name|default('__name__') }}" data-controller="select--country">
+        <option value=""></option>
+        {% for country in getCountriesList() %}
+            <option value="{{ country.code }}" data-flag="{{ country.flag }}" {% if value is defined and value == country.code %}selected{% endif %}>
+                {{ country.name }}
+            </option>
+        {% endfor %}
+    </select>
+    <label for="{{ id|default('__id__') }}">{{ 'label.value'|trans }}</label>
+</div>

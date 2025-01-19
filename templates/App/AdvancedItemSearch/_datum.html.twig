@@ -1,0 +1,5 @@
+{% if type == 'text' %}
+    {{ include('/App/AdvancedItemSearch/_input_text.html.twig') }}
+{% elseif type == 'country' %}
+    {{ include('/App/AdvancedItemSearch/_input_country.html.twig') }}
+{% endif %}
