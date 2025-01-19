@@ -1,6 +1,6 @@
 {% extends 'layout.html.twig' %}
 
-{% set breadcrumb = buildBreadcrumb([{'route': 'app_search_advanced_item_search', 'trans': 'menu.advanced_item_search'}], null, null) %}
+{% set breadcrumb = buildBreadcrumb([{'route': 'app_advanced_item_search_index', 'trans': 'menu.advanced_item_search'}], null, null) %}
 
 {% block title %}
     {{ renderTitle(breadcrumb) }}
@@ -19,7 +19,7 @@
         {{ form_start(form, {'method': 'POST'}) }}
 
         {% for block in form.blocks %}
-            <div class="row search-block">
+            <div class="row search-block" data-controller="search-filter">
                 <div class="{% if loop.first %}hidden{% endif %}">
                     {{ form_row(block.condition) }}
                 </div>
@@ -32,11 +32,25 @@
                     </div>
 
                     <div class="s12 l4 xl2">
-                        {{ form_row(filter.datum, {'label' : 'label.datum', 'attr': {'data-controller' : 'select--default' } }) }}
+                        {{ form_row(filter.datum, {'label' : 'label.datum', 'attr': {
+                            'data-controller' : 'select--default',
+                            'data-action': 'change->search-filter#loadOperatorAndValueInputs',
+                            'data-search-filter-target': 'datumInput'
+                        } }) }}
                     </div>
 
-                    <div class="s12 l4 xl2">
-                        {{ form_row(filter.operator, {'label' : 'label.operator', 'attr': {'data-controller' : 'select--default' } }) }}
+                    <div class="s12 l4 xl2" data-search-filter-target="operatorInput">
+                        {% if filter.operator is defined %}
+                            {{ form_row(filter.operator, {'label' : 'label.operator', 'attr': {
+                                'data-controller' : 'select--default'
+                            } }) }}
+                        {% endif %}
+                    </div>
+
+                    <div class="s12 l4 xl2" data-search-filter-target="valueInput">
+                        {% if filter.operator is defined %}
+                            {{ form_row(filter.value, {'label' : 'label.value'}) }}
+                        {% endif %}
                     </div>
                 {% endfor %}
             </div>

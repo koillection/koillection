@@ -1,0 +1,8 @@
+<div class="input-field outlined">
+    <select id="__id__" name="__name__" data-controller="select--default">
+        {% for value, label in operators %}
+            <option value="{{ value }}">{{ label|trans }}</option>
+        {% endfor %}
+    </select>
+    <label for="__id__">{{ 'label.value'|trans }}</label>
+</div>

@@ -3667,6 +3667,12 @@
         <target>=</target>
       </segment>
     </unit>
+    <unit id="Ixftgmq" name="global.advanced_item_search.operator.contains">
+      <segment state="translated">
+        <source>Contains</source>
+        <target>Contains</target>
+      </segment>
+    </unit>
     <unit id="Nnq80zp" name="global.advanced_item_search.condition.and">
       <segment state="translated">
         <source>AND</source>

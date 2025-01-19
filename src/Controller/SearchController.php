@@ -5,10 +5,7 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Enum\DisplayModeEnum;
-use App\Form\Type\Model\AdvancedItemSearch\AdvancedItemSearchType;
 use App\Form\Type\Model\SearchType;
-use App\Model\AdvancedItemSearch\AdvancedItemSearch;
-use App\Model\AdvancedItemSearch\Block;
 use App\Model\Search\Search;
 use App\Repository\AlbumRepository;
 use App\Repository\CollectionRepository;
@@ -71,29 +68,6 @@ class SearchController extends AbstractController
             'form' => $form,
             'results' => $results,
             'search' => $search
-        ]);
-    }
-
-    #[Route(path: '/advanced-item-search', name: 'app_search_advanced_item_search', methods: ['GET', 'POST'])]
-    public function advancedItemSearch(
-        Request $request
-    ): Response {
-        $results = [];
-
-        $search = new AdvancedItemSearch();
-        $search->setDisplayMode($this->getUser()?->getSearchResultsDisplayMode() ?? DisplayModeEnum::DISPLAY_MODE_GRID);
-        $form = $this->createForm(AdvancedItemSearchType::class, $search);
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            //dd($search);
-        }
-
-        return $this->render('App/Search/advanced-item-search.html.twig', [
-            'form' => $form,
-            'search' => $search,
-            'results' => $results
         ]);
     }
 
