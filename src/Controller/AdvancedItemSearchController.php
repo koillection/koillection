@@ -51,7 +51,7 @@ class AdvancedItemSearchController extends AbstractController
         ])->getContent();
 
         $valueInput = match ($type) {
-            DatumTypeEnum::TYPE_TEXT, DatumTypeEnum::TYPE_TEXTAREA => $this->render('App/AdvancedItemSearch/_input_text.html.twig')->getContent(),
+            DatumTypeEnum::TYPE_TEXT, DatumTypeEnum::TYPE_TEXTAREA, DatumTypeEnum::TYPE_LINK => $this->render('App/AdvancedItemSearch/_input_text.html.twig')->getContent(),
             DatumTypeEnum::TYPE_COUNTRY => $this->render('App/AdvancedItemSearch/_input_country.html.twig')->getContent(),
             DatumTypeEnum::TYPE_DATE => $this->render('App/AdvancedItemSearch/_input_date.html.twig')->getContent(),
             DatumTypeEnum::TYPE_NUMBER => $this->render('App/AdvancedItemSearch/_input_number.html.twig')->getContent(),

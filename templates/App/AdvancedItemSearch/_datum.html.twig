@@ -1,4 +1,4 @@
-{% if type == 'text' or type == 'textarea' %}
+{% if type == 'text' or type == 'textarea' or type == 'link' %}
     {{ include('/App/AdvancedItemSearch/_input_text.html.twig') }}
 {% elseif type == 'country' %}
     {{ include('/App/AdvancedItemSearch/_input_country.html.twig') }}
