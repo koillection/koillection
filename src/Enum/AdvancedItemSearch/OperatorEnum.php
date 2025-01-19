@@ -44,7 +44,7 @@ class OperatorEnum
                 OperatorEnum::OPERATOR_EQUAL => OperatorEnum::getLabelFromName(OperatorEnum::OPERATOR_EQUAL),
                 OperatorEnum::OPERATOR_CONTAINS => OperatorEnum::getLabelFromName(OperatorEnum::OPERATOR_CONTAINS)
             ],
-            DatumTypeEnum::TYPE_COUNTRY => [
+            DatumTypeEnum::TYPE_COUNTRY, DatumTypeEnum::TYPE_CHECKBOX => [
                 OperatorEnum::OPERATOR_EQUAL => OperatorEnum::getLabelFromName(OperatorEnum::OPERATOR_EQUAL)
             ],
             DatumTypeEnum::TYPE_DATE, DatumTypeEnum::TYPE_NUMBER, DatumTypeEnum::TYPE_RATING => [

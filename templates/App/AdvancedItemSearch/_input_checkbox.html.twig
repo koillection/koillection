@@ -1,0 +1,8 @@
+<div class="input-field outlined">
+    <label>
+        <input type="checkbox" id="{{ id|default('__id__') }}" name="{{ name|default('__name__') }}"
+               {% if value is defined and value == true %}checked{% endif %}
+        />
+        <span></span>
+    </label>
+</div>

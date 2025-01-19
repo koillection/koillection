@@ -10,4 +10,6 @@
     {{ include('/App/AdvancedItemSearch/_input_list.html.twig') }}
 {% elseif type == 'rating' %}
     {{ include('/App/AdvancedItemSearch/_input_rating.html.twig') }}
+{% elseif type == 'checkbox' %}
+    {{ include('/App/AdvancedItemSearch/_input_checkbox.html.twig') }}
 {% endif %}
