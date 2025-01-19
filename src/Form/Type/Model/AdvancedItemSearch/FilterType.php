@@ -78,7 +78,7 @@ class FilterType extends AbstractType
                 list($label, $type) = explode('_koillection_separator_', $data['datum']);
 
                 match ($type) {
-                    DatumTypeEnum::TYPE_TEXT => $form
+                    DatumTypeEnum::TYPE_TEXT, DatumTypeEnum::TYPE_TEXTAREA => $form
                         ->add('operator', ChoiceType::class, [
                             'choices' => [
                                 OperatorEnum::getLabelFromName(OperatorEnum::OPERATOR_EQUAL) => OperatorEnum::OPERATOR_EQUAL,
