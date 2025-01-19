@@ -8,4 +8,6 @@
     {{ include('/App/AdvancedItemSearch/_input_number.html.twig') }}
 {% elseif type == 'list' or type == 'choice-list' %}
     {{ include('/App/AdvancedItemSearch/_input_list.html.twig') }}
+{% elseif type == 'rating' %}
+    {{ include('/App/AdvancedItemSearch/_input_rating.html.twig') }}
 {% endif %}

@@ -1,0 +1,21 @@
+<div class="input-field outlined">
+    <div class="star-rating editable">
+        {% for i in 10 .. 1 %}
+            {% set isHalf = loop.index % 2 == 0 %}
+            <input class="star-rating-input"
+                   type="radio"
+                   name="{{ name|default('__name__') }}"
+                   value="{{ i }}"
+                   id="{{ id|default('__id__') }}_{{ i }}"
+                   data-additional-data-target="value"
+                   {% if value is defined and value == i %}checked{% endif %}
+            >
+
+            <label class="star-rating-view {{ isHalf ? 'is-half' }}" for="{{ id|default('__id__') }}_{{ i }}">
+                <svg class="icon {{ isHalf ? 'icon-star-half' : 'icon-star' }}">
+                    <use xlink:href="{{ isHalf ? '#icon-star-half' : '#icon-star' }}"></use>
+                </svg>
+            </label>
+        {% endfor %}
+    </div>
+</div>
