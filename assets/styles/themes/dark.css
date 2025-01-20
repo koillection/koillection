@@ -83,7 +83,7 @@ input {
 }
 
 /** FONT COLOR LIGHT **/
-.sidebar-element.separate-item, .sidebar-element.separate-item div, .autocomplete-results li, .select2, .input-field.outlined input, .input-field.outlined textarea, .dropdown-menu li, .dropdown-menu {
+.sidebar-element.separate-item, .sidebar-element.separate-item div, .autocomplete-results li, .select2, .input-field.outlined input, .input-field.outlined textarea, .dropdown-menu li, .dropdown-menu, .search-block {
     border-color: var(--font-color-light);
 }
 

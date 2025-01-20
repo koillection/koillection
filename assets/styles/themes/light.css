@@ -90,7 +90,7 @@ footer, .image-label, .datum-row span.country-name, .breadcrumb-item a {
     color: var(--font-color-light);
 }
 
-.select2, .input-field.outlined input, .input-field.outlined textarea {
+.select2, .input-field.outlined input, .input-field.outlined textarea, .search-block {
     border-color: var(--font-color-light);
 }
 

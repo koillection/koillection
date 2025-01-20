@@ -33,7 +33,7 @@ class FilterType extends AbstractType
         $builder
             ->add('condition', ChoiceType::class, [
                 'choices' => array_merge(['' => ''], array_flip(ConditionEnum::getConditionLabels())),
-                'required' => false,
+                'required' => true,
                 'label' => false,
             ])
             ->add('type', ChoiceType::class, [

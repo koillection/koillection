@@ -3727,5 +3727,23 @@
         <target>Operator</target>
       </segment>
     </unit>
+    <unit id="VCbf5xj" name="btn.add_filter">
+      <segment state="translated">
+        <source>Add filter</source>
+        <target>Add filter</target>
+      </segment>
+    </unit>
+    <unit id="uGUtdPP" name="label.condition">
+      <segment state="translated">
+        <source>Condition</source>
+        <target>Condition</target>
+      </segment>
+    </unit>
+    <unit id="2mInqTu" name="menu.advanced_item_search">
+      <segment state="translated">
+        <source>Advanced item search</source>
+        <target>Advanced item search</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

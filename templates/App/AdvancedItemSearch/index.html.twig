@@ -19,57 +19,32 @@
         {{ form_start(form, {'method': 'POST'}) }}
 
         {% for block in form.blocks %}
-            <div class="row search-block" data-controller="search-filter">
-                <div class="{% if loop.first %}hidden{% endif %}">
-                    {{ form_row(block.condition) }}
+            <div class="{% if loop.first %}hidden{% endif %}">
+                {{ form_row(block.condition) }}
+            </div>
+
+            <div class="row">
+                <div class="search-block s12 l10 offset-l1">
+                    <div data-controller="search-filters"
+                         data-prototype="{% apply escape %} {% include 'App/AdvancedItemSearch/_prototype_filter.html.twig' with { 'form': block.children.filters.vars.prototype } only %} {% endapply %}"
+                    >
+                        <div data-search-filters-target="filtersContainer">
+                            {% for filter in block.children.filters %}
+                                {{ include('App/AdvancedItemSearch/_prototype_filter.html.twig', { 'form': filter }) }}
+                            {% endfor %}
+                        </div>
+
+
+                        <a data-search-filters-target="button"
+                           data-action="click->search-filters#add"
+                           href="#"
+                           class="waves-effect waves-light btn right"
+                        >{{ 'btn.add_filter'|trans }}</a>
+
+
+                        {% do block.children.filters.setRendered %}
+                    </div>
                 </div>
-
-                {% for filter in block.children.filters %}
-                    <div class="s12 l2 offset-l1 xl1 offset-xl1 {% if loop.first %}visibility-none{% endif %}">
-                        {{ form_row(filter.condition, {'attr': {'data-controller' : 'select--default'}}) }}
-                    </div>
-
-                    <div class="s12 l4 xl2">
-                        {{ form_row(filter.type, {'label' : 'label.type', 'attr': {
-                            'data-controller' : 'select--default',
-                            'data-action': 'change->search-filter#loadTypeInputs',
-                            'data-search-filter-target': 'typeInput'
-                        } }) }}
-                    </div>
-
-                    <div class="s12 l4 xl2" data-search-filter-target="datumInputContainer">
-                        {% if filter.datum is defined %}
-                            {{ form_row(filter.datum, {'label' : 'label.item_data', 'attr': {
-                                'data-controller' : 'select--default',
-                                'data-action': 'change->search-filter#loadDatumInputs',
-                                'data-search-filter-target': 'datumInput'
-                            } }) }}
-                        {% endif %}
-                    </div>
-
-                    <div class="s12 l4 xl2" data-search-filter-target="operatorInputContainer">
-                        {% if filter.operator is defined %}
-                            {{ form_row(filter.operator, {'label' : 'label.operator', 'attr': {
-                                'data-controller' : 'select--default'
-                            } }) }}
-                        {% endif %}
-                    </div>
-
-                    <div class="s12 l4 xl2" data-search-filter-target="valueInputContainer">
-                        {% if filter.value is defined %}
-                            {% include 'App/AdvancedItemSearch/_value.html.twig' with {
-                                id: filter.vars.id ~ '_value',
-                                value: filter.value.vars.value,
-                                name: filter.vars.full_name ~ '[value]',
-                                type: filter.vars.value.type,
-                                datumLabel: filter.vars.value.datumLabel,
-                                datumType: filter.vars.value.datumType,
-                            } only %}
-
-                            {% do filter.value.setRendered %}
-                        {% endif %}
-                    </div>
-                {% endfor %}
             </div>
         {% endfor %}
 

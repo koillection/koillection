@@ -2297,3 +2297,21 @@ tr {
     top: -30px;
     left: 47px;
 }
+
+.filter .fa-remove {
+    cursor: pointer;
+}
+
+.search-block {
+    border-style: dashed;
+    border-radius: 10px;
+    padding: 30px 25px 10px 25px;
+}
+
+.search-block .btn {
+    margin-top: -75px;
+}
+
+.search-block .icon-holder {
+    margin-top: -25px;
+}

@@ -1,7 +1,8 @@
 <div class="row filter" data-controller="search-filter" data-search-filters-target="filter">
 
     <div class="s12 l2 offset-l1 xl1 offset-xl1 {% if loop is defined and loop.first %}visibility-none{% endif %}">
-        {{ form_row(form.condition, {'attr': {'data-controller' : 'select--default'}}) }}
+        {% set required = loop is defined and loop.first ? false : true %}
+        {{ form_row(form.condition, {'label' : 'label.condition', 'required': required ? 'required': '', 'attr': {'data-controller' : 'select--default'}}) }}
     </div>
 
     <div class="s12 l4 xl2">
@@ -45,7 +46,7 @@
         {% endif %}
     </div>
 
-    <div class="s1 icon-holder">
+    <div class="s12 l1 icon-holder">
         <i class="fa fa-remove fa-fw" data-action="click->search-filters#remove"></i>
     </div>
 
