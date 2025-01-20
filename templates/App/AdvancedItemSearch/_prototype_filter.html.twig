@@ -1,0 +1,52 @@
+<div class="row filter" data-controller="search-filter" data-search-filters-target="filter">
+
+    <div class="s12 l2 offset-l1 xl1 offset-xl1 {% if loop is defined and loop.first %}visibility-none{% endif %}">
+        {{ form_row(form.condition, {'attr': {'data-controller' : 'select--default'}}) }}
+    </div>
+
+    <div class="s12 l4 xl2">
+        {{ form_row(form.type, {'label' : 'label.type', 'attr': {
+            'data-controller' : 'select--default',
+            'data-action': 'change->search-filter#loadTypeInputs',
+            'data-search-filter-target': 'typeInput'
+        } }) }}
+    </div>
+
+    <div class="s12 l4 xl2" data-search-filter-target="datumInputContainer">
+        {% if form.datum is defined %}
+            {{ form_row(form.datum, {'label' : 'label.item_data', 'attr': {
+                'data-controller' : 'select--default',
+                'data-action': 'change->search-filter#loadDatumInputs',
+                'data-search-filter-target': 'datumInput'
+            } }) }}
+        {% endif %}
+    </div>
+
+    <div class="s12 l4 xl2" data-search-filter-target="operatorInputContainer">
+        {% if form.operator is defined %}
+            {{ form_row(form.operator, {'label' : 'label.operator', 'attr': {
+                'data-controller' : 'select--default'
+            } }) }}
+        {% endif %}
+    </div>
+
+    <div class="s12 l4 xl2" data-search-filter-target="valueInputContainer">
+        {% if form.value is defined %}
+            {% include 'App/AdvancedItemSearch/_value.html.twig' with {
+                id: form.vars.id ~ '_value',
+                value: form.value.vars.value,
+                name: form.vars.full_name ~ '[value]',
+                type: form.vars.value.type,
+                datumLabel: form.vars.value.datumLabel,
+                datumType: form.vars.value.datumType,
+            } only %}
+
+            {% do form.value.setRendered %}
+        {% endif %}
+    </div>
+
+    <div class="s1 icon-holder">
+        <i class="fa fa-remove fa-fw" data-action="click->search-filters#remove"></i>
+    </div>
+
+</div>
