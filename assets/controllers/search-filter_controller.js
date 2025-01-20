@@ -6,6 +6,14 @@ export default class extends Controller {
     loadTypeInputs(){
         let self = this;
 
+        if (this.typeInputTarget.value === '') {
+            self.operatorInputContainerTarget.innerHTML = '';
+            self.valueInputContainerTarget.innerHTML = '';
+            self.datumInputContainerTarget.innerHTML = '';
+
+            return;
+        }
+
         fetch('/advanced-item-search/load-type-inputs/' + this.typeInputTarget.value, {
             method: 'GET'
         })
