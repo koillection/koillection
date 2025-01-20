@@ -1,27 +1,62 @@
-import { Controller } from '@hotwired/stimulus';
-import Sortable from "sortablejs";
+import {Controller} from '@hotwired/stimulus';
 
 export default class extends Controller {
-    static targets = ['datumInput', 'valueInput', 'operatorInput']
+    static targets = ['typeInput', 'datumInput', 'datumInputContainer', 'valueInputContainer', 'operatorInputContainer']
 
-    loadOperatorAndValueInputs(){
+    loadTypeInputs(){
         let self = this;
 
-        fetch('/advanced-item-search/load-operator-and-value-inputs/' + this.datumInputTarget.value, {
+        fetch('/advanced-item-search/load-type-inputs/' + this.typeInputTarget.value, {
+            method: 'GET'
+        })
+            .then(response => response.json())
+            .then(function(result) {
+                self.operatorInputContainerTarget.innerHTML = '';
+                self.valueInputContainerTarget.innerHTML = '';
+                self.datumInputContainerTarget.innerHTML = '';
+
+
+                if (result.operatorInput) {
+                    let idOperator = self.typeInputTarget.id.replace('_type', '_operator');
+                    let nameOperator = self.typeInputTarget.name.replace('[type]', '[operator]');
+                    self.operatorInputContainerTarget.innerHTML = result.operatorInput.replace(/__id__/g, idOperator).replace(/__name__/g, nameOperator);
+                }
+
+                if (result.valueInput) {
+                    let idValue = self.typeInputTarget.id.replace('_type', '_value');
+                    let nameValue = self.typeInputTarget.name.replace('[type]', '[value]');
+                    self.valueInputContainerTarget.innerHTML = result.valueInput.replace(/__id__/g, idValue).replace(/__name__/g, nameValue);
+                }
+
+                if (result.datumInput) {
+                    let idValue = self.typeInputTarget.id.replace('_type', '_datum');
+                    let nameValue = self.typeInputTarget.name.replace('[type]', '[datum]');
+                    self.datumInputContainerTarget.innerHTML = result.datumInput.replace(/__id__/g, idValue).replace(/__name__/g, nameValue);
+                }
+            })
+    }
+
+    loadDatumInputs(){
+        let self = this;
+
+        fetch('/advanced-item-search/load-datum-inputs/' + this.datumInputTarget.value, {
             method: 'GET'
         })
         .then(response => response.json())
         .then(function(result) {
-            let idOperator = self.datumInputTarget.id.replace('_datum', '_operator');
-            let nameOperator = self.datumInputTarget.name.replace('[datum]', '[operator]');
+            self.operatorInputContainerTarget.innerHTML = '';
+            self.valueInputContainerTarget.innerHTML = '';
+
+            let idOperator = self.typeInputTarget.id.replace('_type', '_operator');
+            let nameOperator = self.typeInputTarget.name.replace('[type]', '[operator]');
             let operatorInputHtml = result.operatorInput.replace(/__id__/g, idOperator).replace(/__name__/g, nameOperator);
 
-            let idValue = self.datumInputTarget.id.replace('_datum', '_value');
-            let nameValue = self.datumInputTarget.name.replace('[datum]', '[value]');
+            let idValue = self.typeInputTarget.id.replace('_type', '_value');
+            let nameValue = self.typeInputTarget.name.replace('[type]', '[value]');
             let valueInputHtml = result.valueInput.replace(/__id__/g, idValue).replace(/__name__/g, nameValue);
 
-            self.valueInputTarget.innerHTML = valueInputHtml;
-            self.operatorInputTarget.innerHTML = operatorInputHtml;
+            self.valueInputContainerTarget.innerHTML = valueInputHtml;
+            self.operatorInputContainerTarget.innerHTML = operatorInputHtml;
         })
     }
 }

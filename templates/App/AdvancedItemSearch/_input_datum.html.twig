@@ -1,0 +1,15 @@
+<div class="input-field outlined">
+    <select id="{{ id|default('__id__') }}" name="{{ name|default('__name__') }}"
+            data-controller="select--default"
+            data-action="change->search-filter#loadDatumInputs"
+            data-search-filter-target="datumInput"
+    >
+        <option value=""></option>
+        {% for inputValue, label in labels %}
+            <option value="{{ inputValue }}" {% if value is defined and value == inputValue %}selected{% endif %}>
+                {{ label }}
+            </option>
+        {% endfor %}
+    </select>
+    <label for="{{ id|default('__id__') }}">{{ 'label.item_data'|trans }}</label>
+</div>

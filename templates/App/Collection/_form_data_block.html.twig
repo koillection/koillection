@@ -7,7 +7,7 @@
 
     <div data-additional-data-target="textsHolder">
         {% for key, datum in data %}
-            {% include 'App/Datum/_datum.html.twig' with {
+            {% include 'App/Datum/_value.html.twig' with {
                 datum: datum,
                 iteration: key,
                 type: datum.type,

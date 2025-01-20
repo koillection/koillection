@@ -1,15 +1,15 @@
-{% if type == 'text' or type == 'textarea' or type == 'link' %}
+{% if datumType == 'text' or datumType == 'textarea' or datumType == 'link' or type == 'name' %}
     {{ include('/App/AdvancedItemSearch/_input_text.html.twig') }}
-{% elseif type == 'country' %}
+{% elseif datumType == 'country' %}
     {{ include('/App/AdvancedItemSearch/_input_country.html.twig') }}
-{% elseif type == 'date' %}
+{% elseif datumType == 'date' %}
     {{ include('/App/AdvancedItemSearch/_input_date.html.twig') }}
-{% elseif type == 'number' %}
+{% elseif datumType == 'number' %}
     {{ include('/App/AdvancedItemSearch/_input_number.html.twig') }}
-{% elseif type == 'list' or type == 'choice-list' %}
+{% elseif datumType == 'list' or datumType == 'choice-list' %}
     {{ include('/App/AdvancedItemSearch/_input_list.html.twig') }}
-{% elseif type == 'rating' %}
+{% elseif datumType == 'rating' %}
     {{ include('/App/AdvancedItemSearch/_input_rating.html.twig') }}
-{% elseif type == 'checkbox' %}
+{% elseif datumType == 'checkbox' %}
     {{ include('/App/AdvancedItemSearch/_input_checkbox.html.twig') }}
 {% endif %}

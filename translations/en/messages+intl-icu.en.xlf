@@ -3661,6 +3661,12 @@
         <target>Item data</target>
       </segment>
     </unit>
+    <unit id="i202Q5I" name="global.advanced_item_search.type.name">
+      <segment state="translated">
+        <source>Item name</source>
+        <target>Item name</target>
+      </segment>
+    </unit>
     <unit id="g8GYcYx" name="global.advanced_item_search.operator.equal">
       <segment state="translated">
         <source>=</source>
@@ -3707,6 +3713,18 @@
       <segment state="translated">
         <source>OR</source>
         <target>OR</target>
+      </segment>
+    </unit>
+    <unit id="XAPwUuS" name="label.item_data">
+      <segment state="translated">
+        <source>Item data</source>
+        <target>Item data</target>
+      </segment>
+    </unit>
+    <unit id="vkFJA2N" name="label.operator">
+      <segment state="translated">
+        <source>Operator</source>
+        <target>Operator</target>
       </segment>
     </unit>
   </file>

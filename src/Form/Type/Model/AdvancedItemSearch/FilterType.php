@@ -30,43 +30,16 @@ class FilterType extends AbstractType
     #[\Override]
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
-        $data = [];
-        $data[''] = '';
-
-        foreach ($this->datumRepository->findAllUniqueLabels() as $datum) {
-            $data["{$datum['label']} <i>({$datum['type']})</i>"] = "{$datum['label']}_koillection_separator_{$datum['type']}";
-        }
-
         $builder
             ->add('condition', ChoiceType::class, [
-                'choices' => array_flip(ConditionEnum::getConditionLabels()),
-                'required' => true,
+                'choices' => array_merge(['' => ''], array_flip(ConditionEnum::getConditionLabels())),
+                'required' => false,
                 'label' => false,
             ])
             ->add('type', ChoiceType::class, [
-                'choices' => array_flip(TypeEnum::getTypeLabels()),
+                'choices' => array_merge(['' => ''], array_flip(TypeEnum::getTypeLabels())),
                 'required' => true,
                 'label' => false
-            ])
-            ->add('datum', ChoiceType::class, [
-                'choices' => $data,
-                'required' => true,
-                'label' => false,
-                'getter' => function (Filter $filter, FormInterface $form): ?string {
-                    if ($filter->getDatumLabel() && $filter->getDatumType()) {
-                        return "{$filter->getDatumLabel()}_koillection_separator_({$filter->getDatumType()})";
-                    }
-
-                    return null;
-                },
-                'setter' => function (Filter $filter, ?string $value, FormInterface $form): void {
-                    list($label, $type) = explode('_koillection_separator_', $value);
-
-                    $filter
-                        ->setDatumLabel($label)
-                        ->setDatumType($type)
-                    ;
-                },
             ])
         ;
 
@@ -75,17 +48,59 @@ class FilterType extends AbstractType
             function (FormEvent $event): void {
                 $form = $event->getForm();
                 $data = $event->getData();
-                list($label, $type) = explode('_koillection_separator_', $data['datum']);
 
                 $form
-                    ->add('operator', ChoiceType::class, [
-                        'choices' => array_flip(OperatorEnum::getOperatorsByType($type)),
-                        'required' => true,
-                    ])
                     ->add('value', TextType::class, [
                         'required' => true,
                     ])
                 ;
+
+                if ($data['type'] === TypeEnum::TYPE_NAME) {
+                    $form
+                        ->add('operator', ChoiceType::class, [
+                            'choices' => array_flip(OperatorEnum::getOperatorsByType('item_name')),
+                            'required' => true,
+                        ])
+                    ;
+                }
+
+                if ($data['type'] === TypeEnum::TYPE_DATUM) {
+                    $labels = [];
+                    $labels[''] = '';
+
+                    foreach ($this->datumRepository->findAllUniqueLabels() as $datum) {
+                        $labels["{$datum['label']} <i>({$datum['type']})</i>"] = "{$datum['label']}_koillection_separator_{$datum['type']}";
+                    }
+
+                    list($label, $type) = explode('_koillection_separator_', $data['datum']);
+
+                    $form
+                        ->add('operator', ChoiceType::class, [
+                            'choices' => array_flip(OperatorEnum::getOperatorsByType($type)),
+                            'required' => true,
+                        ])
+                        ->add('datum', ChoiceType::class, [
+                            'choices' => $labels,
+                            'required' => true,
+                            'label' => false,
+                            'getter' => function (Filter $filter, FormInterface $form): ?string {
+                                if ($filter->getDatumLabel() && $filter->getDatumType()) {
+                                    return "{$filter->getDatumLabel()}_koillection_separator_({$filter->getDatumType()})";
+                                }
+
+                                return null;
+                            },
+                            'setter' => function (Filter $filter, ?string $value, FormInterface $form): void {
+                                list($label, $type) = explode('_koillection_separator_', $value);
+
+                                $filter
+                                    ->setDatumLabel($label)
+                                    ->setDatumType($type)
+                                ;
+                            },
+                        ])
+                    ;
+                }
             }
         );
     }
